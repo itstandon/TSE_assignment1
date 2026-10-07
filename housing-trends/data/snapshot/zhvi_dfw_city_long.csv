@@ -1,0 +1,1444 @@
+city,county,city_key,month,zhvi
+Addison,Dallas County,addison,2025-08,502429.1618822168
+Addison,Dallas County,addison,2025-09,502652.1307255589
+Addison,Dallas County,addison,2025-10,504291.7653486074
+Addison,Dallas County,addison,2025-11,505961.191864848
+Addison,Dallas County,addison,2025-12,507399.9032806192
+Addison,Dallas County,addison,2026-01,508227.25982786826
+Addison,Dallas County,addison,2026-02,508316.5305011693
+Addison,Dallas County,addison,2026-03,507383.8667920598
+Addison,Dallas County,addison,2026-04,505438.7988935445
+Addison,Dallas County,addison,2026-05,502899.8804351995
+Addison,Dallas County,addison,2026-06,500622.088103822
+Addison,Dallas County,addison,2026-07,499347.5262050622
+Addison,Dallas County,addison,2026-08,499363.42450558016
+Aledo,Parker County,aledo,2025-08,541822.8199983294
+Aledo,Parker County,aledo,2025-09,542904.6555281301
+Aledo,Parker County,aledo,2025-10,543675.1761559848
+Aledo,Parker County,aledo,2025-11,542876.7122537085
+Aledo,Parker County,aledo,2025-12,541640.1668653549
+Aledo,Parker County,aledo,2026-01,540224.3344341562
+Aledo,Parker County,aledo,2026-02,539317.914551352
+Aledo,Parker County,aledo,2026-03,537596.4582625525
+Aledo,Parker County,aledo,2026-04,536164.6739403718
+Aledo,Parker County,aledo,2026-05,534729.840261805
+Aledo,Parker County,aledo,2026-06,534291.6937723845
+Aledo,Parker County,aledo,2026-07,534070.157945993
+Aledo,Parker County,aledo,2026-08,534468.2214839609
+Allen,Collin County,allen,2025-08,513356.8083480519
+Allen,Collin County,allen,2025-09,512031.1285184878
+Allen,Collin County,allen,2025-10,510734.9598948048
+Allen,Collin County,allen,2025-11,508500.88674568565
+Allen,Collin County,allen,2025-12,505888.667972682
+Allen,Collin County,allen,2026-01,502802.9299367128
+Allen,Collin County,allen,2026-02,500216.6790121179
+Allen,Collin County,allen,2026-03,496392.7399149311
+Allen,Collin County,allen,2026-04,492975.56823404366
+Allen,Collin County,allen,2026-05,489476.9291718461
+Allen,Collin County,allen,2026-06,487451.3805427374
+Allen,Collin County,allen,2026-07,486065.5823581343
+Allen,Collin County,allen,2026-08,485393.0539712777
+Alvarado,Johnson County,alvarado,2025-08,303319.9504021701
+Alvarado,Johnson County,alvarado,2025-09,302970.5440002503
+Alvarado,Johnson County,alvarado,2025-10,303121.69483835745
+Alvarado,Johnson County,alvarado,2025-11,303885.5660221171
+Alvarado,Johnson County,alvarado,2025-12,304823.606456348
+Alvarado,Johnson County,alvarado,2026-01,305660.2220677108
+Alvarado,Johnson County,alvarado,2026-02,306236.20309073455
+Alvarado,Johnson County,alvarado,2026-03,306381.06907565694
+Alvarado,Johnson County,alvarado,2026-04,305920.95379403065
+Alvarado,Johnson County,alvarado,2026-05,304947.706763433
+Alvarado,Johnson County,alvarado,2026-06,303832.1306489101
+Alvarado,Johnson County,alvarado,2026-07,302849.4198281347
+Alvarado,Johnson County,alvarado,2026-08,302220.99148927914
+Alvord,Wise County,alvord,2025-08,359206.40528642945
+Alvord,Wise County,alvord,2025-09,358989.27857095253
+Alvord,Wise County,alvord,2025-10,359204.12068313936
+Alvord,Wise County,alvord,2025-11,360287.2951105455
+Alvord,Wise County,alvord,2025-12,361622.6254342683
+Alvord,Wise County,alvord,2026-01,363328.2991434469
+Alvord,Wise County,alvord,2026-02,364722.2383306541
+Alvord,Wise County,alvord,2026-03,366017.28080683993
+Alvord,Wise County,alvord,2026-04,366273.2731134324
+Alvord,Wise County,alvord,2026-05,365535.9025643056
+Alvord,Wise County,alvord,2026-06,363985.184032642
+Alvord,Wise County,alvord,2026-07,362995.0067960368
+Alvord,Wise County,alvord,2026-08,363045.6608046822
+Anna,Collin County,anna,2025-08,362635.91056902497
+Anna,Collin County,anna,2025-09,360630.4780513097
+Anna,Collin County,anna,2025-10,358739.3204997396
+Anna,Collin County,anna,2025-11,356839.0696549273
+Anna,Collin County,anna,2025-12,354960.2023009386
+Anna,Collin County,anna,2026-01,352999.53677064605
+Anna,Collin County,anna,2026-02,350843.0563165953
+Anna,Collin County,anna,2026-03,348431.6952525601
+Anna,Collin County,anna,2026-04,345847.1893523911
+Anna,Collin County,anna,2026-05,343382.56078630645
+Anna,Collin County,anna,2026-06,340959.0816317801
+Anna,Collin County,anna,2026-07,339160.90473582793
+Anna,Collin County,anna,2026-08,337501.5929085679
+Argyle,Denton County,argyle,2025-08,614732.2789654516
+Argyle,Denton County,argyle,2025-09,614268.1511754045
+Argyle,Denton County,argyle,2025-10,614034.4052552847
+Argyle,Denton County,argyle,2025-11,612334.6716743533
+Argyle,Denton County,argyle,2025-12,610441.6999213243
+Argyle,Denton County,argyle,2026-01,608267.9874132699
+Argyle,Denton County,argyle,2026-02,605842.9072573305
+Argyle,Denton County,argyle,2026-03,602338.9730369168
+Argyle,Denton County,argyle,2026-04,599164.7881159429
+Argyle,Denton County,argyle,2026-05,596474.8839509604
+Argyle,Denton County,argyle,2026-06,595179.2853408273
+Argyle,Denton County,argyle,2026-07,595136.5912516539
+Argyle,Denton County,argyle,2026-08,596292.4081835974
+Arlington,Tarrant County,arlington,2025-08,312276.0179669533
+Arlington,Tarrant County,arlington,2025-09,311713.4161045016
+Arlington,Tarrant County,arlington,2025-10,311252.47104748205
+Arlington,Tarrant County,arlington,2025-11,311068.13320577616
+Arlington,Tarrant County,arlington,2025-12,311237.60118228535
+Arlington,Tarrant County,arlington,2026-01,311263.3678602222
+Arlington,Tarrant County,arlington,2026-02,311219.87682050886
+Arlington,Tarrant County,arlington,2026-03,310975.9736893896
+Arlington,Tarrant County,arlington,2026-04,310894.01925838925
+Arlington,Tarrant County,arlington,2026-05,310544.62708101654
+Arlington,Tarrant County,arlington,2026-06,310118.69599168765
+Arlington,Tarrant County,arlington,2026-07,309727.082534533
+Arlington,Tarrant County,arlington,2026-08,309891.2813848746
+Aubrey,Denton County,aubrey,2025-08,367121.25828537
+Aubrey,Denton County,aubrey,2025-09,365490.8569379639
+Aubrey,Denton County,aubrey,2025-10,364075.28677832894
+Aubrey,Denton County,aubrey,2025-11,362256.9566421335
+Aubrey,Denton County,aubrey,2025-12,360266.2453156929
+Aubrey,Denton County,aubrey,2026-01,357824.3566965332
+Aubrey,Denton County,aubrey,2026-02,355447.6743495063
+Aubrey,Denton County,aubrey,2026-03,352917.28243765904
+Aubrey,Denton County,aubrey,2026-04,349972.83087950136
+Aubrey,Denton County,aubrey,2026-05,346770.4991161461
+Aubrey,Denton County,aubrey,2026-06,343720.27936197614
+Aubrey,Denton County,aubrey,2026-07,341744.2865020107
+Aubrey,Denton County,aubrey,2026-08,340550.72272968065
+Azle,Parker County,azle,2025-08,334820.4522341657
+Azle,Parker County,azle,2025-09,334411.4915236918
+Azle,Parker County,azle,2025-10,334364.0690333875
+Azle,Parker County,azle,2025-11,334544.5224143128
+Azle,Parker County,azle,2025-12,334664.1368228296
+Azle,Parker County,azle,2026-01,334845.9741597485
+Azle,Parker County,azle,2026-02,335167.99161372107
+Azle,Parker County,azle,2026-03,335240.9951481643
+Azle,Parker County,azle,2026-04,334908.84211498656
+Azle,Parker County,azle,2026-05,334372.48462093686
+Azle,Parker County,azle,2026-06,333789.7627821038
+Azle,Parker County,azle,2026-07,333598.61138271535
+Azle,Parker County,azle,2026-08,333808.2726051232
+Balch Springs,Dallas County,balch springs,2025-08,230379.04896761663
+Balch Springs,Dallas County,balch springs,2025-09,229073.73249299196
+Balch Springs,Dallas County,balch springs,2025-10,227525.93462767743
+Balch Springs,Dallas County,balch springs,2025-11,226368.7253524393
+Balch Springs,Dallas County,balch springs,2025-12,225936.17555444964
+Balch Springs,Dallas County,balch springs,2026-01,226132.30417702664
+Balch Springs,Dallas County,balch springs,2026-02,226642.70015729143
+Balch Springs,Dallas County,balch springs,2026-03,226790.86627124707
+Balch Springs,Dallas County,balch springs,2026-04,226063.5965738534
+Balch Springs,Dallas County,balch springs,2026-05,224837.19449891287
+Balch Springs,Dallas County,balch springs,2026-06,223444.93752342995
+Balch Springs,Dallas County,balch springs,2026-07,222716.3164971128
+Balch Springs,Dallas County,balch springs,2026-08,222235.0887413624
+Bedford,Tarrant County,bedford,2025-08,371363.30744560045
+Bedford,Tarrant County,bedford,2025-09,371445.7974269016
+Bedford,Tarrant County,bedford,2025-10,372315.4388372482
+Bedford,Tarrant County,bedford,2025-11,373464.4719489616
+Bedford,Tarrant County,bedford,2025-12,374650.4906512314
+Bedford,Tarrant County,bedford,2026-01,375117.3605774978
+Bedford,Tarrant County,bedford,2026-02,375174.8823522597
+Bedford,Tarrant County,bedford,2026-03,374753.0636593378
+Bedford,Tarrant County,bedford,2026-04,374347.2913305929
+Bedford,Tarrant County,bedford,2026-05,373837.3648765783
+Bedford,Tarrant County,bedford,2026-06,373677.4652811527
+Bedford,Tarrant County,bedford,2026-07,373753.7035537064
+Bedford,Tarrant County,bedford,2026-08,374670.41783267935
+Blue Ridge,Collin County,blue ridge,2025-08,430086.065213454
+Blue Ridge,Collin County,blue ridge,2025-09,430319.5279825973
+Blue Ridge,Collin County,blue ridge,2025-10,431265.9487996434
+Blue Ridge,Collin County,blue ridge,2025-11,434101.11083804007
+Blue Ridge,Collin County,blue ridge,2025-12,436690.8445281831
+Blue Ridge,Collin County,blue ridge,2026-01,439459.6761070592
+Blue Ridge,Collin County,blue ridge,2026-02,440703.9027120299
+Blue Ridge,Collin County,blue ridge,2026-03,441126.2966107947
+Blue Ridge,Collin County,blue ridge,2026-04,439863.00127283327
+Blue Ridge,Collin County,blue ridge,2026-05,437719.1601704115
+Blue Ridge,Collin County,blue ridge,2026-06,435692.8302801641
+Blue Ridge,Collin County,blue ridge,2026-07,434649.3468062339
+Blue Ridge,Collin County,blue ridge,2026-08,435003.73260561697
+Boyd,Wise County,boyd,2025-08,361526.4670971872
+Boyd,Wise County,boyd,2025-09,360275.2082328066
+Boyd,Wise County,boyd,2025-10,360120.1148456375
+Boyd,Wise County,boyd,2025-11,360566.9155132435
+Boyd,Wise County,boyd,2025-12,360946.0962508658
+Boyd,Wise County,boyd,2026-01,361181.6784189509
+Boyd,Wise County,boyd,2026-02,361839.68997684255
+Boyd,Wise County,boyd,2026-03,362448.7020493993
+Boyd,Wise County,boyd,2026-04,362215.4039097832
+Boyd,Wise County,boyd,2026-05,361103.0318063644
+Boyd,Wise County,boyd,2026-06,359271.6727531242
+Boyd,Wise County,boyd,2026-07,357697.91644072445
+Boyd,Wise County,boyd,2026-08,356951.36454726587
+Bridgeport,Wise County,bridgeport,2025-08,227144.0548077692
+Bridgeport,Wise County,bridgeport,2025-09,226782.9635763268
+Bridgeport,Wise County,bridgeport,2025-10,226010.42363029192
+Bridgeport,Wise County,bridgeport,2025-11,225115.5619139939
+Bridgeport,Wise County,bridgeport,2025-12,225341.0252223052
+Bridgeport,Wise County,bridgeport,2026-01,226212.6536290493
+Bridgeport,Wise County,bridgeport,2026-02,227797.1186944459
+Bridgeport,Wise County,bridgeport,2026-03,229105.2414100266
+Bridgeport,Wise County,bridgeport,2026-04,229219.1984306299
+Bridgeport,Wise County,bridgeport,2026-05,228154.38756239763
+Bridgeport,Wise County,bridgeport,2026-06,226623.8784151344
+Bridgeport,Wise County,bridgeport,2026-07,225015.9336247017
+Bridgeport,Wise County,bridgeport,2026-08,223881.7286733348
+Burleson,Johnson County,burleson,2025-08,340494.8676577248
+Burleson,Johnson County,burleson,2025-09,340135.92100823886
+Burleson,Johnson County,burleson,2025-10,339887.501477451
+Burleson,Johnson County,burleson,2025-11,339967.56254665204
+Burleson,Johnson County,burleson,2025-12,340121.3545951047
+Burleson,Johnson County,burleson,2026-01,340276.5577959016
+Burleson,Johnson County,burleson,2026-02,340256.2781324229
+Burleson,Johnson County,burleson,2026-03,340034.76472493616
+Burleson,Johnson County,burleson,2026-04,339511.57750111615
+Burleson,Johnson County,burleson,2026-05,338681.1679797528
+Burleson,Johnson County,burleson,2026-06,337908.61759422073
+Burleson,Johnson County,burleson,2026-07,337396.6215425144
+Burleson,Johnson County,burleson,2026-08,337265.679920156
+Caddo Mills,Hunt County,caddo mills,2025-08,322455.12726243894
+Caddo Mills,Hunt County,caddo mills,2025-09,320777.89996725187
+Caddo Mills,Hunt County,caddo mills,2025-10,320409.906747506
+Caddo Mills,Hunt County,caddo mills,2025-11,320434.26771556266
+Caddo Mills,Hunt County,caddo mills,2025-12,321057.5226413748
+Caddo Mills,Hunt County,caddo mills,2026-01,322001.2184638149
+Caddo Mills,Hunt County,caddo mills,2026-02,322943.3266742969
+Caddo Mills,Hunt County,caddo mills,2026-03,322690.5118819264
+Caddo Mills,Hunt County,caddo mills,2026-04,321230.8413323101
+Caddo Mills,Hunt County,caddo mills,2026-05,318495.40418624907
+Caddo Mills,Hunt County,caddo mills,2026-06,315768.4308671373
+Caddo Mills,Hunt County,caddo mills,2026-07,313580.25630195934
+Caddo Mills,Hunt County,caddo mills,2026-08,312414.83931830054
+Carrollton,Dallas County,carrollton,2025-08,408140.4055635652
+Carrollton,Dallas County,carrollton,2025-09,407134.1023749248
+Carrollton,Dallas County,carrollton,2025-10,406613.54860774096
+Carrollton,Dallas County,carrollton,2025-11,406144.7454277368
+Carrollton,Dallas County,carrollton,2025-12,405763.28659783537
+Carrollton,Dallas County,carrollton,2026-01,405037.58306958416
+Carrollton,Dallas County,carrollton,2026-02,404283.7526136087
+Carrollton,Dallas County,carrollton,2026-03,403134.0186252013
+Carrollton,Dallas County,carrollton,2026-04,401958.9804335426
+Carrollton,Dallas County,carrollton,2026-05,400498.33305578615
+Carrollton,Dallas County,carrollton,2026-06,399730.8886607874
+Carrollton,Dallas County,carrollton,2026-07,399741.5559676057
+Carrollton,Dallas County,carrollton,2026-08,400641.58598152624
+Cedar Hill,Dallas County,cedar hill,2025-08,316013.1458427712
+Cedar Hill,Dallas County,cedar hill,2025-09,315378.6957929552
+Cedar Hill,Dallas County,cedar hill,2025-10,314931.6115893968
+Cedar Hill,Dallas County,cedar hill,2025-11,314646.31383245124
+Cedar Hill,Dallas County,cedar hill,2025-12,314848.98975641327
+Cedar Hill,Dallas County,cedar hill,2026-01,314943.6229975924
+Cedar Hill,Dallas County,cedar hill,2026-02,315086.8978412857
+Cedar Hill,Dallas County,cedar hill,2026-03,314952.31737331906
+Cedar Hill,Dallas County,cedar hill,2026-04,314659.04626004206
+Cedar Hill,Dallas County,cedar hill,2026-05,313971.8029218554
+Cedar Hill,Dallas County,cedar hill,2026-06,313129.0452099139
+Cedar Hill,Dallas County,cedar hill,2026-07,312596.2565027447
+Cedar Hill,Dallas County,cedar hill,2026-08,312519.64568441344
+Celeste,Hunt County,celeste,2025-08,348338.0829200105
+Celeste,Hunt County,celeste,2025-09,347636.1544027171
+Celeste,Hunt County,celeste,2025-10,347662.8497342062
+Celeste,Hunt County,celeste,2025-11,348523.70559829444
+Celeste,Hunt County,celeste,2025-12,349679.73524649284
+Celeste,Hunt County,celeste,2026-01,350561.2831340808
+Celeste,Hunt County,celeste,2026-02,351997.5001479048
+Celeste,Hunt County,celeste,2026-03,353434.5717317937
+Celeste,Hunt County,celeste,2026-04,354791.7177369818
+Celeste,Hunt County,celeste,2026-05,354473.05837533926
+Celeste,Hunt County,celeste,2026-06,353627.461325146
+Celeste,Hunt County,celeste,2026-07,353147.69018074573
+Celeste,Hunt County,celeste,2026-08,354019.75001388293
+Celina,Collin County,celina,2025-08,563540.6693606077
+Celina,Collin County,celina,2025-09,560434.1556967195
+Celina,Collin County,celina,2025-10,556990.7749528665
+Celina,Collin County,celina,2025-11,552959.0055691873
+Celina,Collin County,celina,2025-12,548851.8471720341
+Celina,Collin County,celina,2026-01,543798.1578961178
+Celina,Collin County,celina,2026-02,538007.9865870192
+Celina,Collin County,celina,2026-03,531476.9932183609
+Celina,Collin County,celina,2026-04,525833.150675868
+Celina,Collin County,celina,2026-05,521023.9524786616
+Celina,Collin County,celina,2026-06,517243.40588525054
+Celina,Collin County,celina,2026-07,514381.7432345068
+Celina,Collin County,celina,2026-08,511902.6860295578
+Cleburne,Johnson County,cleburne,2025-08,277818.75296385423
+Cleburne,Johnson County,cleburne,2025-09,276540.27721823467
+Cleburne,Johnson County,cleburne,2025-10,275663.50942565367
+Cleburne,Johnson County,cleburne,2025-11,275458.68746881187
+Cleburne,Johnson County,cleburne,2025-12,275781.9395381492
+Cleburne,Johnson County,cleburne,2026-01,276272.55968096846
+Cleburne,Johnson County,cleburne,2026-02,276475.3870305203
+Cleburne,Johnson County,cleburne,2026-03,276114.78814370185
+Cleburne,Johnson County,cleburne,2026-04,275036.99587778747
+Cleburne,Johnson County,cleburne,2026-05,273246.8206575126
+Cleburne,Johnson County,cleburne,2026-06,271607.22830303333
+Cleburne,Johnson County,cleburne,2026-07,270445.15864395763
+Cleburne,Johnson County,cleburne,2026-08,269985.7233860088
+Colleyville,Tarrant County,colleyville,2025-08,886705.1529435562
+Colleyville,Tarrant County,colleyville,2025-09,889352.6969818011
+Colleyville,Tarrant County,colleyville,2025-10,895726.5086835182
+Colleyville,Tarrant County,colleyville,2025-11,903790.2644759454
+Colleyville,Tarrant County,colleyville,2025-12,910065.2174554616
+Colleyville,Tarrant County,colleyville,2026-01,913510.5285198228
+Colleyville,Tarrant County,colleyville,2026-02,914812.0080356728
+Colleyville,Tarrant County,colleyville,2026-03,915179.7847615614
+Colleyville,Tarrant County,colleyville,2026-04,913754.0511300372
+Colleyville,Tarrant County,colleyville,2026-05,912093.49074448
+Colleyville,Tarrant County,colleyville,2026-06,911902.1009615328
+Colleyville,Tarrant County,colleyville,2026-07,914029.5092875157
+Colleyville,Tarrant County,colleyville,2026-08,919420.2366077312
+Commerce,Hunt County,commerce,2025-08,229129.6741958288
+Commerce,Hunt County,commerce,2025-09,227489.80105770493
+Commerce,Hunt County,commerce,2025-10,225479.7734003444
+Commerce,Hunt County,commerce,2025-11,223387.5155667904
+Commerce,Hunt County,commerce,2025-12,221819.23148487377
+Commerce,Hunt County,commerce,2026-01,221142.0409577108
+Commerce,Hunt County,commerce,2026-02,221507.95770017317
+Commerce,Hunt County,commerce,2026-03,221602.4114876302
+Commerce,Hunt County,commerce,2026-04,221411.7945860445
+Commerce,Hunt County,commerce,2026-05,220136.9967791432
+Commerce,Hunt County,commerce,2026-06,218513.4641687254
+Commerce,Hunt County,commerce,2026-07,217019.83526495352
+Commerce,Hunt County,commerce,2026-08,216821.7205469897
+Coppell,Dallas County,coppell,2025-08,613301.2780820433
+Coppell,Dallas County,coppell,2025-09,613396.7941274232
+Coppell,Dallas County,coppell,2025-10,614696.8515723338
+Coppell,Dallas County,coppell,2025-11,616198.1794205741
+Coppell,Dallas County,coppell,2025-12,617139.5766630882
+Coppell,Dallas County,coppell,2026-01,616596.7506449126
+Coppell,Dallas County,coppell,2026-02,615469.4233125685
+Coppell,Dallas County,coppell,2026-03,613709.4422746912
+Coppell,Dallas County,coppell,2026-04,612111.0170085506
+Coppell,Dallas County,coppell,2026-05,610440.6179855244
+Coppell,Dallas County,coppell,2026-06,609837.3189828509
+Coppell,Dallas County,coppell,2026-07,610289.400129267
+Coppell,Dallas County,coppell,2026-08,611817.5609545403
+Crandall,Kaufman County,crandall,2025-08,277886.82882429723
+Crandall,Kaufman County,crandall,2025-09,276342.83541162615
+Crandall,Kaufman County,crandall,2025-10,275054.7093490605
+Crandall,Kaufman County,crandall,2025-11,274291.1440357695
+Crandall,Kaufman County,crandall,2025-12,273583.0785660254
+Crandall,Kaufman County,crandall,2026-01,273089.13578733423
+Crandall,Kaufman County,crandall,2026-02,272261.07150753407
+Crandall,Kaufman County,crandall,2026-03,271273.6422837351
+Crandall,Kaufman County,crandall,2026-04,269798.68465136364
+Crandall,Kaufman County,crandall,2026-05,268067.50184601126
+Crandall,Kaufman County,crandall,2026-06,266450.5349473955
+Crandall,Kaufman County,crandall,2026-07,265333.37388361176
+Crandall,Kaufman County,crandall,2026-08,264745.1035914075
+Cresson,Parker County,cresson,2025-08,437201.7070205042
+Cresson,Parker County,cresson,2025-09,434288.9992697851
+Cresson,Parker County,cresson,2025-10,433463.16819123086
+Cresson,Parker County,cresson,2025-11,434547.6275413213
+Cresson,Parker County,cresson,2025-12,435505.6116478204
+Cresson,Parker County,cresson,2026-01,435878.0544447534
+Cresson,Parker County,cresson,2026-02,434471.5074486663
+Cresson,Parker County,cresson,2026-03,432849.9066297545
+Cresson,Parker County,cresson,2026-04,430414.6914089392
+Cresson,Parker County,cresson,2026-05,427989.3798774767
+Cresson,Parker County,cresson,2026-06,425533.7874659313
+Cresson,Parker County,cresson,2026-07,424051.3987511215
+Cresson,Parker County,cresson,2026-08,424100.6054211345
+Crowley,Tarrant County,crowley,2025-08,321410.56522966473
+Crowley,Tarrant County,crowley,2025-09,320614.9868345239
+Crowley,Tarrant County,crowley,2025-10,319862.614633018
+Crowley,Tarrant County,crowley,2025-11,319155.7589777247
+Crowley,Tarrant County,crowley,2025-12,318389.64738437027
+Crowley,Tarrant County,crowley,2026-01,317556.4634135202
+Crowley,Tarrant County,crowley,2026-02,316821.64844735776
+Crowley,Tarrant County,crowley,2026-03,316011.4830348772
+Crowley,Tarrant County,crowley,2026-04,315355.20646206813
+Crowley,Tarrant County,crowley,2026-05,314559.7958453197
+Crowley,Tarrant County,crowley,2026-06,313806.1305036995
+Crowley,Tarrant County,crowley,2026-07,313284.4754163425
+Crowley,Tarrant County,crowley,2026-08,312920.76995518187
+Dallas,Dallas County,dallas,2025-08,310919.1735255601
+Dallas,Dallas County,dallas,2025-09,310319.7841445653
+Dallas,Dallas County,dallas,2025-10,310186.1319457235
+Dallas,Dallas County,dallas,2025-11,310335.584318096
+Dallas,Dallas County,dallas,2025-12,310576.2506393272
+Dallas,Dallas County,dallas,2026-01,310814.4439922715
+Dallas,Dallas County,dallas,2026-02,310824.5318512039
+Dallas,Dallas County,dallas,2026-03,310201.93028096686
+Dallas,Dallas County,dallas,2026-04,308884.1004145599
+Dallas,Dallas County,dallas,2026-05,307209.57987942826
+Dallas,Dallas County,dallas,2026-06,305996.2363782048
+Dallas,Dallas County,dallas,2026-07,305559.01976892987
+Dallas,Dallas County,dallas,2026-08,305764.5463727448
+Decatur,Wise County,decatur,2025-08,435426.6876011696
+Decatur,Wise County,decatur,2025-09,434515.4499901989
+Decatur,Wise County,decatur,2025-10,434579.40497999615
+Decatur,Wise County,decatur,2025-11,435724.5553915941
+Decatur,Wise County,decatur,2025-12,437314.43856440304
+Decatur,Wise County,decatur,2026-01,439265.85436370905
+Decatur,Wise County,decatur,2026-02,441046.1581332565
+Decatur,Wise County,decatur,2026-03,442507.0209147392
+Decatur,Wise County,decatur,2026-04,442437.150770828
+Decatur,Wise County,decatur,2026-05,441246.8677258209
+Decatur,Wise County,decatur,2026-06,439926.00833726086
+Decatur,Wise County,decatur,2026-07,439562.11867391487
+Decatur,Wise County,decatur,2026-08,440261.0873119996
+Denton,Denton County,denton,2025-08,358252.69329932303
+Denton,Denton County,denton,2025-09,357419.3770885168
+Denton,Denton County,denton,2025-10,357145.7437995772
+Denton,Denton County,denton,2025-11,356862.2965426951
+Denton,Denton County,denton,2025-12,356457.39108640404
+Denton,Denton County,denton,2026-01,355776.302854498
+Denton,Denton County,denton,2026-02,354962.17060059565
+Denton,Denton County,denton,2026-03,353846.8073646527
+Denton,Denton County,denton,2026-04,352231.66966513195
+Denton,Denton County,denton,2026-05,350165.58599837875
+Denton,Denton County,denton,2026-06,348363.0142278243
+Denton,Denton County,denton,2026-07,347188.9593747827
+Denton,Denton County,denton,2026-08,346718.6176801315
+Desoto,Dallas County,desoto,2025-08,324949.2264879054
+Desoto,Dallas County,desoto,2025-09,324602.3891249918
+Desoto,Dallas County,desoto,2025-10,324331.27970026195
+Desoto,Dallas County,desoto,2025-11,324196.84056497994
+Desoto,Dallas County,desoto,2025-12,324474.7842109716
+Desoto,Dallas County,desoto,2026-01,324293.89804374095
+Desoto,Dallas County,desoto,2026-02,323882.90494970634
+Desoto,Dallas County,desoto,2026-03,323183.4979682941
+Desoto,Dallas County,desoto,2026-04,322636.0709594884
+Desoto,Dallas County,desoto,2026-05,321908.19269203657
+Desoto,Dallas County,desoto,2026-06,321010.76077156
+Desoto,Dallas County,desoto,2026-07,320480.13637849124
+Desoto,Dallas County,desoto,2026-08,320428.2611441598
+Duncanville,Dallas County,duncanville,2025-08,277086.855283836
+Duncanville,Dallas County,duncanville,2025-09,276238.5019646731
+Duncanville,Dallas County,duncanville,2025-10,275709.06710683386
+Duncanville,Dallas County,duncanville,2025-11,275531.6508801161
+Duncanville,Dallas County,duncanville,2025-12,275821.5462715511
+Duncanville,Dallas County,duncanville,2026-01,276297.9352441544
+Duncanville,Dallas County,duncanville,2026-02,276898.5969677018
+Duncanville,Dallas County,duncanville,2026-03,277173.8334421366
+Duncanville,Dallas County,duncanville,2026-04,277113.20972531865
+Duncanville,Dallas County,duncanville,2026-05,276709.2158748652
+Duncanville,Dallas County,duncanville,2026-06,276174.9067973084
+Duncanville,Dallas County,duncanville,2026-07,275747.944290923
+Duncanville,Dallas County,duncanville,2026-08,275690.6422393126
+Ennis,Ellis County,ennis,2025-08,269020.2070498362
+Ennis,Ellis County,ennis,2025-09,267953.4138169351
+Ennis,Ellis County,ennis,2025-10,267100.29659396264
+Ennis,Ellis County,ennis,2025-11,266581.57042408903
+Ennis,Ellis County,ennis,2025-12,266657.71437374194
+Ennis,Ellis County,ennis,2026-01,267397.42705416126
+Ennis,Ellis County,ennis,2026-02,268250.94516511617
+Ennis,Ellis County,ennis,2026-03,268524.62129929074
+Ennis,Ellis County,ennis,2026-04,267947.5498264476
+Ennis,Ellis County,ennis,2026-05,266725.73246425664
+Ennis,Ellis County,ennis,2026-06,265526.7656599935
+Ennis,Ellis County,ennis,2026-07,264419.2498322839
+Ennis,Ellis County,ennis,2026-08,263767.69953371753
+Euless,Tarrant County,euless,2025-08,355250.3524700582
+Euless,Tarrant County,euless,2025-09,355237.3952402942
+Euless,Tarrant County,euless,2025-10,355656.4713649486
+Euless,Tarrant County,euless,2025-11,356211.035063898
+Euless,Tarrant County,euless,2025-12,356894.96139782964
+Euless,Tarrant County,euless,2026-01,357225.1122787557
+Euless,Tarrant County,euless,2026-02,357257.72406966105
+Euless,Tarrant County,euless,2026-03,356862.324399715
+Euless,Tarrant County,euless,2026-04,356269.6022712311
+Euless,Tarrant County,euless,2026-05,355402.3633596673
+Euless,Tarrant County,euless,2026-06,354618.7842673517
+Euless,Tarrant County,euless,2026-07,354196.1666033387
+Euless,Tarrant County,euless,2026-08,354647.49684671505
+Farmers Branch,Dallas County,farmers branch,2025-08,372112.844299536
+Farmers Branch,Dallas County,farmers branch,2025-09,373304.02049799607
+Farmers Branch,Dallas County,farmers branch,2025-10,374975.7025083901
+Farmers Branch,Dallas County,farmers branch,2025-11,376573.656687497
+Farmers Branch,Dallas County,farmers branch,2025-12,377744.07658966375
+Farmers Branch,Dallas County,farmers branch,2026-01,378203.649307034
+Farmers Branch,Dallas County,farmers branch,2026-02,378081.09256452
+Farmers Branch,Dallas County,farmers branch,2026-03,377256.0084521712
+Farmers Branch,Dallas County,farmers branch,2026-04,376032.612320351
+Farmers Branch,Dallas County,farmers branch,2026-05,375158.9918468159
+Farmers Branch,Dallas County,farmers branch,2026-06,375047.9259010661
+Farmers Branch,Dallas County,farmers branch,2026-07,375850.2064038632
+Farmers Branch,Dallas County,farmers branch,2026-08,376940.7082385978
+Farmersville,Collin County,farmersville,2025-08,343055.44852205977
+Farmersville,Collin County,farmersville,2025-09,342484.6208100241
+Farmersville,Collin County,farmersville,2025-10,342335.07459083805
+Farmersville,Collin County,farmersville,2025-11,342880.4239781921
+Farmersville,Collin County,farmersville,2025-12,343080.6385882681
+Farmersville,Collin County,farmersville,2026-01,343415.1330581619
+Farmersville,Collin County,farmersville,2026-02,342962.326010802
+Farmersville,Collin County,farmersville,2026-03,341704.0474411385
+Farmersville,Collin County,farmersville,2026-04,338925.00101097685
+Farmersville,Collin County,farmersville,2026-05,335601.8806659932
+Farmersville,Collin County,farmersville,2026-06,332030.2384157483
+Farmersville,Collin County,farmersville,2026-07,329545.3080657271
+Farmersville,Collin County,farmersville,2026-08,327971.9596876798
+Ferris,Ellis County,ferris,2025-08,292618.3477217585
+Ferris,Ellis County,ferris,2025-09,292084.746699106
+Ferris,Ellis County,ferris,2025-10,292418.25372212206
+Ferris,Ellis County,ferris,2025-11,293299.8526420908
+Ferris,Ellis County,ferris,2025-12,294131.73924966034
+Ferris,Ellis County,ferris,2026-01,295379.39870618354
+Ferris,Ellis County,ferris,2026-02,296625.2053030622
+Ferris,Ellis County,ferris,2026-03,297452.1359829429
+Ferris,Ellis County,ferris,2026-04,296556.0642351617
+Ferris,Ellis County,ferris,2026-05,294480.44052508293
+Ferris,Ellis County,ferris,2026-06,292217.7392259049
+Ferris,Ellis County,ferris,2026-07,290890.40109126456
+Ferris,Ellis County,ferris,2026-08,290336.80789868446
+Flower Mound,Denton County,flower mound,2025-08,605614.8426885628
+Flower Mound,Denton County,flower mound,2025-09,605641.3932886516
+Flower Mound,Denton County,flower mound,2025-10,607519.2859147623
+Flower Mound,Denton County,flower mound,2025-11,609392.4979480803
+Flower Mound,Denton County,flower mound,2025-12,610411.9688445946
+Flower Mound,Denton County,flower mound,2026-01,610099.5379350557
+Flower Mound,Denton County,flower mound,2026-02,608928.4906475567
+Flower Mound,Denton County,flower mound,2026-03,607257.426055956
+Flower Mound,Denton County,flower mound,2026-04,605283.5374364277
+Flower Mound,Denton County,flower mound,2026-05,603576.8903189005
+Flower Mound,Denton County,flower mound,2026-06,603130.4794268697
+Flower Mound,Denton County,flower mound,2026-07,603379.3297517546
+Flower Mound,Denton County,flower mound,2026-08,604722.6397472938
+Forney,Kaufman County,forney,2025-08,320941.2726163402
+Forney,Kaufman County,forney,2025-09,319262.88521298784
+Forney,Kaufman County,forney,2025-10,317534.44594618666
+Forney,Kaufman County,forney,2025-11,316234.419027239
+Forney,Kaufman County,forney,2025-12,315111.20810908685
+Forney,Kaufman County,forney,2026-01,314283.2613956674
+Forney,Kaufman County,forney,2026-02,313310.4084678794
+Forney,Kaufman County,forney,2026-03,312260.42138553254
+Forney,Kaufman County,forney,2026-04,310878.7064801264
+Forney,Kaufman County,forney,2026-05,309124.42393764347
+Forney,Kaufman County,forney,2026-06,307185.1730443696
+Forney,Kaufman County,forney,2026-07,305675.7440621134
+Forney,Kaufman County,forney,2026-08,304636.0227633964
+Fort Worth,Tarrant County,fort worth,2025-08,301195.2258781825
+Fort Worth,Tarrant County,fort worth,2025-09,300537.00209169503
+Fort Worth,Tarrant County,fort worth,2025-10,300018.9261163433
+Fort Worth,Tarrant County,fort worth,2025-11,299795.34245524014
+Fort Worth,Tarrant County,fort worth,2025-12,299757.05401199334
+Fort Worth,Tarrant County,fort worth,2026-01,299678.6661409862
+Fort Worth,Tarrant County,fort worth,2026-02,299586.7990254423
+Fort Worth,Tarrant County,fort worth,2026-03,299228.77464370494
+Fort Worth,Tarrant County,fort worth,2026-04,298640.44194841286
+Fort Worth,Tarrant County,fort worth,2026-05,297726.896646439
+Fort Worth,Tarrant County,fort worth,2026-06,296749.63370098564
+Fort Worth,Tarrant County,fort worth,2026-07,296053.0884304683
+Fort Worth,Tarrant County,fort worth,2026-08,295799.78431127773
+Frisco,Collin County,frisco,2025-08,666108.6860016665
+Frisco,Collin County,frisco,2025-09,664831.8500928216
+Frisco,Collin County,frisco,2025-10,664434.0828241371
+Frisco,Collin County,frisco,2025-11,663661.588348915
+Frisco,Collin County,frisco,2025-12,662448.0159626481
+Frisco,Collin County,frisco,2026-01,659988.1370503559
+Frisco,Collin County,frisco,2026-02,657082.7618369967
+Frisco,Collin County,frisco,2026-03,653112.0335819476
+Frisco,Collin County,frisco,2026-04,649159.1385665801
+Frisco,Collin County,frisco,2026-05,644814.9880911327
+Frisco,Collin County,frisco,2026-06,641481.5691698934
+Frisco,Collin County,frisco,2026-07,639325.866187022
+Frisco,Collin County,frisco,2026-08,638511.9269593857
+Garland,Dallas County,garland,2025-08,293076.45622659585
+Garland,Dallas County,garland,2025-09,291591.67732872406
+Garland,Dallas County,garland,2025-10,290368.1907171521
+Garland,Dallas County,garland,2025-11,289425.20397702185
+Garland,Dallas County,garland,2025-12,288892.88572962576
+Garland,Dallas County,garland,2026-01,288516.1540453236
+Garland,Dallas County,garland,2026-02,288027.07619617967
+Garland,Dallas County,garland,2026-03,287051.33815228875
+Garland,Dallas County,garland,2026-04,285879.68510810746
+Garland,Dallas County,garland,2026-05,284729.83910444734
+Garland,Dallas County,garland,2026-06,283912.7613283784
+Garland,Dallas County,garland,2026-07,283483.9642999689
+Garland,Dallas County,garland,2026-08,283275.7354048749
+Godley,Johnson County,godley,2025-08,435083.262388279
+Godley,Johnson County,godley,2025-09,435315.15131457336
+Godley,Johnson County,godley,2025-10,437096.7058851751
+Godley,Johnson County,godley,2025-11,439220.29680566856
+Godley,Johnson County,godley,2025-12,440833.7155045192
+Godley,Johnson County,godley,2026-01,441416.3134813389
+Godley,Johnson County,godley,2026-02,441034.5438125494
+Godley,Johnson County,godley,2026-03,439127.5625766619
+Godley,Johnson County,godley,2026-04,436841.0480899674
+Godley,Johnson County,godley,2026-05,434361.76955942647
+Godley,Johnson County,godley,2026-06,433109.7657592397
+Godley,Johnson County,godley,2026-07,432831.3914163772
+Godley,Johnson County,godley,2026-08,433187.9055846495
+Grand Prairie,Dallas County,grand prairie,2025-08,318561.8428575949
+Grand Prairie,Dallas County,grand prairie,2025-09,318422.8171207356
+Grand Prairie,Dallas County,grand prairie,2025-10,318190.02066189406
+Grand Prairie,Dallas County,grand prairie,2025-11,317911.1954046044
+Grand Prairie,Dallas County,grand prairie,2025-12,317662.7256691949
+Grand Prairie,Dallas County,grand prairie,2026-01,317355.190128517
+Grand Prairie,Dallas County,grand prairie,2026-02,317028.7578303562
+Grand Prairie,Dallas County,grand prairie,2026-03,316641.2324269809
+Grand Prairie,Dallas County,grand prairie,2026-04,316167.7894367536
+Grand Prairie,Dallas County,grand prairie,2026-05,315374.6215561971
+Grand Prairie,Dallas County,grand prairie,2026-06,314636.2480413138
+Grand Prairie,Dallas County,grand prairie,2026-07,314283.95111795975
+Grand Prairie,Dallas County,grand prairie,2026-08,314396.8185986033
+Grandview,Johnson County,grandview,2025-08,391136.432218642
+Grandview,Johnson County,grandview,2025-09,390960.53327959497
+Grandview,Johnson County,grandview,2025-10,392127.9011995518
+Grandview,Johnson County,grandview,2025-11,394976.1950391845
+Grandview,Johnson County,grandview,2025-12,397576.21966505307
+Grandview,Johnson County,grandview,2026-01,399931.2850766343
+Grandview,Johnson County,grandview,2026-02,401800.0917870795
+Grandview,Johnson County,grandview,2026-03,403663.7947754264
+Grandview,Johnson County,grandview,2026-04,404495.20813324495
+Grandview,Johnson County,grandview,2026-05,404507.0854724341
+Grandview,Johnson County,grandview,2026-06,404092.57048601593
+Grandview,Johnson County,grandview,2026-07,404153.4611142571
+Grandview,Johnson County,grandview,2026-08,404477.18309787655
+Grapevine,Tarrant County,grapevine,2025-08,541386.7912843617
+Grapevine,Tarrant County,grapevine,2025-09,542529.0256275766
+Grapevine,Tarrant County,grapevine,2025-10,544925.4540478688
+Grapevine,Tarrant County,grapevine,2025-11,547991.0416209794
+Grapevine,Tarrant County,grapevine,2025-12,550315.4616953568
+Grapevine,Tarrant County,grapevine,2026-01,551514.171288899
+Grapevine,Tarrant County,grapevine,2026-02,551484.7864288812
+Grapevine,Tarrant County,grapevine,2026-03,550772.8988014179
+Grapevine,Tarrant County,grapevine,2026-04,549844.3823023066
+Grapevine,Tarrant County,grapevine,2026-05,549339.2607652621
+Grapevine,Tarrant County,grapevine,2026-06,549901.2389682456
+Grapevine,Tarrant County,grapevine,2026-07,550976.4631509028
+Grapevine,Tarrant County,grapevine,2026-08,553269.9342178181
+Greenville,Hunt County,greenville,2025-08,250173.6412159544
+Greenville,Hunt County,greenville,2025-09,248058.8093501141
+Greenville,Hunt County,greenville,2025-10,246706.4311393476
+Greenville,Hunt County,greenville,2025-11,246201.58141204776
+Greenville,Hunt County,greenville,2025-12,246172.26835380343
+Greenville,Hunt County,greenville,2026-01,246129.51541755107
+Greenville,Hunt County,greenville,2026-02,246252.85008264045
+Greenville,Hunt County,greenville,2026-03,246056.1742134782
+Greenville,Hunt County,greenville,2026-04,245763.9380761476
+Greenville,Hunt County,greenville,2026-05,244996.84712297728
+Greenville,Hunt County,greenville,2026-06,244046.53678296576
+Greenville,Hunt County,greenville,2026-07,243139.1724305293
+Greenville,Hunt County,greenville,2026-08,242551.5044529028
+Haltom City,Tarrant County,haltom city,2025-08,250314.86766441303
+Haltom City,Tarrant County,haltom city,2025-09,249079.83251033208
+Haltom City,Tarrant County,haltom city,2025-10,247859.7767393908
+Haltom City,Tarrant County,haltom city,2025-11,246763.3488905416
+Haltom City,Tarrant County,haltom city,2025-12,245975.1900919781
+Haltom City,Tarrant County,haltom city,2026-01,245440.4626001068
+Haltom City,Tarrant County,haltom city,2026-02,244746.7318914437
+Haltom City,Tarrant County,haltom city,2026-03,243803.827861532
+Haltom City,Tarrant County,haltom city,2026-04,242956.9308865565
+Haltom City,Tarrant County,haltom city,2026-05,242541.99607189628
+Haltom City,Tarrant County,haltom city,2026-06,242275.7200944757
+Haltom City,Tarrant County,haltom city,2026-07,242276.4580010719
+Haltom City,Tarrant County,haltom city,2026-08,242438.2889795803
+Hurst,Tarrant County,hurst,2025-08,334469.5649849329
+Hurst,Tarrant County,hurst,2025-09,334386.0087798629
+Hurst,Tarrant County,hurst,2025-10,334636.2036637347
+Hurst,Tarrant County,hurst,2025-11,335353.84662820847
+Hurst,Tarrant County,hurst,2025-12,336307.29581552924
+Hurst,Tarrant County,hurst,2026-01,336780.23198673764
+Hurst,Tarrant County,hurst,2026-02,336766.15801246953
+Hurst,Tarrant County,hurst,2026-03,336523.8933670341
+Hurst,Tarrant County,hurst,2026-04,336283.7143138041
+Hurst,Tarrant County,hurst,2026-05,336069.8801089485
+Hurst,Tarrant County,hurst,2026-06,336016.2468051702
+Hurst,Tarrant County,hurst,2026-07,336325.66413262207
+Hurst,Tarrant County,hurst,2026-08,337349.26041637297
+Irving,Dallas County,irving,2025-08,340254.4264187108
+Irving,Dallas County,irving,2025-09,339892.687360246
+Irving,Dallas County,irving,2025-10,340087.0712343304
+Irving,Dallas County,irving,2025-11,340679.2669547272
+Irving,Dallas County,irving,2025-12,341399.9210752614
+Irving,Dallas County,irving,2026-01,341772.9548713162
+Irving,Dallas County,irving,2026-02,341860.8820718047
+Irving,Dallas County,irving,2026-03,341378.11054119794
+Irving,Dallas County,irving,2026-04,340478.2865948935
+Irving,Dallas County,irving,2026-05,339335.8505181541
+Irving,Dallas County,irving,2026-06,338684.5854806476
+Irving,Dallas County,irving,2026-07,338723.10378888453
+Irving,Dallas County,irving,2026-08,339198.2189254779
+Italy,Ellis County,italy,2025-08,262966.97790658264
+Italy,Ellis County,italy,2025-09,262461.87138234824
+Italy,Ellis County,italy,2025-10,262693.2718464663
+Italy,Ellis County,italy,2025-11,263286.8630703194
+Italy,Ellis County,italy,2025-12,264364.7758616414
+Italy,Ellis County,italy,2026-01,265375.55693322286
+Italy,Ellis County,italy,2026-02,266694.8951887971
+Italy,Ellis County,italy,2026-03,268015.8690375555
+Italy,Ellis County,italy,2026-04,268721.9613905338
+Italy,Ellis County,italy,2026-05,268618.85262882075
+Italy,Ellis County,italy,2026-06,267887.7449456758
+Italy,Ellis County,italy,2026-07,267344.28702551866
+Italy,Ellis County,italy,2026-08,267221.8113625455
+Joshua,Johnson County,joshua,2025-08,355281.0479679878
+Joshua,Johnson County,joshua,2025-09,354575.76103670755
+Joshua,Johnson County,joshua,2025-10,354271.3156216195
+Joshua,Johnson County,joshua,2025-11,354799.9370005447
+Joshua,Johnson County,joshua,2025-12,355526.6583134043
+Joshua,Johnson County,joshua,2026-01,356711.4729787214
+Joshua,Johnson County,joshua,2026-02,357524.77228363213
+Joshua,Johnson County,joshua,2026-03,357822.8967176237
+Joshua,Johnson County,joshua,2026-04,357050.84563621465
+Joshua,Johnson County,joshua,2026-05,355708.517970555
+Joshua,Johnson County,joshua,2026-06,354535.3181058143
+Joshua,Johnson County,joshua,2026-07,353861.05177918426
+Joshua,Johnson County,joshua,2026-08,353725.0425338384
+Justin,Denton County,justin,2025-08,377706.3976607586
+Justin,Denton County,justin,2025-09,376647.8735219731
+Justin,Denton County,justin,2025-10,376092.6472181142
+Justin,Denton County,justin,2025-11,375605.52080992254
+Justin,Denton County,justin,2025-12,374986.6083302934
+Justin,Denton County,justin,2026-01,374059.5225283362
+Justin,Denton County,justin,2026-02,372844.2979431399
+Justin,Denton County,justin,2026-03,371332.8165983665
+Justin,Denton County,justin,2026-04,369394.1629700175
+Justin,Denton County,justin,2026-05,367454.1178778855
+Justin,Denton County,justin,2026-06,365860.1555623381
+Justin,Denton County,justin,2026-07,365284.7154959634
+Justin,Denton County,justin,2026-08,365170.9821288068
+Kaufman,Kaufman County,kaufman,2025-08,287873.86573124235
+Kaufman,Kaufman County,kaufman,2025-09,287810.5351808131
+Kaufman,Kaufman County,kaufman,2025-10,287831.7329694223
+Kaufman,Kaufman County,kaufman,2025-11,288774.5363194418
+Kaufman,Kaufman County,kaufman,2025-12,290072.97349964426
+Kaufman,Kaufman County,kaufman,2026-01,292214.2211408499
+Kaufman,Kaufman County,kaufman,2026-02,294439.1452369239
+Kaufman,Kaufman County,kaufman,2026-03,295993.4245050645
+Kaufman,Kaufman County,kaufman,2026-04,295985.83101962414
+Kaufman,Kaufman County,kaufman,2026-05,294605.4483716297
+Kaufman,Kaufman County,kaufman,2026-06,293215.9789657837
+Kaufman,Kaufman County,kaufman,2026-07,292711.1999845416
+Kaufman,Kaufman County,kaufman,2026-08,293029.3800065264
+Keller,Tarrant County,keller,2025-08,642350.6203892223
+Keller,Tarrant County,keller,2025-09,643634.3260061054
+Keller,Tarrant County,keller,2025-10,646697.0477995854
+Keller,Tarrant County,keller,2025-11,650190.8314528045
+Keller,Tarrant County,keller,2025-12,652968.56887478
+Keller,Tarrant County,keller,2026-01,653912.1636917028
+Keller,Tarrant County,keller,2026-02,654113.3837238438
+Keller,Tarrant County,keller,2026-03,653770.1167714435
+Keller,Tarrant County,keller,2026-04,652733.2892252173
+Keller,Tarrant County,keller,2026-05,651800.4300647377
+Keller,Tarrant County,keller,2026-06,651594.2288463752
+Keller,Tarrant County,keller,2026-07,652060.6070672265
+Keller,Tarrant County,keller,2026-08,653855.8620960781
+Kemp,Kaufman County,kemp,2025-08,272452.95171852346
+Kemp,Kaufman County,kemp,2025-09,270118.7271893803
+Kemp,Kaufman County,kemp,2025-10,268574.49335230497
+Kemp,Kaufman County,kemp,2025-11,269009.246666535
+Kemp,Kaufman County,kemp,2025-12,270771.95362697373
+Kemp,Kaufman County,kemp,2026-01,273558.76605203346
+Kemp,Kaufman County,kemp,2026-02,275158.5887999009
+Kemp,Kaufman County,kemp,2026-03,275645.0513344489
+Kemp,Kaufman County,kemp,2026-04,274316.10802327073
+Kemp,Kaufman County,kemp,2026-05,271790.75590729737
+Kemp,Kaufman County,kemp,2026-06,269841.8625286121
+Kemp,Kaufman County,kemp,2026-07,268700.9896330368
+Kemp,Kaufman County,kemp,2026-08,269086.7988809535
+Kennedale,Tarrant County,kennedale,2025-08,384773.44228531857
+Kennedale,Tarrant County,kennedale,2025-09,384494.3049385599
+Kennedale,Tarrant County,kennedale,2025-10,384823.13099563424
+Kennedale,Tarrant County,kennedale,2025-11,385551.315033396
+Kennedale,Tarrant County,kennedale,2025-12,386276.5116624982
+Kennedale,Tarrant County,kennedale,2026-01,386457.7317047317
+Kennedale,Tarrant County,kennedale,2026-02,386232.78323968657
+Kennedale,Tarrant County,kennedale,2026-03,385749.6139303399
+Kennedale,Tarrant County,kennedale,2026-04,385266.48770394985
+Kennedale,Tarrant County,kennedale,2026-05,384636.7966283276
+Kennedale,Tarrant County,kennedale,2026-06,384278.16190827056
+Kennedale,Tarrant County,kennedale,2026-07,384388.8994262693
+Kennedale,Tarrant County,kennedale,2026-08,385222.9455887371
+Krum,Denton County,krum,2025-08,340620.28956930496
+Krum,Denton County,krum,2025-09,339928.3225545386
+Krum,Denton County,krum,2025-10,339898.558927594
+Krum,Denton County,krum,2025-11,340115.7948876563
+Krum,Denton County,krum,2025-12,339966.8445087508
+Krum,Denton County,krum,2026-01,339458.69743495976
+Krum,Denton County,krum,2026-02,338652.5399053754
+Krum,Denton County,krum,2026-03,337581.7946984076
+Krum,Denton County,krum,2026-04,335914.17878506164
+Krum,Denton County,krum,2026-05,333988.14843979647
+Krum,Denton County,krum,2026-06,332248.2687506909
+Krum,Denton County,krum,2026-07,331371.0268633833
+Krum,Denton County,krum,2026-08,330875.6892817936
+Lake Dallas,Denton County,lake dallas,2025-08,344434.9743264871
+Lake Dallas,Denton County,lake dallas,2025-09,343742.0763520619
+Lake Dallas,Denton County,lake dallas,2025-10,343668.83899162564
+Lake Dallas,Denton County,lake dallas,2025-11,343733.3924212695
+Lake Dallas,Denton County,lake dallas,2025-12,343911.22057726706
+Lake Dallas,Denton County,lake dallas,2026-01,344031.90378872067
+Lake Dallas,Denton County,lake dallas,2026-02,344016.62688250665
+Lake Dallas,Denton County,lake dallas,2026-03,343648.3163753545
+Lake Dallas,Denton County,lake dallas,2026-04,343118.22524937615
+Lake Dallas,Denton County,lake dallas,2026-05,342420.80263357866
+Lake Dallas,Denton County,lake dallas,2026-06,341981.3380843047
+Lake Dallas,Denton County,lake dallas,2026-07,341781.04445395
+Lake Dallas,Denton County,lake dallas,2026-08,341869.8498002985
+Lancaster,Dallas County,lancaster,2025-08,276124.3585551039
+Lancaster,Dallas County,lancaster,2025-09,275418.0454243285
+Lancaster,Dallas County,lancaster,2025-10,274933.87220282044
+Lancaster,Dallas County,lancaster,2025-11,274438.9165559678
+Lancaster,Dallas County,lancaster,2025-12,274344.9360258317
+Lancaster,Dallas County,lancaster,2026-01,274212.81590666465
+Lancaster,Dallas County,lancaster,2026-02,274035.55459815025
+Lancaster,Dallas County,lancaster,2026-03,273498.98134097684
+Lancaster,Dallas County,lancaster,2026-04,272797.831403016
+Lancaster,Dallas County,lancaster,2026-05,271835.36971614766
+Lancaster,Dallas County,lancaster,2026-06,270808.39478984644
+Lancaster,Dallas County,lancaster,2026-07,270206.42911016475
+Lancaster,Dallas County,lancaster,2026-08,270106.3779808349
+Lavon,Collin County,lavon,2025-08,369618.5997795551
+Lavon,Collin County,lavon,2025-09,367871.3260155316
+Lavon,Collin County,lavon,2025-10,366068.69610791
+Lavon,Collin County,lavon,2025-11,364161.11346204026
+Lavon,Collin County,lavon,2025-12,362098.1775455814
+Lavon,Collin County,lavon,2026-01,359684.07904399704
+Lavon,Collin County,lavon,2026-02,356735.0797176948
+Lavon,Collin County,lavon,2026-03,353521.5310978967
+Lavon,Collin County,lavon,2026-04,350188.6688244066
+Lavon,Collin County,lavon,2026-05,347121.94149565155
+Lavon,Collin County,lavon,2026-06,344068.3022191963
+Lavon,Collin County,lavon,2026-07,342258.68693082227
+Lavon,Collin County,lavon,2026-08,340960.47408114513
+Lewisville,Denton County,lewisville,2025-08,398230.9723110407
+Lewisville,Denton County,lewisville,2025-09,396799.92618801375
+Lewisville,Denton County,lewisville,2025-10,396217.4914980659
+Lewisville,Denton County,lewisville,2025-11,395773.2484437178
+Lewisville,Denton County,lewisville,2025-12,395203.1690127626
+Lewisville,Denton County,lewisville,2026-01,394390.4921656468
+Lewisville,Denton County,lewisville,2026-02,393413.0354800058
+Lewisville,Denton County,lewisville,2026-03,392089.5836067105
+Lewisville,Denton County,lewisville,2026-04,390484.4701696027
+Lewisville,Denton County,lewisville,2026-05,388583.4819274328
+Lewisville,Denton County,lewisville,2026-06,387307.3785187735
+Lewisville,Denton County,lewisville,2026-07,386838.6356414228
+Lewisville,Denton County,lewisville,2026-08,387165.6222330045
+Little Elm,Denton County,little elm,2025-08,417587.84257922834
+Little Elm,Denton County,little elm,2025-09,415187.7092272619
+Little Elm,Denton County,little elm,2025-10,413373.70440705656
+Little Elm,Denton County,little elm,2025-11,411429.5769419887
+Little Elm,Denton County,little elm,2025-12,409593.8287748303
+Little Elm,Denton County,little elm,2026-01,407337.4296514162
+Little Elm,Denton County,little elm,2026-02,405267.7937541287
+Little Elm,Denton County,little elm,2026-03,403091.7559335266
+Little Elm,Denton County,little elm,2026-04,400702.15131704905
+Little Elm,Denton County,little elm,2026-05,398052.7562838762
+Little Elm,Denton County,little elm,2026-06,395624.5441482544
+Little Elm,Denton County,little elm,2026-07,394270.5057652944
+Little Elm,Denton County,little elm,2026-08,393656.8594730576
+Lone Oak,Hunt County,lone oak,2025-08,313778.2174620814
+Lone Oak,Hunt County,lone oak,2025-09,311667.13840597094
+Lone Oak,Hunt County,lone oak,2025-10,310467.5196736538
+Lone Oak,Hunt County,lone oak,2025-11,309650.9479053693
+Lone Oak,Hunt County,lone oak,2025-12,309046.3097717916
+Lone Oak,Hunt County,lone oak,2026-01,308203.92253363
+Lone Oak,Hunt County,lone oak,2026-02,307948.8700829246
+Lone Oak,Hunt County,lone oak,2026-03,307840.23570575536
+Lone Oak,Hunt County,lone oak,2026-04,307744.9271342393
+Lone Oak,Hunt County,lone oak,2026-05,306946.1718955248
+Lone Oak,Hunt County,lone oak,2026-06,305763.9983767723
+Lone Oak,Hunt County,lone oak,2026-07,304330.90765153064
+Lone Oak,Hunt County,lone oak,2026-08,304051.2093803011
+Mabank,Kaufman County,mabank,2025-08,275306.13762914296
+Mabank,Kaufman County,mabank,2025-09,273896.5158109349
+Mabank,Kaufman County,mabank,2025-10,272989.3877563457
+Mabank,Kaufman County,mabank,2025-11,273286.55217239127
+Mabank,Kaufman County,mabank,2025-12,274310.06558546243
+Mabank,Kaufman County,mabank,2026-01,275718.8249951222
+Mabank,Kaufman County,mabank,2026-02,276718.8508491004
+Mabank,Kaufman County,mabank,2026-03,276900.76812597923
+Mabank,Kaufman County,mabank,2026-04,276062.8992300416
+Mabank,Kaufman County,mabank,2026-05,274585.54463051166
+Mabank,Kaufman County,mabank,2026-06,273515.5402941525
+Mabank,Kaufman County,mabank,2026-07,272879.4679693038
+Mabank,Kaufman County,mabank,2026-08,272278.64122894016
+Mansfield,Tarrant County,mansfield,2025-08,445331.6618103187
+Mansfield,Tarrant County,mansfield,2025-09,445325.5052092288
+Mansfield,Tarrant County,mansfield,2025-10,445569.5817621455
+Mansfield,Tarrant County,mansfield,2025-11,445723.4470377525
+Mansfield,Tarrant County,mansfield,2025-12,446072.6690124247
+Mansfield,Tarrant County,mansfield,2026-01,445940.2177483919
+Mansfield,Tarrant County,mansfield,2026-02,445618.5388482629
+Mansfield,Tarrant County,mansfield,2026-03,444687.26096029504
+Mansfield,Tarrant County,mansfield,2026-04,444042.8965573334
+Mansfield,Tarrant County,mansfield,2026-05,443377.73857006617
+Mansfield,Tarrant County,mansfield,2026-06,443190.668405023
+Mansfield,Tarrant County,mansfield,2026-07,443146.5780485741
+Mansfield,Tarrant County,mansfield,2026-08,443697.0824745586
+McKinney,Collin County,mckinney,2025-08,499990.8698080895
+McKinney,Collin County,mckinney,2025-09,498372.31476688
+McKinney,Collin County,mckinney,2025-10,496662.7722164684
+McKinney,Collin County,mckinney,2025-11,494190.6853741452
+McKinney,Collin County,mckinney,2025-12,491666.1197174983
+McKinney,Collin County,mckinney,2026-01,488846.5619058016
+McKinney,Collin County,mckinney,2026-02,486209.12709755526
+McKinney,Collin County,mckinney,2026-03,482523.4759867369
+McKinney,Collin County,mckinney,2026-04,478934.9077239048
+McKinney,Collin County,mckinney,2026-05,475273.6617269079
+McKinney,Collin County,mckinney,2026-06,472927.3130437236
+McKinney,Collin County,mckinney,2026-07,472033.7620896848
+McKinney,Collin County,mckinney,2026-08,472118.295615711
+Melissa,Collin County,melissa,2025-08,447905.0080405328
+Melissa,Collin County,melissa,2025-09,446129.449008357
+Melissa,Collin County,melissa,2025-10,444436.0192978853
+Melissa,Collin County,melissa,2025-11,442796.9874030133
+Melissa,Collin County,melissa,2025-12,441184.960278816
+Melissa,Collin County,melissa,2026-01,438882.67223466624
+Melissa,Collin County,melissa,2026-02,435976.08824542427
+Melissa,Collin County,melissa,2026-03,432654.8957030096
+Melissa,Collin County,melissa,2026-04,429631.0515420902
+Melissa,Collin County,melissa,2026-05,426914.15704532486
+Melissa,Collin County,melissa,2026-06,424655.6298874284
+Melissa,Collin County,melissa,2026-07,423249.6287617468
+Melissa,Collin County,melissa,2026-08,422270.8194794401
+Mesquite,Dallas County,mesquite,2025-08,265305.1260564916
+Mesquite,Dallas County,mesquite,2025-09,264032.3184161227
+Mesquite,Dallas County,mesquite,2025-10,263285.17375944025
+Mesquite,Dallas County,mesquite,2025-11,263065.8064148448
+Mesquite,Dallas County,mesquite,2025-12,263089.4921370413
+Mesquite,Dallas County,mesquite,2026-01,263145.5854302275
+Mesquite,Dallas County,mesquite,2026-02,263108.1633447104
+Mesquite,Dallas County,mesquite,2026-03,262830.8376399051
+Mesquite,Dallas County,mesquite,2026-04,262245.7005954063
+Mesquite,Dallas County,mesquite,2026-05,261207.21979458933
+Mesquite,Dallas County,mesquite,2026-06,260036.477106399
+Mesquite,Dallas County,mesquite,2026-07,259132.0682265868
+Mesquite,Dallas County,mesquite,2026-08,258678.2075560206
+Midlothian,Ellis County,midlothian,2025-08,452803.0260530154
+Midlothian,Ellis County,midlothian,2025-09,453110.5900282731
+Midlothian,Ellis County,midlothian,2025-10,453753.6676273737
+Midlothian,Ellis County,midlothian,2025-11,454192.98954039696
+Midlothian,Ellis County,midlothian,2025-12,454567.9736294813
+Midlothian,Ellis County,midlothian,2026-01,454533.78501118784
+Midlothian,Ellis County,midlothian,2026-02,454180.1923858317
+Midlothian,Ellis County,midlothian,2026-03,453144.3267356346
+Midlothian,Ellis County,midlothian,2026-04,451877.5536897041
+Midlothian,Ellis County,midlothian,2026-05,450683.2679199786
+Midlothian,Ellis County,midlothian,2026-06,450194.8916312815
+Midlothian,Ellis County,midlothian,2026-07,450566.9066024311
+Midlothian,Ellis County,midlothian,2026-08,451268.84275267547
+Murphy,Collin County,murphy,2025-08,587660.5831979517
+Murphy,Collin County,murphy,2025-09,587465.6249233711
+Murphy,Collin County,murphy,2025-10,588053.7381967412
+Murphy,Collin County,murphy,2025-11,588079.0646404196
+Murphy,Collin County,murphy,2025-12,587537.5990804987
+Murphy,Collin County,murphy,2026-01,585315.4159927395
+Murphy,Collin County,murphy,2026-02,582623.2034098253
+Murphy,Collin County,murphy,2026-03,577453.2943537262
+Murphy,Collin County,murphy,2026-04,572694.7761565838
+Murphy,Collin County,murphy,2026-05,567498.7583719807
+Murphy,Collin County,murphy,2026-06,565442.9684240104
+Murphy,Collin County,murphy,2026-07,564325.5778115232
+Murphy,Collin County,murphy,2026-08,564016.4919682018
+Nevada,Collin County,nevada,2025-08,407002.6572965334
+Nevada,Collin County,nevada,2025-09,407649.5592736208
+Nevada,Collin County,nevada,2025-10,408754.0494823096
+Nevada,Collin County,nevada,2025-11,410154.7323702167
+Nevada,Collin County,nevada,2025-12,410639.76061785984
+Nevada,Collin County,nevada,2026-01,410196.79081545817
+Nevada,Collin County,nevada,2026-02,408713.1269624705
+Nevada,Collin County,nevada,2026-03,406987.5302732973
+Nevada,Collin County,nevada,2026-04,404495.3893298187
+Nevada,Collin County,nevada,2026-05,402367.4392013911
+Nevada,Collin County,nevada,2026-06,400733.18948613777
+Nevada,Collin County,nevada,2026-07,400674.0220152669
+Nevada,Collin County,nevada,2026-08,400603.954681961
+Newark,Wise County,newark,2025-08,309668.86137271224
+Newark,Wise County,newark,2025-09,308362.26065071457
+Newark,Wise County,newark,2025-10,307700.970766866
+Newark,Wise County,newark,2025-11,306789.6870106779
+Newark,Wise County,newark,2025-12,306448.7838763535
+Newark,Wise County,newark,2026-01,306589.26058950456
+Newark,Wise County,newark,2026-02,307558.07442874723
+Newark,Wise County,newark,2026-03,307984.2111285036
+Newark,Wise County,newark,2026-04,307297.83793311816
+Newark,Wise County,newark,2026-05,305176.7808231064
+Newark,Wise County,newark,2026-06,302896.03413340566
+Newark,Wise County,newark,2026-07,301032.0135117343
+Newark,Wise County,newark,2026-08,300141.1746344291
+North Richland Hills,Tarrant County,north richland hills,2025-08,365758.1792344277
+North Richland Hills,Tarrant County,north richland hills,2025-09,366076.3408162649
+North Richland Hills,Tarrant County,north richland hills,2025-10,367000.6705744481
+North Richland Hills,Tarrant County,north richland hills,2025-11,368053.4979005366
+North Richland Hills,Tarrant County,north richland hills,2025-12,369011.9806601249
+North Richland Hills,Tarrant County,north richland hills,2026-01,369241.05882565
+North Richland Hills,Tarrant County,north richland hills,2026-02,369055.17828456144
+North Richland Hills,Tarrant County,north richland hills,2026-03,368403.1481236985
+North Richland Hills,Tarrant County,north richland hills,2026-04,367627.9630482251
+North Richland Hills,Tarrant County,north richland hills,2026-05,366905.310243458
+North Richland Hills,Tarrant County,north richland hills,2026-06,366588.9138843471
+North Richland Hills,Tarrant County,north richland hills,2026-07,366802.1282920388
+North Richland Hills,Tarrant County,north richland hills,2026-08,367767.98432682926
+Palmer,Ellis County,palmer,2025-08,322980.1311865732
+Palmer,Ellis County,palmer,2025-09,323190.8076601702
+Palmer,Ellis County,palmer,2025-10,323649.8712627252
+Palmer,Ellis County,palmer,2025-11,324097.2659436536
+Palmer,Ellis County,palmer,2025-12,324490.0576981394
+Palmer,Ellis County,palmer,2026-01,325123.27909840626
+Palmer,Ellis County,palmer,2026-02,325560.5721594072
+Palmer,Ellis County,palmer,2026-03,325877.14120204776
+Palmer,Ellis County,palmer,2026-04,325001.9509463545
+Palmer,Ellis County,palmer,2026-05,323672.1592580105
+Palmer,Ellis County,palmer,2026-06,322404.0328435304
+Palmer,Ellis County,palmer,2026-07,322137.9615064376
+Palmer,Ellis County,palmer,2026-08,322524.285484898
+Paradise,Wise County,paradise,2025-08,455383.7099517236
+Paradise,Wise County,paradise,2025-09,455513.1164846133
+Paradise,Wise County,paradise,2025-10,456890.2530259446
+Paradise,Wise County,paradise,2025-11,458965.3467087785
+Paradise,Wise County,paradise,2025-12,460704.8728768248
+Paradise,Wise County,paradise,2026-01,462048.6912338372
+Paradise,Wise County,paradise,2026-02,462419.1598938748
+Paradise,Wise County,paradise,2026-03,462247.6510410516
+Paradise,Wise County,paradise,2026-04,460628.0153542014
+Paradise,Wise County,paradise,2026-05,458729.0949704873
+Paradise,Wise County,paradise,2026-06,456795.48893142975
+Paradise,Wise County,paradise,2026-07,455676.458041229
+Paradise,Wise County,paradise,2026-08,455197.30687131407
+Pilot Point,Denton County,pilot point,2025-08,341687.02799758804
+Pilot Point,Denton County,pilot point,2025-09,339301.38167489105
+Pilot Point,Denton County,pilot point,2025-10,337587.3077338732
+Pilot Point,Denton County,pilot point,2025-11,336564.3814487582
+Pilot Point,Denton County,pilot point,2025-12,335490.7770723743
+Pilot Point,Denton County,pilot point,2026-01,334291.6557955563
+Pilot Point,Denton County,pilot point,2026-02,332704.77744614705
+Pilot Point,Denton County,pilot point,2026-03,330288.1919386215
+Pilot Point,Denton County,pilot point,2026-04,327253.2256701548
+Pilot Point,Denton County,pilot point,2026-05,324396.28834217624
+Pilot Point,Denton County,pilot point,2026-06,322157.9356735965
+Pilot Point,Denton County,pilot point,2026-07,321090.63397968333
+Pilot Point,Denton County,pilot point,2026-08,320731.359431921
+Plano,Collin County,plano,2025-08,512740.6283200837
+Plano,Collin County,plano,2025-09,511751.7094532366
+Plano,Collin County,plano,2025-10,510979.3364477721
+Plano,Collin County,plano,2025-11,509800.098047148
+Plano,Collin County,plano,2025-12,508396.6139279054
+Plano,Collin County,plano,2026-01,506672.9172575226
+Plano,Collin County,plano,2026-02,504952.39547243295
+Plano,Collin County,plano,2026-03,501747.7928856636
+Plano,Collin County,plano,2026-04,498338.7829649688
+Plano,Collin County,plano,2026-05,494872.5188322105
+Plano,Collin County,plano,2026-06,493226.0206448807
+Plano,Collin County,plano,2026-07,492759.4273715168
+Plano,Collin County,plano,2026-08,493092.1457794936
+Ponder,Denton County,ponder,2025-08,323065.5438615108
+Ponder,Denton County,ponder,2025-09,321909.4292866296
+Ponder,Denton County,ponder,2025-10,321015.5512582038
+Ponder,Denton County,ponder,2025-11,320043.1401137638
+Ponder,Denton County,ponder,2025-12,318699.9088411426
+Ponder,Denton County,ponder,2026-01,317077.4290585315
+Ponder,Denton County,ponder,2026-02,315759.70508230507
+Ponder,Denton County,ponder,2026-03,314772.19716291287
+Ponder,Denton County,ponder,2026-04,313761.0041370474
+Ponder,Denton County,ponder,2026-05,312541.12057972373
+Ponder,Denton County,ponder,2026-06,311342.5468275952
+Ponder,Denton County,ponder,2026-07,310571.8945637868
+Ponder,Denton County,ponder,2026-08,310100.8326228995
+Poolville,Parker County,poolville,2025-08,444891.8673736835
+Poolville,Parker County,poolville,2025-09,444583.4625191176
+Poolville,Parker County,poolville,2025-10,446034.6441512644
+Poolville,Parker County,poolville,2025-11,448167.3958149476
+Poolville,Parker County,poolville,2025-12,450358.3252052481
+Poolville,Parker County,poolville,2026-01,453050.9823666906
+Poolville,Parker County,poolville,2026-02,455960.6540019478
+Poolville,Parker County,poolville,2026-03,457446.8785884415
+Poolville,Parker County,poolville,2026-04,456362.16795487615
+Poolville,Parker County,poolville,2026-05,453924.5232149111
+Poolville,Parker County,poolville,2026-06,451792.9544596181
+Poolville,Parker County,poolville,2026-07,450834.0111826354
+Poolville,Parker County,poolville,2026-08,451152.0484704864
+Princeton,Collin County,princeton,2025-08,314868.2494119668
+Princeton,Collin County,princeton,2025-09,312882.1892332895
+Princeton,Collin County,princeton,2025-10,310858.8836253707
+Princeton,Collin County,princeton,2025-11,308340.72445961804
+Princeton,Collin County,princeton,2025-12,305340.8498715963
+Princeton,Collin County,princeton,2026-01,302237.634798834
+Princeton,Collin County,princeton,2026-02,299333.7257783432
+Princeton,Collin County,princeton,2026-03,296256.78508723486
+Princeton,Collin County,princeton,2026-04,293201.98441638594
+Princeton,Collin County,princeton,2026-05,289986.59519929666
+Princeton,Collin County,princeton,2026-06,287123.04236594046
+Princeton,Collin County,princeton,2026-07,284909.49516276125
+Princeton,Collin County,princeton,2026-08,283245.3451320697
+Prosper,Collin County,prosper,2025-08,800994.5728892627
+Prosper,Collin County,prosper,2025-09,798411.3147703065
+Prosper,Collin County,prosper,2025-10,796246.0351082935
+Prosper,Collin County,prosper,2025-11,794275.1401783623
+Prosper,Collin County,prosper,2025-12,792319.8421144839
+Prosper,Collin County,prosper,2026-01,788993.2605241755
+Prosper,Collin County,prosper,2026-02,784376.0764864158
+Prosper,Collin County,prosper,2026-03,778088.0008187522
+Prosper,Collin County,prosper,2026-04,772451.8059049324
+Prosper,Collin County,prosper,2026-05,766834.2984895561
+Prosper,Collin County,prosper,2026-06,762654.2594260589
+Prosper,Collin County,prosper,2026-07,759706.689431555
+Prosper,Collin County,prosper,2026-08,757803.8923880347
+Quinlan,Hunt County,quinlan,2025-08,279098.3422894659
+Quinlan,Hunt County,quinlan,2025-09,277617.9201928621
+Quinlan,Hunt County,quinlan,2025-10,278088.05746382853
+Quinlan,Hunt County,quinlan,2025-11,280369.9290903919
+Quinlan,Hunt County,quinlan,2025-12,283415.28511169896
+Quinlan,Hunt County,quinlan,2026-01,286439.1063983444
+Quinlan,Hunt County,quinlan,2026-02,288849.00999823114
+Quinlan,Hunt County,quinlan,2026-03,289834.52404364804
+Quinlan,Hunt County,quinlan,2026-04,289423.9119910477
+Quinlan,Hunt County,quinlan,2026-05,287514.06971605244
+Quinlan,Hunt County,quinlan,2026-06,285433.0476129744
+Quinlan,Hunt County,quinlan,2026-07,283812.58721493534
+Quinlan,Hunt County,quinlan,2026-08,283916.40563571494
+Red Oak,Ellis County,red oak,2025-08,349453.1321759157
+Red Oak,Ellis County,red oak,2025-09,349241.7106645911
+Red Oak,Ellis County,red oak,2025-10,348877.5527773117
+Red Oak,Ellis County,red oak,2025-11,348437.30100026313
+Red Oak,Ellis County,red oak,2025-12,348038.7467190959
+Red Oak,Ellis County,red oak,2026-01,347826.49565242004
+Red Oak,Ellis County,red oak,2026-02,347582.3335002349
+Red Oak,Ellis County,red oak,2026-03,347307.0320701722
+Red Oak,Ellis County,red oak,2026-04,346776.8328881762
+Red Oak,Ellis County,red oak,2026-05,345939.38734658743
+Red Oak,Ellis County,red oak,2026-06,345118.1850276794
+Red Oak,Ellis County,red oak,2026-07,344705.8494725469
+Red Oak,Ellis County,red oak,2026-08,344401.88302240014
+Rhome,Wise County,rhome,2025-08,369832.2922494763
+Rhome,Wise County,rhome,2025-09,369187.62668858847
+Rhome,Wise County,rhome,2025-10,368161.4369622524
+Rhome,Wise County,rhome,2025-11,367053.05348986114
+Rhome,Wise County,rhome,2025-12,366236.5348368163
+Rhome,Wise County,rhome,2026-01,365639.3338345424
+Rhome,Wise County,rhome,2026-02,366012.51439262537
+Rhome,Wise County,rhome,2026-03,366820.9778429025
+Rhome,Wise County,rhome,2026-04,366807.3652055516
+Rhome,Wise County,rhome,2026-05,366043.478817132
+Rhome,Wise County,rhome,2026-06,364988.0567036021
+Rhome,Wise County,rhome,2026-07,364447.188110001
+Rhome,Wise County,rhome,2026-08,363900.313742156
+Richardson,Dallas County,richardson,2025-08,437150.20268273936
+Richardson,Dallas County,richardson,2025-09,437213.2798641236
+Richardson,Dallas County,richardson,2025-10,438026.4523361581
+Richardson,Dallas County,richardson,2025-11,439162.94981701736
+Richardson,Dallas County,richardson,2025-12,440471.1487099699
+Richardson,Dallas County,richardson,2026-01,441211.7736670563
+Richardson,Dallas County,richardson,2026-02,441256.6215997776
+Richardson,Dallas County,richardson,2026-03,440014.8649652605
+Richardson,Dallas County,richardson,2026-04,438419.9668168279
+Richardson,Dallas County,richardson,2026-05,436864.1070731701
+Richardson,Dallas County,richardson,2026-06,436621.75224682287
+Richardson,Dallas County,richardson,2026-07,437346.26517771225
+Richardson,Dallas County,richardson,2026-08,438610.63812469103
+Richland Hills,Tarrant County,richland hills,2025-08,283101.2004810113
+Richland Hills,Tarrant County,richland hills,2025-09,283262.3950421754
+Richland Hills,Tarrant County,richland hills,2025-10,283944.42949130485
+Richland Hills,Tarrant County,richland hills,2025-11,285170.2807968988
+Richland Hills,Tarrant County,richland hills,2025-12,286573.57222568075
+Richland Hills,Tarrant County,richland hills,2026-01,287692.3482410777
+Richland Hills,Tarrant County,richland hills,2026-02,287874.6750049742
+Richland Hills,Tarrant County,richland hills,2026-03,287672.03749696724
+Richland Hills,Tarrant County,richland hills,2026-04,286879.32628765533
+Richland Hills,Tarrant County,richland hills,2026-05,286465.49010415823
+Richland Hills,Tarrant County,richland hills,2026-06,286370.9662425255
+Richland Hills,Tarrant County,richland hills,2026-07,286854.5383667005
+Richland Hills,Tarrant County,richland hills,2026-08,288039.9656393067
+Rio Vista,Johnson County,rio vista,2025-08,335231.67074114626
+Rio Vista,Johnson County,rio vista,2025-09,333048.66133836523
+Rio Vista,Johnson County,rio vista,2025-10,332068.9180980699
+Rio Vista,Johnson County,rio vista,2025-11,332124.7239548349
+Rio Vista,Johnson County,rio vista,2025-12,332725.5350911842
+Rio Vista,Johnson County,rio vista,2026-01,334382.0667303914
+Rio Vista,Johnson County,rio vista,2026-02,336368.9324092728
+Rio Vista,Johnson County,rio vista,2026-03,338010.65963078494
+Rio Vista,Johnson County,rio vista,2026-04,337802.3387729347
+Rio Vista,Johnson County,rio vista,2026-05,336565.05484985973
+Rio Vista,Johnson County,rio vista,2026-06,334939.9047739311
+Rio Vista,Johnson County,rio vista,2026-07,334249.2535849573
+Rio Vista,Johnson County,rio vista,2026-08,334266.5390134352
+Rockwall,Rockwall County,rockwall,2025-08,479647.4958554885
+Rockwall,Rockwall County,rockwall,2025-09,480096.6894000669
+Rockwall,Rockwall County,rockwall,2025-10,480646.36430780665
+Rockwall,Rockwall County,rockwall,2025-11,481116.7492044589
+Rockwall,Rockwall County,rockwall,2025-12,481491.9982146081
+Rockwall,Rockwall County,rockwall,2026-01,481403.705769916
+Rockwall,Rockwall County,rockwall,2026-02,480789.8985014705
+Rockwall,Rockwall County,rockwall,2026-03,479836.8466161765
+Rockwall,Rockwall County,rockwall,2026-04,478937.9381644952
+Rockwall,Rockwall County,rockwall,2026-05,477708.9739736736
+Rockwall,Rockwall County,rockwall,2026-06,476211.3470084776
+Rockwall,Rockwall County,rockwall,2026-07,475138.3689100605
+Rockwall,Rockwall County,rockwall,2026-08,474988.950005535
+Rowlett,Dallas County,rowlett,2025-08,374394.3310989358
+Rowlett,Dallas County,rowlett,2025-09,373511.1554419994
+Rowlett,Dallas County,rowlett,2025-10,372934.6552778536
+Rowlett,Dallas County,rowlett,2025-11,372473.7347676466
+Rowlett,Dallas County,rowlett,2025-12,372176.4092147725
+Rowlett,Dallas County,rowlett,2026-01,371502.6767448848
+Rowlett,Dallas County,rowlett,2026-02,370821.7272228892
+Rowlett,Dallas County,rowlett,2026-03,369797.2425130354
+Rowlett,Dallas County,rowlett,2026-04,368719.56674959697
+Rowlett,Dallas County,rowlett,2026-05,367133.2482957915
+Rowlett,Dallas County,rowlett,2026-06,365510.0083599088
+Rowlett,Dallas County,rowlett,2026-07,364472.8299511391
+Rowlett,Dallas County,rowlett,2026-08,364063.0005587235
+Royse City,Rockwall County,royse city,2025-08,324121.36677370727
+Royse City,Rockwall County,royse city,2025-09,322828.8345692434
+Royse City,Rockwall County,royse city,2025-10,321795.59578879405
+Royse City,Rockwall County,royse city,2025-11,320917.8314492962
+Royse City,Rockwall County,royse city,2025-12,320160.3845524529
+Royse City,Rockwall County,royse city,2026-01,319142.7842060499
+Royse City,Rockwall County,royse city,2026-02,318051.6735450152
+Royse City,Rockwall County,royse city,2026-03,316702.24540080427
+Royse City,Rockwall County,royse city,2026-04,315367.85317342746
+Royse City,Rockwall County,royse city,2026-05,313644.5772412774
+Royse City,Rockwall County,royse city,2026-06,311823.72946936806
+Royse City,Rockwall County,royse city,2026-07,310348.65183426155
+Royse City,Rockwall County,royse city,2026-08,309341.169193075
+Sachse,Dallas County,sachse,2025-08,441291.08852730674
+Sachse,Dallas County,sachse,2025-09,440450.3803423021
+Sachse,Dallas County,sachse,2025-10,439803.7020893649
+Sachse,Dallas County,sachse,2025-11,438726.6347131121
+Sachse,Dallas County,sachse,2025-12,437916.69379355287
+Sachse,Dallas County,sachse,2026-01,436891.4375054482
+Sachse,Dallas County,sachse,2026-02,435961.93986981566
+Sachse,Dallas County,sachse,2026-03,433942.4895367152
+Sachse,Dallas County,sachse,2026-04,431868.2507529637
+Sachse,Dallas County,sachse,2026-05,429575.6974604034
+Sachse,Dallas County,sachse,2026-06,428187.5028832851
+Sachse,Dallas County,sachse,2026-07,427563.13454220816
+Sachse,Dallas County,sachse,2026-08,427561.1523769416
+Sanger,Denton County,sanger,2025-08,360625.8892457909
+Sanger,Denton County,sanger,2025-09,360101.9933705823
+Sanger,Denton County,sanger,2025-10,359878.18954804895
+Sanger,Denton County,sanger,2025-11,359971.83981469367
+Sanger,Denton County,sanger,2025-12,359890.83638732624
+Sanger,Denton County,sanger,2026-01,359806.0258956536
+Sanger,Denton County,sanger,2026-02,359722.6339699521
+Sanger,Denton County,sanger,2026-03,359415.8982433197
+Sanger,Denton County,sanger,2026-04,358398.0108492632
+Sanger,Denton County,sanger,2026-05,356810.20620758453
+Sanger,Denton County,sanger,2026-06,355229.28018902056
+Sanger,Denton County,sanger,2026-07,354492.26210149535
+Sanger,Denton County,sanger,2026-08,354277.0616440686
+Scurry,Kaufman County,scurry,2025-08,329151.669108502
+Scurry,Kaufman County,scurry,2025-09,328430.43902139744
+Scurry,Kaufman County,scurry,2025-10,328859.8021065752
+Scurry,Kaufman County,scurry,2025-11,330779.78239840554
+Scurry,Kaufman County,scurry,2025-12,333693.4934796483
+Scurry,Kaufman County,scurry,2026-01,337356.98179057083
+Scurry,Kaufman County,scurry,2026-02,340708.6426858167
+Scurry,Kaufman County,scurry,2026-03,342676.55027809687
+Scurry,Kaufman County,scurry,2026-04,342181.1973594972
+Scurry,Kaufman County,scurry,2026-05,339952.63915752264
+Scurry,Kaufman County,scurry,2026-06,337987.80885869096
+Scurry,Kaufman County,scurry,2026-07,337221.5988230699
+Scurry,Kaufman County,scurry,2026-08,337401.97424521623
+Seagoville,Dallas County,seagoville,2025-08,277099.4199069569
+Seagoville,Dallas County,seagoville,2025-09,275818.93892811675
+Seagoville,Dallas County,seagoville,2025-10,274525.2388434809
+Seagoville,Dallas County,seagoville,2025-11,273539.0368582865
+Seagoville,Dallas County,seagoville,2025-12,272939.8418324983
+Seagoville,Dallas County,seagoville,2026-01,272808.8283809975
+Seagoville,Dallas County,seagoville,2026-02,272984.2574242192
+Seagoville,Dallas County,seagoville,2026-03,272882.52709031105
+Seagoville,Dallas County,seagoville,2026-04,272223.51686255675
+Seagoville,Dallas County,seagoville,2026-05,270841.63229513814
+Seagoville,Dallas County,seagoville,2026-06,269503.18741453066
+Seagoville,Dallas County,seagoville,2026-07,268809.02533720736
+Seagoville,Dallas County,seagoville,2026-08,268724.1995783668
+Southlake,Tarrant County,southlake,2025-08,1266054.4622836031
+Southlake,Tarrant County,southlake,2025-09,1268911.912499972
+Southlake,Tarrant County,southlake,2025-10,1276140.3761779966
+Southlake,Tarrant County,southlake,2025-11,1286035.0747863937
+Southlake,Tarrant County,southlake,2025-12,1294660.404417378
+Southlake,Tarrant County,southlake,2026-01,1300501.141531825
+Southlake,Tarrant County,southlake,2026-02,1304758.4703456855
+Southlake,Tarrant County,southlake,2026-03,1306865.1568230295
+Southlake,Tarrant County,southlake,2026-04,1306298.596025712
+Southlake,Tarrant County,southlake,2026-05,1304265.8470985212
+Southlake,Tarrant County,southlake,2026-06,1305080.7818764572
+Southlake,Tarrant County,southlake,2026-07,1309306.3330094486
+Southlake,Tarrant County,southlake,2026-08,1317796.5971984554
+Springtown,Parker County,springtown,2025-08,388912.5973662523
+Springtown,Parker County,springtown,2025-09,389219.7958058035
+Springtown,Parker County,springtown,2025-10,389576.1991503906
+Springtown,Parker County,springtown,2025-11,390115.4648450375
+Springtown,Parker County,springtown,2025-12,390701.4519765188
+Springtown,Parker County,springtown,2026-01,391823.5122030129
+Springtown,Parker County,springtown,2026-02,392705.6049322337
+Springtown,Parker County,springtown,2026-03,393183.6006887492
+Springtown,Parker County,springtown,2026-04,392777.197875585
+Springtown,Parker County,springtown,2026-05,392017.0066944771
+Springtown,Parker County,springtown,2026-06,391317.6991546492
+Springtown,Parker County,springtown,2026-07,390929.5259464343
+Springtown,Parker County,springtown,2026-08,391078.5748778766
+Sunnyvale,Dallas County,sunnyvale,2025-08,627115.1065494381
+Sunnyvale,Dallas County,sunnyvale,2025-09,630722.8953291018
+Sunnyvale,Dallas County,sunnyvale,2025-10,635444.0563552664
+Sunnyvale,Dallas County,sunnyvale,2025-11,639611.464138437
+Sunnyvale,Dallas County,sunnyvale,2025-12,642557.5829324763
+Sunnyvale,Dallas County,sunnyvale,2026-01,642484.0572570362
+Sunnyvale,Dallas County,sunnyvale,2026-02,640281.9567534094
+Sunnyvale,Dallas County,sunnyvale,2026-03,635809.6957217384
+Sunnyvale,Dallas County,sunnyvale,2026-04,632149.3313651038
+Sunnyvale,Dallas County,sunnyvale,2026-05,629362.6878948873
+Sunnyvale,Dallas County,sunnyvale,2026-06,629032.3388371029
+Sunnyvale,Dallas County,sunnyvale,2026-07,630260.1480757672
+Sunnyvale,Dallas County,sunnyvale,2026-08,632166.6820092698
+Sunset,Montague County,sunset,2025-08,471111.5208503967
+Sunset,Montague County,sunset,2025-09,471439.4772409862
+Sunset,Montague County,sunset,2025-10,472646.19130062015
+Sunset,Montague County,sunset,2025-11,475612.503059434
+Sunset,Montague County,sunset,2025-12,477588.7277066272
+Sunset,Montague County,sunset,2026-01,478784.95202605793
+Sunset,Montague County,sunset,2026-02,478093.4843437406
+Sunset,Montague County,sunset,2026-03,476657.3059782178
+Sunset,Montague County,sunset,2026-04,473307.5422059307
+Sunset,Montague County,sunset,2026-05,469502.6188345896
+Sunset,Montague County,sunset,2026-06,465580.9529819783
+Sunset,Montague County,sunset,2026-07,464196.4740814671
+Sunset,Montague County,sunset,2026-08,465775.3765653916
+Terrell,Kaufman County,terrell,2025-08,285127.8678891345
+Terrell,Kaufman County,terrell,2025-09,284114.61947163515
+Terrell,Kaufman County,terrell,2025-10,283440.59499125497
+Terrell,Kaufman County,terrell,2025-11,283497.3386309954
+Terrell,Kaufman County,terrell,2025-12,283895.97790722485
+Terrell,Kaufman County,terrell,2026-01,284925.45296196576
+Terrell,Kaufman County,terrell,2026-02,285912.7235465499
+Terrell,Kaufman County,terrell,2026-03,286482.8534835975
+Terrell,Kaufman County,terrell,2026-04,285944.88388088107
+Terrell,Kaufman County,terrell,2026-05,284494.4715373836
+Terrell,Kaufman County,terrell,2026-06,283087.7967901696
+Terrell,Kaufman County,terrell,2026-07,282292.4554877062
+Terrell,Kaufman County,terrell,2026-08,282223.04462766804
+The Colony,Denton County,the colony,2025-08,410833.5977792549
+The Colony,Denton County,the colony,2025-09,409671.0846808963
+The Colony,Denton County,the colony,2025-10,409273.6493353723
+The Colony,Denton County,the colony,2025-11,408874.1690616226
+The Colony,Denton County,the colony,2025-12,408325.9262352935
+The Colony,Denton County,the colony,2026-01,407209.47334054793
+The Colony,Denton County,the colony,2026-02,405877.3455222676
+The Colony,Denton County,the colony,2026-03,404387.1573547674
+The Colony,Denton County,the colony,2026-04,402640.8098245591
+The Colony,Denton County,the colony,2026-05,401018.0994535466
+The Colony,Denton County,the colony,2026-06,399620.8210616298
+The Colony,Denton County,the colony,2026-07,399167.8177224938
+The Colony,Denton County,the colony,2026-08,399292.9566436121
+University Park,Dallas County,university park,2025-08,2276187.1023793207
+University Park,Dallas County,university park,2025-09,2297216.5258805617
+University Park,Dallas County,university park,2025-10,2321602.766405375
+University Park,Dallas County,university park,2025-11,2349456.8118808265
+University Park,Dallas County,university park,2025-12,2378731.847578786
+University Park,Dallas County,university park,2026-01,2406100.1050443947
+University Park,Dallas County,university park,2026-02,2427614.500181867
+University Park,Dallas County,university park,2026-03,2439036.040998612
+University Park,Dallas County,university park,2026-04,2440371.8268734035
+University Park,Dallas County,university park,2026-05,2437349.7450289465
+University Park,Dallas County,university park,2026-06,2437352.3552463087
+University Park,Dallas County,university park,2026-07,2449241.4306105264
+University Park,Dallas County,university park,2026-08,2472652.438981298
+Venus,Johnson County,venus,2025-08,334988.3665354054
+Venus,Johnson County,venus,2025-09,333849.36226598214
+Venus,Johnson County,venus,2025-10,333213.195051641
+Venus,Johnson County,venus,2025-11,332616.6312098188
+Venus,Johnson County,venus,2025-12,331973.3335716858
+Venus,Johnson County,venus,2026-01,331125.92689574935
+Venus,Johnson County,venus,2026-02,330030.0222818553
+Venus,Johnson County,venus,2026-03,329076.9390357533
+Venus,Johnson County,venus,2026-04,328193.08214218105
+Venus,Johnson County,venus,2026-05,327515.6929126105
+Venus,Johnson County,venus,2026-06,327017.7015575153
+Venus,Johnson County,venus,2026-07,326720.0147401882
+Venus,Johnson County,venus,2026-08,326659.38036931714
+Watauga,Tarrant County,watauga,2025-08,276142.45563689084
+Watauga,Tarrant County,watauga,2025-09,276085.7413623579
+Watauga,Tarrant County,watauga,2025-10,276035.73735716235
+Watauga,Tarrant County,watauga,2025-11,276107.3204235256
+Watauga,Tarrant County,watauga,2025-12,276325.3641219545
+Watauga,Tarrant County,watauga,2026-01,276454.11720850744
+Watauga,Tarrant County,watauga,2026-02,276560.5458482364
+Watauga,Tarrant County,watauga,2026-03,276684.0743878208
+Watauga,Tarrant County,watauga,2026-04,276445.6215146391
+Watauga,Tarrant County,watauga,2026-05,276050.5251009154
+Watauga,Tarrant County,watauga,2026-06,275467.3243725839
+Watauga,Tarrant County,watauga,2026-07,275163.1255707249
+Watauga,Tarrant County,watauga,2026-08,275243.3304127191
+Waxahachie,Ellis County,waxahachie,2025-08,373577.0584657625
+Waxahachie,Ellis County,waxahachie,2025-09,373047.9084786991
+Waxahachie,Ellis County,waxahachie,2025-10,372896.9737090574
+Waxahachie,Ellis County,waxahachie,2025-11,372795.07443903503
+Waxahachie,Ellis County,waxahachie,2025-12,372651.106402866
+Waxahachie,Ellis County,waxahachie,2026-01,372383.7065691164
+Waxahachie,Ellis County,waxahachie,2026-02,372044.0138760144
+Waxahachie,Ellis County,waxahachie,2026-03,371406.567780138
+Waxahachie,Ellis County,waxahachie,2026-04,370586.1643579016
+Waxahachie,Ellis County,waxahachie,2026-05,369718.3970082042
+Waxahachie,Ellis County,waxahachie,2026-06,369122.0029551739
+Waxahachie,Ellis County,waxahachie,2026-07,368793.5319146511
+Waxahachie,Ellis County,waxahachie,2026-08,368534.6290579888
+Weatherford,Parker County,weatherford,2025-08,395795.3991224444
+Weatherford,Parker County,weatherford,2025-09,396454.57298439735
+Weatherford,Parker County,weatherford,2025-10,396863.7480678139
+Weatherford,Parker County,weatherford,2025-11,397105.51933815127
+Weatherford,Parker County,weatherford,2025-12,397252.7361081023
+Weatherford,Parker County,weatherford,2026-01,397725.145920548
+Weatherford,Parker County,weatherford,2026-02,398349.9234853248
+Weatherford,Parker County,weatherford,2026-03,398609.8755397902
+Weatherford,Parker County,weatherford,2026-04,398349.3876954752
+Weatherford,Parker County,weatherford,2026-05,397635.5080364223
+Weatherford,Parker County,weatherford,2026-06,397087.379471238
+Weatherford,Parker County,weatherford,2026-07,396744.9961852022
+Weatherford,Parker County,weatherford,2026-08,397128.3541897391
+Wills Point,Van Zandt County,wills point,2025-08,260480.8193853593
+Wills Point,Van Zandt County,wills point,2025-09,260150.240256749
+Wills Point,Van Zandt County,wills point,2025-10,260040.39654600408
+Wills Point,Van Zandt County,wills point,2025-11,260614.30288076465
+Wills Point,Van Zandt County,wills point,2025-12,261472.5206273852
+Wills Point,Van Zandt County,wills point,2026-01,263203.81516711484
+Wills Point,Van Zandt County,wills point,2026-02,265062.1663065336
+Wills Point,Van Zandt County,wills point,2026-03,266464.9552393123
+Wills Point,Van Zandt County,wills point,2026-04,266474.0702266907
+Wills Point,Van Zandt County,wills point,2026-05,264887.54061298555
+Wills Point,Van Zandt County,wills point,2026-06,262591.74193895666
+Wills Point,Van Zandt County,wills point,2026-07,260230.17337670157
+Wills Point,Van Zandt County,wills point,2026-08,259394.55167506935
+Wilmer,Dallas County,wilmer,2025-08,227510.28557070935
+Wilmer,Dallas County,wilmer,2025-09,226716.30910123
+Wilmer,Dallas County,wilmer,2025-10,226473.5923726945
+Wilmer,Dallas County,wilmer,2025-11,226796.6573695765
+Wilmer,Dallas County,wilmer,2025-12,227382.61335517312
+Wilmer,Dallas County,wilmer,2026-01,228760.1138528741
+Wilmer,Dallas County,wilmer,2026-02,230316.18131441003
+Wilmer,Dallas County,wilmer,2026-03,231193.1531868387
+Wilmer,Dallas County,wilmer,2026-04,230167.159761167
+Wilmer,Dallas County,wilmer,2026-05,227748.92779623892
+Wilmer,Dallas County,wilmer,2026-06,225129.06107450192
+Wilmer,Dallas County,wilmer,2026-07,223289.2089221848
+Wilmer,Dallas County,wilmer,2026-08,222403.08509711263
+Wolfe City,Hunt County,wolfe city,2025-08,286508.71733868524
+Wolfe City,Hunt County,wolfe city,2025-09,285494.67133914307
+Wolfe City,Hunt County,wolfe city,2025-10,284477.5423615648
+Wolfe City,Hunt County,wolfe city,2025-11,284281.6864437857
+Wolfe City,Hunt County,wolfe city,2025-12,284613.301743815
+Wolfe City,Hunt County,wolfe city,2026-01,285525.13130773866
+Wolfe City,Hunt County,wolfe city,2026-02,286648.56179689214
+Wolfe City,Hunt County,wolfe city,2026-03,287338.8535136857
+Wolfe City,Hunt County,wolfe city,2026-04,287373.2987326952
+Wolfe City,Hunt County,wolfe city,2026-05,286436.1184669043
+Wolfe City,Hunt County,wolfe city,2026-06,284814.0599963517
+Wolfe City,Hunt County,wolfe city,2026-07,283005.10095320066
+Wolfe City,Hunt County,wolfe city,2026-08,282278.315565004
+Wylie,Collin County,wylie,2025-08,437647.2392849406
+Wylie,Collin County,wylie,2025-09,436442.8664848833
+Wylie,Collin County,wylie,2025-10,435234.2255002146
+Wylie,Collin County,wylie,2025-11,433472.9871785689
+Wylie,Collin County,wylie,2025-12,431672.4672903271
+Wylie,Collin County,wylie,2026-01,429410.3420572146
+Wylie,Collin County,wylie,2026-02,427258.8999158783
+Wylie,Collin County,wylie,2026-03,423871.5238226058
+Wylie,Collin County,wylie,2026-04,420680.4409641642
+Wylie,Collin County,wylie,2026-05,417211.5221917469
+Wylie,Collin County,wylie,2026-06,415004.5794703068
+Wylie,Collin County,wylie,2026-07,413673.4316716045
+Wylie,Collin County,wylie,2026-08,412915.2567433059

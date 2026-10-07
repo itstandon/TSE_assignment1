@@ -1,0 +1,5 @@
+pydantic>=2
+pandas
+streamlit
+pytest
+python-dotenv

@@ -1,0 +1,64 @@
+{
+  "seed": 20261016,
+  "window": [
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "calibration_window": [
+    "2021-11",
+    "2022-04"
+  ],
+  "args": {
+    "seed": 20261016,
+    "end_month": null,
+    "window": 12,
+    "calib_start": "2021-11",
+    "calib_end": "2022-04",
+    "min_zip_rows": 10,
+    "shrink_k": 20.0,
+    "volume_scale": 1.0,
+    "typo_rate": 0.004,
+    "rural_rate": 0.003
+  },
+  "calibration": {
+    "beta_size_elasticity": 0.8177,
+    "sigma_log_noise": 0.1695,
+    "f_metro": 0.0352,
+    "real_rows_used": 26838,
+    "zips_calibrated": 260,
+    "zips_in_snapshot": 248,
+    "ambiguous_zhvi_cities_dropped": []
+  },
+  "output": {
+    "rows": 54004,
+    "zips": 248,
+    "cities": 111,
+    "faults": {
+      "none": 53607,
+      "rural_lowvalue": 176,
+      "typo_x10": 119,
+      "typo_div10": 102
+    }
+  },
+  "input_sha256": {
+    "kaggle": "2678a7d0a1054861464d0dbdf938c133ffd3e5c5f22c8065255bab87e9af0de4",
+    "zhvi_city": "9be9ce85c3442fc40d362a009738ae2c8e8ee257c3eadc8d52e4c63a95fb2355"
+  },
+  "output_sha256": {
+    "listings_dfw.csv": "4c19752094d8012db0f6ff9b5e3b3d2f76ae5035291ed419f85db216fa218688",
+    "listings_dfw_truth.csv": "9d4851567fb659a94436cd19f45a3a7443377f3b302425673efc9f9d75b59ae3",
+    "zhvi_dfw_city_long.csv": "cf4de9636a143990a239feea0b409022ce134b1d9cb7744318a19f4aa6ff7f71"
+  },
+  "numpy": "1.26.4",
+  "pandas": "2.2.3"
+}
