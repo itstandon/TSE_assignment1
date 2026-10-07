@@ -36,6 +36,7 @@
     "window": 24,
     "calib_start": "2021-11",
     "calib_end": "2022-04",
+    "cities": "Dallas",
     "min_zip_rows": 10,
     "shrink_k": 20.0,
     "volume_scale": 1.0,
@@ -48,18 +49,18 @@
     "f_metro": 0.0352,
     "real_rows_used": 26838,
     "zips_calibrated": 260,
-    "zips_in_snapshot": 248,
+    "zips_in_snapshot": 42,
     "ambiguous_zhvi_cities_dropped": []
   },
   "output": {
-    "rows": 104838,
-    "zips": 248,
-    "cities": 111,
+    "rows": 19976,
+    "zips": 42,
+    "cities": 1,
     "faults": {
-      "none": 104067,
-      "rural_lowvalue": 336,
-      "typo_x10": 232,
-      "typo_div10": 203
+      "none": 19845,
+      "rural_lowvalue": 60,
+      "typo_div10": 42,
+      "typo_x10": 29
     }
   },
   "input_sha256": {
@@ -67,9 +68,9 @@
     "zhvi_city": "9be9ce85c3442fc40d362a009738ae2c8e8ee257c3eadc8d52e4c63a95fb2355"
   },
   "output_sha256": {
-    "listings_dfw.csv": "d2206237058a08cccba786d859fc18fa6fca652873a715f04f526892dc517ffd",
-    "listings_dfw_truth.csv": "8dfadacaa1d480e1ed144cfeb4afc9c115715f8e11057ac279fa9a473c639512",
-    "zhvi_dfw_city_long.csv": "e06784b5fbadd6dc5c4940a472177d92f5fe2c46fa00dc3b4efee94ca3d090cd"
+    "listings_dfw.csv": "2aa4f1fd27d673eb9e2d1a0c75a222b58c36e5fbc58868c9434f6b3ab2a00f28",
+    "listings_dfw_truth.csv": "608091118d2a297ccc468cb7fc4e37d755ee22f889f55106167932707bf794f8",
+    "zhvi_dfw_city_long.csv": "ea7ce1eb0ce913d6da29b805d2231bb0d143e3dd3849f333c38e53cb89befe75"
   },
   "numpy": "1.26.4",
   "pandas": "2.2.3"

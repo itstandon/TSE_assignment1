@@ -162,6 +162,8 @@ def main():
     ap.add_argument("--window", type=int, default=12)
     ap.add_argument("--calib-start", default="2021-11")
     ap.add_argument("--calib-end", default="2022-04")
+    ap.add_argument("--cities", default=None,
+                    help="comma-separated cities to KEEP in the snapshot (e.g. 'Dallas'); calibration still uses all of DFW")
     ap.add_argument("--min-zip-rows", type=int, default=10, help="min real rows for a ZIP to be included")
     ap.add_argument("--shrink-k", type=float, default=20.0)
     ap.add_argument("--volume-scale", type=float, default=1.0)
@@ -182,6 +184,11 @@ def main():
     ok_cities = set(full[full].index)
     n_all = len(zips)
     zips = {z: v for z, v in zips.items() if v["n"] >= a.min_zip_rows and v["city_key"] in ok_cities}
+    if a.cities:                                    # restrict output geography AFTER calibrating on all of DFW
+        keep = {c.strip().lower() for c in a.cities.split(",") if c.strip()}
+        zips = {z: v for z, v in zips.items() if v["city_key"] in keep}
+        if not zips:
+            raise SystemExit(f"--cities {a.cities!r} matched no ZIPs")
 
     p = dict(beta=cal["beta"], sigma=cal["sigma"], volume_scale=a.volume_scale,
              typo_rate=a.typo_rate, rural_rate=a.rural_rate)
