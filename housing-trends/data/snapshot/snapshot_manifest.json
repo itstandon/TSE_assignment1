@@ -1,6 +1,18 @@
 {
   "seed": 20261016,
   "window": [
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
     "2025-09",
     "2025-10",
     "2025-11",
@@ -21,7 +33,7 @@
   "args": {
     "seed": 20261016,
     "end_month": null,
-    "window": 12,
+    "window": 24,
     "calib_start": "2021-11",
     "calib_end": "2022-04",
     "min_zip_rows": 10,
@@ -40,14 +52,14 @@
     "ambiguous_zhvi_cities_dropped": []
   },
   "output": {
-    "rows": 54004,
+    "rows": 104838,
     "zips": 248,
     "cities": 111,
     "faults": {
-      "none": 53607,
-      "rural_lowvalue": 176,
-      "typo_x10": 119,
-      "typo_div10": 102
+      "none": 104067,
+      "rural_lowvalue": 336,
+      "typo_x10": 232,
+      "typo_div10": 203
     }
   },
   "input_sha256": {
@@ -55,9 +67,9 @@
     "zhvi_city": "9be9ce85c3442fc40d362a009738ae2c8e8ee257c3eadc8d52e4c63a95fb2355"
   },
   "output_sha256": {
-    "listings_dfw.csv": "4c19752094d8012db0f6ff9b5e3b3d2f76ae5035291ed419f85db216fa218688",
-    "listings_dfw_truth.csv": "9d4851567fb659a94436cd19f45a3a7443377f3b302425673efc9f9d75b59ae3",
-    "zhvi_dfw_city_long.csv": "cf4de9636a143990a239feea0b409022ce134b1d9cb7744318a19f4aa6ff7f71"
+    "listings_dfw.csv": "d2206237058a08cccba786d859fc18fa6fca652873a715f04f526892dc517ffd",
+    "listings_dfw_truth.csv": "8dfadacaa1d480e1ed144cfeb4afc9c115715f8e11057ac279fa9a473c639512",
+    "zhvi_dfw_city_long.csv": "e06784b5fbadd6dc5c4940a472177d92f5fe2c46fa00dc3b4efee94ca3d090cd"
   },
   "numpy": "1.26.4",
   "pandas": "2.2.3"

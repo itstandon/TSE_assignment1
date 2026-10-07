@@ -1,12 +1,13 @@
-"""Try the Parser Agent against a toy snapshot.
-Usage: python scripts/try_parser.py "affordable homes in north dallas"
-Needs LLM2_API_KEY (and optionally LLM2_MODEL, LLM2_BASE_URL) in the environment.
+"""Run the Parser Agent against the frozen snapshot.
+Usage: python scripts/try_parser.py "affordable homes in dallas"
+Needs LLM2_API_KEY in .env.local (see README).
 """
 import json
 import pathlib
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 import pandas as pd
 from housing_trends import SnapshotContext, handle_input, llm_from_env
@@ -14,16 +15,8 @@ from housing_trends import SnapshotContext, handle_input, llm_from_env
 if len(sys.argv) != 2:
     sys.exit('usage: python scripts/try_parser.py "your request in quotes"')
 
-# Toy snapshot: replace with your real one once it exists.
-rows = []
-for i, m in enumerate(str(p) for p in pd.period_range("2021-01", "2022-06", freq="M")):
-    for z, c, base in [(75201, "Dallas", 400_000), (75204, "Dallas", 450_000),
-                       (75230, "Dallas", 700_000), (75024, "Plano", 600_000)]:
-        rows.append(dict(zip_code=float(z), city=c, price=base + i * 1000, month=m))
-ctx = SnapshotContext.from_dataframe(
-    pd.DataFrame(rows),
-    area_gazetteer={"North Dallas": ["75230"]},   # placeholder: verify real ZIPs later
-)
+df = pd.read_csv(ROOT / "data/snapshot/listings_dfw.csv", dtype={"zip_code": str})
+ctx = SnapshotContext.from_dataframe(df)
 
 res = handle_input(ctx=ctx, text=sys.argv[1], llm=llm_from_env())
 
