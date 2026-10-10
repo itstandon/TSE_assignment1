@@ -7,6 +7,7 @@ Otherwise a rescan meant to fix thin buckets would silently change healthy ones.
 
 Per-bucket report (one row per requested ZIP x month in the criteria window):
   widened              True if this bucket was thin at base and therefore received the scope
+  zip_extra_used, time_pad_used   widening depth actually applied to this bucket (0 if not widened)
   n_base               own listings under ALL user filters, no pooling (decides `widened`; never changes)
   n_own, n, n_pooled   listings from the bucket itself / in the current scope / pooled in from neighbours
   gain_time            extra listings if the date window were widened to the MAX allowed padding
@@ -34,12 +35,13 @@ from ..context import month_index, month_range
 from ..criteria import Criteria
 from ..state import MAX_TIME_PAD, MAX_ZIP_EXTRA, MIN_LISTINGS, Scope
 
-OPTIONAL_COLS = ("bed", "bath", "house_size", "property_type")
+OPTIONAL_COLS = ("bed", "bath", "house_size", "acre_lot", "property_type")
 
 
 # ---------------------------------------------------------------- snapshot
 class Snapshot:
-    def __init__(self, df: pd.DataFrame):
+    def __init__(self, df: pd.DataFrame, months=None, zips=None):
+        """`months` / `zips` declare the coverage explicitly; by default it is inferred from the rows."""
         need = {"listing_id", "zip_code", "month", "price"} - set(df.columns)
         if need:
             raise ValueError(f"snapshot is missing columns: {sorted(need)}")
@@ -50,8 +52,8 @@ class Snapshot:
             if c not in df.columns:
                 df[c] = np.nan
         self.df = df
-        self.zips = sorted(df.zip_code.dropna().unique(), key=int)
-        self.months = month_range(df.month.min(), df.month.max())
+        self.zips = sorted(set(zips) if zips else df.zip_code.dropna().unique(), key=int)
+        self.months = list(months) if months else month_range(df.month.min(), df.month.max())
         self._order = {z: sorted((o for o in self.zips if o != z), key=lambda o: (abs(int(o) - int(z)), int(o)))
                        for z in self.zips}
 
@@ -110,8 +112,8 @@ class ScanResult:
     def summary(self) -> str:
         b = self.buckets
         return (f"{len(b)} buckets, {int(b.widened.sum())} widened, {int(b.thin.sum())} thin (<min), {int(b.exhaustive.sum())} exhaustive, "
-                f"{int((b.thin & ~b.reachable).sum())} thin&unreachable | scope zip_extra={self.scope.zip_extra} "
-                f"time_pad={self.scope.time_pad} relaxed={list(self.scope.relaxed)}")
+                f"{int((b.thin & ~b.reachable).sum())} thin&unreachable | depth used: time_pad max {int(b.time_pad_used.max())}, "
+                f"zip_extra max {int(b.zip_extra_used.max())}, relaxed={list(self.scope.relaxed)}")
 
 
 def _count_matrix(df, zips, months):
@@ -151,15 +153,17 @@ def scan(c: Criteria, scope: Scope, snap: Snapshot, min_listings: int = MIN_LIST
             mi = midx[m]
             n_base = int(A_base[zidx[z], mi])
             widen = n_base < min_listings                                    # healthy buckets keep the default scope
-            sc, A = (scope, A_cur) if widen else (Scope(), A_base)
-            n = pooled(A, z, mi, sc.zip_extra, sc.time_pad)
-            g_t = pooled(A, z, mi, sc.zip_extra, MAX_TIME_PAD) - n
-            g_z = pooled(A, z, mi, MAX_ZIP_EXTRA, sc.time_pad) - n
-            g_f = pooled(A_rel, z, mi, sc.zip_extra, sc.time_pad) - n
+            ze, tp = scope.depth(z, m) if widen else (0, 0)
+            A = A_cur if widen else A_base
+            n = pooled(A, z, mi, ze, tp)
+            g_t = pooled(A, z, mi, ze, MAX_TIME_PAD) - n
+            g_z = pooled(A, z, mi, MAX_ZIP_EXTRA, tp) - n
+            g_f = pooled(A_rel, z, mi, ze, tp) - n
             pot = pooled(A_rel, z, mi, MAX_ZIP_EXTRA, MAX_TIME_PAD) - n
             n_own = int(A[zidx[z], mi])
-            plan.append((z, m, widen, sc))
-            rows.append(dict(zip_code=z, month=m, widened=widen, n_base=n_base, n_own=n_own, n=n, n_pooled=n - n_own,
+            plan.append((z, m, widen, ze, tp))
+            rows.append(dict(zip_code=z, month=m, widened=widen, zip_extra_used=ze, time_pad_used=tp,
+                             n_base=n_base, n_own=n_own, n=n, n_pooled=n - n_own,
                              gain_time=g_t, gain_zip=g_z, gain_filters=g_f, potential=pot,
                              moves=",".join(k for k, g in (("time", g_t), ("zip", g_z), ("filters", g_f)) if g > 0),
                              exhaustive=pot == 0, reachable=n + pot >= min_listings, thin=n < min_listings))
@@ -168,10 +172,10 @@ def scan(c: Criteria, scope: Scope, snap: Snapshot, min_listings: int = MIN_LIST
     ids_cur = {k: v.to_numpy() for k, v in df[m_cur].groupby(["zip_code", "month"]).listing_id}
     ids_base = {k: v.to_numpy() for k, v in df[m_base].groupby(["zip_code", "month"]).listing_id}
     mem = []
-    for z, m, widen, sc in plan:
+    for z, m, widen, ze, tp in plan:
         ids, mi = (ids_cur if widen else ids_base), midx[m]
-        for zz in [z] + snap.neighbours(z, sc.zip_extra):
-            for mm in snap.months[max(0, mi - sc.time_pad): min(nm - 1, mi + sc.time_pad) + 1]:
+        for zz in [z] + snap.neighbours(z, ze):
+            for mm in snap.months[max(0, mi - tp): min(nm - 1, mi + tp) + 1]:
                 for lid in ids.get((zz, mm), ()):
                     mem.append((z, m, int(lid), zz == z and mm == m))
     members = (pd.DataFrame(mem, columns=["zip_code", "month", "listing_id", "own"])

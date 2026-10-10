@@ -196,3 +196,34 @@ def test_rejects_zip_or_window_outside_snapshot(snap):
         scan(crit(zips=("99999",)), Scope(), snap, MIN)
     with pytest.raises(ValueError, match="outside snapshot"):
         scan(crit(end_month="2026-12"), Scope(), snap, MIN)
+
+
+# ---- per-bucket depth -----------------------------------------------------------------------------------
+def test_per_bucket_depth_applies_to_that_bucket_only_and_matches_oracle(snap):
+    from housing_trends.state import BucketScope
+    c = crit()
+    thin = scan(c, Scope(), snap, MIN).buckets
+    t = thin[thin.widened].iloc[0]
+    sc = Scope(per_bucket=(BucketScope(zip_code=t.zip_code, month=t.month, time_pad=2, zip_extra=2),))
+    b = scan(c, sc, snap, MIN).buckets.set_index(["zip_code", "month"])
+    row = b.loc[(t.zip_code, t.month)]
+    assert (row.time_pad_used, row.zip_extra_used) == (2, 2)
+    assert row.n == oracle(snap, c, t.zip_code, t.month, 2, 2, ())
+    others = b.drop(index=(t.zip_code, t.month))
+    assert (others.time_pad_used == 0).all() and (others.zip_extra_used == 0).all()        # default depth is 0
+
+def test_per_bucket_entry_is_ignored_for_healthy_buckets(snap):
+    from housing_trends.state import BucketScope
+    c = crit()
+    base = scan(c, Scope(), snap, MIN).buckets
+    h = base[~base.widened].iloc[0]
+    sc = Scope(per_bucket=(BucketScope(zip_code=h.zip_code, month=h.month, time_pad=3, zip_extra=6),))
+    row = scan(c, sc, snap, MIN).buckets.set_index(["zip_code", "month"]).loc[(h.zip_code, h.month)]
+    assert row.n == h.n_base and row.n_pooled == 0 and row.time_pad_used == 0
+
+def test_scope_depth_lookup_and_duplicate_rejection():
+    from housing_trends.state import BucketScope
+    sc = Scope(zip_extra=1, per_bucket=(BucketScope(zip_code="75201", month="2025-02", time_pad=3),))
+    assert sc.depth("75201", "2025-02") == (0, 3) and sc.depth("75202", "2025-02") == (1, 0)
+    with pytest.raises(ValidationError):
+        Scope(per_bucket=(BucketScope(zip_code="75201", month="2025-02"), BucketScope(zip_code="75201", month="2025-02", time_pad=1)))

@@ -1,0 +1,29 @@
+# execution trace: dallas_all_llm
+# snapshot sha256 2aa4f1fd27d6 | diagnoser model: cached:openai/gpt-oss-120b@seed42
+# loops used: {'rescans': 3, 'recomputes': 1, 'diag_rounds': 1}
+
+run: criteria 27a365192367 | 42 ZIP(s) | 2025-09..2026-08 | thresholds: min_listings=20, jump=30%
+scanner: 504 buckets, 304 widened, 304 thin (<min), 0 exhaustive, 0 thin&unreachable | depth used: time_pad max 0, zip_extra max 0, relaxed=[]
+statistician: method=median, 504 buckets (7 empty), 0 override(s), 0 excluded id(s)
+critic: coverage: 304/504 buckets below 20 listings (304 fixable) -> Data Issue, route to Pooling (rescan 1/3)
+pooling: rescan 1: 304 fixable of 304 thin: time +1 month for 278 bucket(s); ZIP +2 neighbours for 26 bucket(s)
+scanner: 504 buckets, 304 widened, 57 thin (<min), 0 exhaustive, 0 thin&unreachable | depth used: time_pad max 1, zip_extra max 2, relaxed=[]
+statistician: method=median, 504 buckets (0 empty), 0 override(s), 0 excluded id(s)
+critic: coverage: 57/504 buckets below 20 listings (57 fixable) -> Data Issue, route to Pooling (rescan 2/3)
+pooling: rescan 2: 57 fixable of 57 thin: time +1 month for 57 bucket(s)
+scanner: 504 buckets, 304 widened, 6 thin (<min), 0 exhaustive, 0 thin&unreachable | depth used: time_pad max 2, zip_extra max 2, relaxed=[]
+statistician: method=median, 504 buckets (0 empty), 0 override(s), 0 excluded id(s)
+critic: coverage: 6/504 buckets below 20 listings (6 fixable) -> Data Issue, route to Pooling (rescan 3/3)
+pooling: rescan 3: 6 fixable of 6 thin: time +1 month for 6 bucket(s)
+scanner: 504 buckets, 304 widened, 0 thin (<min), 0 exhaustive, 0 thin&unreachable | depth used: time_pad max 3, zip_extra max 2, relaxed=[]
+statistician: method=median, 504 buckets (0 empty), 0 override(s), 0 excluded id(s)
+critic: coverage OK (0 thin of 504; 3 rescan(s) used)
+critic: trend: 8 price jump(s) > 30% in 4 ZIP(s) -> robust recompute (trimmed mean 0.1) on those ZIP series (recompute 1/1)
+statistician: method=median, 504 buckets (0 empty), 48 override(s), 0 excluded id(s)
+critic: trend: robust recompute resolved 3 of 8 jump(s); 5 persist
+critic: trend: 5 persistent anomaly(ies) -> Diagnoser round 1/2 (5 sent, 2 outlier suspect(s))
+diagnoser: round 1: 2 suspect(s) judged by cached:openai/gpt-oss-120b@seed42 in 1 attempt(s): bad_listing=2, legit_rural=0, unexplained=0 -> statistician excludes 2 listing(s)
+diagnoser:   listing 13442 (75219, 2025-12, $5,776,500) -> bad_listing: price 13.54× zip median with average lot and house size
+diagnoser:   listing 14698 (75225, 2026-07, $9,676,300) -> bad_listing: price 15.68× zip median despite small lot and large house
+statistician: method=median, 504 buckets (0 empty), 24 override(s), 2 excluded id(s)
+critic: trend: 7 jump(s) persist after 1 Diagnoser round(s) (no new outlier suspects to investigate) -> accept and flag as unresolved

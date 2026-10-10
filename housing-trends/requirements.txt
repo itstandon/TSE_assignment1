@@ -1,5 +1,7 @@
 pydantic>=2
 pandas
+numpy
 streamlit
 pytest
 python-dotenv
+langgraph

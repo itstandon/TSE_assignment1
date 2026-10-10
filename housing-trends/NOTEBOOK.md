@@ -67,3 +67,46 @@
 
 ### Next
 Statistician, Critic, Pooling, graph wiring, MR harness.
+
+
+## 2026-10-09: Statistician, and what the data says about the Critic
+
+### Built
+- Statistician (plain code, no LLM). Input: ScanResult + StatInstruction (method, per-bucket overrides,
+  listing ids to exclude). Output per ZIP-month: price, ppsf, n_used / n_own / n_pooled / n_excluded,
+  month-over-month % for price, ppsf and count; plus an overall series over all requested ZIPs.
+- Methods: median (default), trimmed_mean, median_of_medians. Total tests now: 77 passing.
+- Why no LLM: every decision is made upstream (Critic / Pooling / Diagnoser); it only does arithmetic, and
+  the MRs need exact properties (scaling prices by k scales statistics by exactly k; duplicating all listings
+  leaves medians unchanged), verified to 1e-9 in unit tests.
+- Design choices: (1) trimmed mean uses FRACTIONAL trimming, so duplicating every listing leaves it unchanged
+  (a floor-based trim does not: it would produce false MR violations); (2) median_of_medians equals the plain
+  median for an unpooled bucket; (3) count change uses own listings so pooling cannot hide a real drop;
+  (4) overall series uses own listings once, never pooled ones; (5) it never judges its own output.
+
+### Measurements (Dallas snapshot, 42 ZIPs, window 2025-09..2026-08, default scope)
+- Overall median price 397,400 -> 391,000 (-1.6%); ZHVI index -1.5%. Month-to-month sd of the overall median
+  5.2%, versus 2.8% for a composition-free index: about half the swing is which ZIPs happen to list.
+- A ZIP's own listing count changes by a median 57% month to month; 74% of healthy ZIP-months change by >30%.
+  Cause: my generator's volumes are more volatile than a real market (gamma-mixed Poisson). Threat to validity.
+- Price jumps >30% among ZIP-months: 53 of 451 (14% of thin buckets, 8% of healthy).
+  Trimmed mean (0.1): 45. Removing all 71 typo listings: 52. Pooling +-3 months: 8. Then trimmed mean: 5.
+  Pooling +-3 months and +2 ZIPs: 38 (ZIP pooling adds composition noise).
+- Typos barely move medians: 33 of 504 bucket medians change when typos are removed; median shift 0.6%
+  for buckets with n_own >= 20, 4.5% for thinner ones.
+
+### Decisions
+- Snapshot kept as frozen; volume volatility recorded as a threat to validity.
+- Critic trend check flags PRICE jumps only; count changes are reported, not flagged.
+- Order inside the Critic: coverage check first, then trend check. Pooling tries time before ZIPs.
+- Because medians hide typos, the Critic also needs a listing-level outlier screen (price or ppsf far outside
+  its ZIP's distribution), otherwise the Diagnoser (LLM) is almost never reached.
+- Coverage check, variant A: count threshold 20 plus a post-widening bias check vs the unpooled value.
+
+### Open
+- Per-ZIP Scanner workers (assignment says "several agents each scan"): do only if time remains.
+- Ask TA whether deterministic nodes count as agents. Narrative node in Rendering: optional.
+
+### Next
+Critic, Pooling, Diagnoser (LLM), LangGraph wiring and a captured loop trace, MR harness, UI, report.
+

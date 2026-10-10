@@ -18,5 +18,5 @@ def handle_input(*, form: dict | None = None, text: str | None = None,
             res.trace.append(f"criteria {res.criteria.key()}")
         return res
     if llm is None:
-        raise ValueError("free-text mode needs an llm callable")
+        raise ValueError("free-text mode needs an llm callable, e.g. llm_from_env()")
     return parse_free_text(text, ctx, llm)
