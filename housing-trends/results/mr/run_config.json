@@ -1,0 +1,29 @@
+{
+ "seeds": [
+  101,
+  202,
+  303
+ ],
+ "bases_per_mr": 30,
+ "pool_seed": 20261016,
+ "llm": "rule_based_standin",
+ "min_listings": 20,
+ "jump_pct": 30.0,
+ "snapshot": "listings_dfw.csv",
+ "snapshot_sha256": "2aa4f1fd27d673eb9e2d1a0c75a222b58c36e5fbc58868c9434f6b3ab2a00f28",
+ "python": "3.14.4",
+ "pandas": "3.0.5",
+ "numpy": "2.5.2",
+ "mrs": [
+  "MR1",
+  "MR2",
+  "MR3",
+  "MR4",
+  "MR5",
+  "MR6",
+  "MR7",
+  "MR8",
+  "MR9",
+  "MR10"
+ ]
+}

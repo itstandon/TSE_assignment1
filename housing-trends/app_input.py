@@ -120,8 +120,8 @@ if request:
         inp = handle_input(ctx=ctx, form=payload) if kind == "form" else handle_input(ctx=ctx, text=payload, llm=real_llm())
         st.session_state["out"] = analyse(inp)
     except RuntimeError as ex:
-        st.session_state["out"] = {"fatal": "An LLM API key is needed for this option. Add LLM2_API_KEY to .env.local, "
-                                            "or use the form with the offline stand-in." if "LLM2_API_KEY" in str(ex)
+        st.session_state["out"] = {"fatal": f"An LLM API key is needed for this option ({ex}). Add it to .env.local, "
+                                            "or use the form with the offline stand-in." if "_API_KEY" in str(ex)
                                    else f"Something went wrong: {ex}"}
     except Exception as ex:
         st.session_state["out"] = {"fatal": f"Something went wrong while running the analysis ({type(ex).__name__}: {ex})."}
