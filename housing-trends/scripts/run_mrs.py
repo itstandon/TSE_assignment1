@@ -3,7 +3,7 @@
   python scripts/run_mrs.py                       # all 12 MRs, 30 base inputs, seeds 101,202,303, offline Diagnoser
   python scripts/run_mrs.py --quick               # smoke run: 5 base inputs, 1 seed
   python scripts/run_mrs.py --only MR1,MR3        # a subset
-  python scripts/run_mrs.py --llm real            # real Diagnoser LLM (needs a key in .env.local; replies are cached)
+  python scripts/run_mrs.py --llm real            # real LLM (local Qwen by default, see .env.local; replies are cached)
 
 Writes results/mr/{runs.csv, summary.csv, summary.md, base_inputs.json, run_config.json} and docs/mr_catalog.md.
 """

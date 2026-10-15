@@ -1,5 +1,15 @@
-"""Scanner Agent (plain code, no LLM): retrieve matching listings per ZIP-month bucket and report,
-for each bucket, whether and how widening the scope could surface more listings.
+"""Scanner Agent: retrieve matching listings per ZIP-month bucket and report, for each bucket, whether and how
+widening the scope could surface more listings.
+
+ONE LLM DECISION, NO LLM ARITHMETIC: which neighbouring ZIPs are comparable markets to pool from.
+  * Geography alone picks poor neighbours: a ZIP next door can be a much richer or much cheaper market, and pooling
+    it distorts the median. So, once per run and only for ZIPs that have thin buckets, code shows the LLM the
+    N_CANDIDATES geographically nearest ZIPs with their median price, house size and listing count, and the LLM
+    ranks the most comparable ones (rank_neighbours).
+  * Code validates the reply (only listed candidates, no duplicates, at most MAX_ZIP_EXTRA) and falls back to the
+    geographic order for any ZIP without a valid ranking. The ranking only reorders neighbours; every count and gain
+    below is still computed by code, exactly, from that order.
+  * The stand-in (rule_based_neighbours) keeps the geographic order, so `--llm offline` scans exactly as before.
 
 WIDEN ONLY WHAT IS THIN: a bucket whose own listings (all user filters, no pooling) already reach
 `min_listings` is never pooled or relaxed, whatever the scope says. Only thin buckets receive the scope.
@@ -26,6 +36,7 @@ Assumptions (document in the report):
 """
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 
 import numpy as np
@@ -71,6 +82,19 @@ class Snapshot:
 
     def neighbours(self, z: str, k: int) -> list[str]:
         return self._order[z][:k]
+
+    def profiles(self) -> dict[str, dict]:
+        """{zip: median price, median house size, listing count, city} over the whole snapshot (computed once)."""
+        if getattr(self, "_profiles", None) is None:
+            g = self.df.groupby("zip_code")
+            price, size, n = g.price.median(), g.house_size.median(), g.size()
+            city = (g.city.agg(lambda s: s.mode().iat[0] if s.notna().any() else None)
+                    if "city" in self.df.columns else {})
+            self._profiles = {z: {"median_price": int(price[z]) if z in price and pd.notna(price[z]) else None,
+                                  "median_sqft": int(size[z]) if z in size and pd.notna(size[z]) else None,
+                                  "listings": int(n.get(z, 0)), "city": city.get(z) if len(city) else None}
+                              for z in self.zips}
+        return self._profiles
 
 
 # ---------------------------------------------------------------- filters
@@ -129,7 +153,14 @@ def _count_matrix(df, zips, months):
     return g.reindex(index=zips, columns=months, fill_value=0).to_numpy()
 
 
-def scan(c: Criteria, scope: Scope, snap: Snapshot, min_listings: int = MIN_LISTINGS) -> ScanResult:
+def scan(c: Criteria, scope: Scope, snap: Snapshot, min_listings: int = MIN_LISTINGS,
+         order: dict[str, list[str]] | None = None) -> ScanResult:
+    """`order` {zip: neighbours, best first} overrides the snapshot's geographic order for the ZIPs it names."""
+    order = order or {}
+
+    def nbrs(z: str, k: int) -> list[str]:
+        return order[z][:k] if z in order else snap.neighbours(z, k)
+
     illegal = sorted(set(scope.relaxed) & set(c.protected_filters))
     if illegal:
         raise ValueError(f"scope relaxes protected filter(s) {illegal}; Pooling may only relax non-protected ones")
@@ -152,7 +183,7 @@ def scan(c: Criteria, scope: Scope, snap: Snapshot, min_listings: int = MIN_LIST
     nm = len(snap.months)
 
     def pooled(A, z, mi, extra, pad):
-        rows = [zidx[z]] + [zidx[o] for o in snap.neighbours(z, extra)]
+        rows = [zidx[z]] + [zidx[o] for o in nbrs(z, extra)]
         return int(A[np.ix_(rows, range(max(0, mi - pad), min(nm - 1, mi + pad) + 1))].sum())
 
     rows, plan = [], []
@@ -182,7 +213,7 @@ def scan(c: Criteria, scope: Scope, snap: Snapshot, min_listings: int = MIN_LIST
     mem = []
     for z, m, widen, ze, tp in plan:
         ids, mi = (ids_cur if widen else ids_base), midx[m]
-        for zz in [z] + snap.neighbours(z, ze):
+        for zz in [z] + nbrs(z, ze):
             for mm in snap.months[max(0, mi - tp): min(nm - 1, mi + tp) + 1]:
                 for lid in ids.get((zz, mm), ()):
                     mem.append((z, m, int(lid), zz == z and mm == m))
@@ -191,9 +222,140 @@ def scan(c: Criteria, scope: Scope, snap: Snapshot, min_listings: int = MIN_LIST
     return ScanResult(c.key(), scope, buckets, members)
 
 
-def make_scanner(snap: Snapshot, min_listings: int = MIN_LISTINGS):
-    """LangGraph node factory: reads state['criteria'] and state['scope'], writes state['scan']."""
+# ---------------------------------------------------------------- neighbour ranking (the Scanner's LLM decision)
+MARK = "NEIGHBOURS_JSON:\n"
+N_CANDIDATES = MAX_ZIP_EXTRA + 4      # geographically nearest ZIPs shown to the model per target
+RANK_BATCH = 4                        # targets per prompt: a 7B model drops or mixes up targets in larger batches
+
+SYSTEM_PROMPT = f"""You are the market-comparability analyst of a housing price-trend system.
+When a ZIP code has too few listings in a month, listings from other ZIP codes are pooled in. Pooling from a ZIP that
+is a different market (much more or much less expensive, very different house sizes) distorts the median price.
+NEIGHBOURS_JSON lists "targets". Each target has its own profile (median_price, median_sqft, listings, city) and
+"candidates": nearby ZIPs, nearest first (proximity_rank 1 = nearest), each with the same profile plus
+price_ratio = candidate median_price / target median_price.
+For EVERY target choose up to {MAX_ZIP_EXTRA} of its candidates that are the most comparable markets, most comparable
+first. Prefer price_ratio close to 1 and a similar median_sqft; between similar markets prefer the nearer one.
+Use only candidate ZIPs listed for that target.
+Reply with ONE JSON object and nothing else:
+{{"rankings":[{{"zip_code":"<target>","comparable":["<zip>", "..."],"reason":"<short>"}}]}}"""
+
+
+def thin_zips(c: Criteria, snap: Snapshot, min_listings: int = MIN_LISTINGS) -> list[str]:
+    """Requested ZIPs with at least one bucket below the threshold under ALL user filters (the only ZIPs whose
+    neighbours can ever be pooled). Independent of the scope, so it is decided once per run."""
+    window = [m for m in month_range(c.start_month, c.end_month) if m in snap.months]
+    A = _count_matrix(snap.df[filter_mask(snap.df, c, active_filters(c))], list(c.zips), window)
+    return [z for z, row in zip(c.zips, A) if (row < min_listings).any()]
+
+
+def candidates(snap: Snapshot, z: str) -> list[str]:
+    return snap.neighbours(z, N_CANDIDATES)
+
+
+def build_neighbour_prompt(targets: list[str], snap: Snapshot) -> str:
+    prof = snap.profiles()
+    body = []
+    for z in targets:
+        base = prof[z]["median_price"]
+        cands = []
+        for rank, o in enumerate(candidates(snap, z), 1):
+            p = prof[o]
+            ratio = round(p["median_price"] / base, 2) if base and p["median_price"] else None
+            cands.append({"zip_code": o, "proximity_rank": rank, "price_ratio": ratio, **p})
+        body.append({"zip_code": z, **prof[z], "candidates": cands})
+    return MARK + json.dumps({"max_per_target": MAX_ZIP_EXTRA, "targets": body}, sort_keys=True)
+
+
+def validate_rankings(obj, allowed: dict[str, list[str]]) -> tuple[dict[str, list[str]], dict[str, str], list[str]]:
+    """-> ({target: comparable ZIPs}, {target: reason}, errors). Valid entries are kept even when others are rejected."""
+    picks, reasons, errors = {}, {}, []
+    if not isinstance(obj.get("rankings"), list):
+        return {}, {}, ["reply must contain a list 'rankings'"]
+    for r in obj["rankings"]:
+        try:
+            z, comp = str(r["zip_code"]), r["comparable"]
+        except (KeyError, TypeError):
+            errors.append(f"malformed ranking entry: {r!r}")
+            continue
+        if z not in allowed:
+            errors.append(f"{z!r} is not one of the targets {sorted(allowed)}")
+            continue
+        comp = [str(o) for o in comp] if isinstance(comp, list) else None
+        bad = None if comp is None else [o for o in comp if o not in allowed[z]]
+        if not comp:
+            errors.append(f"{z}: 'comparable' must be a non-empty list of candidate ZIPs")
+        elif bad:
+            errors.append(f"{z}: {bad} are not candidates of {z} (candidates: {allowed[z]})")
+        elif len(set(comp)) != len(comp):
+            errors.append(f"{z}: 'comparable' repeats a ZIP")
+        elif len(comp) > MAX_ZIP_EXTRA:
+            errors.append(f"{z}: at most {MAX_ZIP_EXTRA} comparable ZIPs, got {len(comp)}")
+        else:
+            picks[z], reasons[z] = comp, str(r.get("reason", ""))[:160]
+    missing = [z for z in allowed if z not in picks and not any(e.startswith(f"{z}:") for e in errors)]
+    if missing:
+        errors.append(f"no ranking for target(s) {missing}")
+    return picks, reasons, errors
+
+
+def rule_based_neighbours(user: str) -> str:
+    """Deterministic stand-in with the same prompt -> JSON contract: keeps the geographic order."""
+    ev = json.loads(user.split(MARK, 1)[1].split("\n", 1)[0])
+    return json.dumps({"rankings": [{"zip_code": t["zip_code"], "reason": "nearest first",
+                                     "comparable": [c["zip_code"] for c in t["candidates"][:MAX_ZIP_EXTRA]]}
+                                    for t in ev["targets"]]})
+
+
+def rank_neighbours(llm, c: Criteria, snap: Snapshot, min_listings: int = MIN_LISTINGS,
+                    max_attempts: int = 2) -> tuple[dict[str, list[str]], list[str]]:
+    """LLM ranks comparable neighbours for the thin ZIPs, code validates. -> ({zip: full neighbour order}, trace)."""
+    from ..parser_agent import _extract_json as extract_json
+    targets = thin_zips(c, snap, min_listings) if llm is not None else []
+    if not targets:
+        return {}, []
+    picks, reasons, notes = {}, {}, []
+    for i in range(0, len(targets), RANK_BATCH):
+        batch = targets[i:i + RANK_BATCH]
+        allowed = {z: candidates(snap, z) for z in batch}
+        user, feedback = build_neighbour_prompt(batch, snap), ""
+        for attempt in range(1, max_attempts + 1):
+            try:
+                obj = extract_json(llm(SYSTEM_PROMPT, user + feedback))
+            except Exception as ex:
+                notes.append(f"attempt {attempt}: unusable reply ({ex})")
+                feedback = f"\n\nYour previous reply was not valid JSON ({ex}). Reply with ONLY the JSON object."
+                continue
+            got, why, errors = validate_rankings(obj, allowed)
+            picks.update(got)
+            reasons.update(why)
+            allowed = {z: v for z, v in allowed.items() if z not in got}      # retry only what is still missing
+            if not errors or not allowed:
+                break
+            notes.append(f"attempt {attempt}: rejected: {'; '.join(errors[:3])}")
+            feedback = (f"\n\nYour previous reply was rejected: {'; '.join(errors[:3])}. Fix it and reply with ONLY "
+                        f"the JSON object, with rankings for {sorted(allowed)}.")
+
+    order, changed = {}, []
+    for z, comp in picks.items():
+        geo = snap.neighbours(z, len(snap.zips))
+        order[z] = comp + [o for o in geo if o not in comp]
+        if order[z][:MAX_ZIP_EXTRA] != geo[:MAX_ZIP_EXTRA]:
+            changed.append(f"scanner:   {z} pools {', '.join(order[z][:MAX_ZIP_EXTRA])} "
+                           f"(geographic: {', '.join(geo[:MAX_ZIP_EXTRA])}): {reasons.get(z, '')}")
+    fallback = [z for z in targets if z not in picks]
+    trace = [f"scanner:   neighbours ranked by {getattr(llm, 'name', 'llm')} for {len(picks)}/{len(targets)} thin ZIP(s), "
+             f"{len(changed)} differ from the geographic order"
+             + (f"; geographic fallback for {fallback}" if fallback else "")]
+    return order, trace + changed[:10] + [f"scanner:   {n}" for n in notes]
+
+
+def make_scanner(snap: Snapshot, min_listings: int = MIN_LISTINGS, llm=None):
+    """LangGraph node factory: reads state['criteria'] and state['scope'], writes state['scan']. The neighbour order is
+    ranked on the first call only and kept in state['neighbour_order'], so Pooling's rescans reuse it."""
     def scanner(state):
-        res = scan(state["criteria"], state.get("scope") or Scope(), snap, min_listings)
-        return {"scan": res, "trace": [f"scanner: {res.summary()}"]}
+        order, extra = state.get("neighbour_order"), []
+        if order is None:
+            order, extra = rank_neighbours(llm, state["criteria"], snap, min_listings)
+        res = scan(state["criteria"], state.get("scope") or Scope(), snap, min_listings, order=order)
+        return {"scan": res, "neighbour_order": order, "trace": [f"scanner: {res.summary()}"] + extra}
     return scanner

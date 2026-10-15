@@ -73,7 +73,7 @@ def validate_reply(obj, anomalies, suspects):
 
 
 def rule_based_llm(system: str, user: str) -> str:
-    """Deterministic stand-in for EVERY LLM node (Diagnoser, Critic, Pooling), dispatched on the prompt's marker.
+    """Deterministic stand-in for EVERY LLM node (Diagnoser, Critic, Pooling, Scanner), dispatched on the prompt's marker.
 
     Each node's stand-in reproduces the hard-coded policy that node had before it was given a model, so `--llm offline`
     is both reproducible without an API key and a true baseline: any difference between an offline run and a real-model
@@ -81,6 +81,9 @@ def rule_based_llm(system: str, user: str) -> str:
     """
     from .critic import MARK as CRITIC_MARK, rule_based_route
     from .pooling import MARK as POOLING_MARK, rule_based_moves
+    from .scanner import MARK as SCANNER_MARK, rule_based_neighbours
+    if SCANNER_MARK in user:
+        return rule_based_neighbours(user)
     if CRITIC_MARK in user:
         return rule_based_route(user)
     if POOLING_MARK in user:

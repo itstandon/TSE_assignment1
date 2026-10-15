@@ -1,5 +1,6 @@
 """LLM adapter. An 'llm' is any callable (system, user) -> str, so tests can inject a fake.
-Configuration comes from .env.local at the repo root (LLM_PROVIDER, the provider's API key, optional LLM2_MODEL, LLM2_BASE_URL, LLM_SEED)."""
+Configuration comes from .env.local at the repo root (LLM_PROVIDER, the provider's API key, optional LLM2_MODEL, LLM2_BASE_URL, LLM_SEED).
+The default provider is the local Qwen 2.5 7B served by llama.cpp (scripts/start_qwen_server.sh): no API key, no cloud."""
 import hashlib
 import json
 import os
@@ -52,12 +53,17 @@ def openai_compat_llm(model: str, api_key: str, base_url: str = "https://api.gro
                 if e.code != 400 or drop is None:   # 429 rate limit, 401 bad key, ... -> surface it
                     raise RuntimeError(f"LLM API error {e.code}: {e.read().decode()[:300]}") from e
                 payload.pop(drop, None)             # endpoint rejected a parameter (JSON mode, then seed): retry without it
+            except (urllib.error.URLError, TimeoutError) as e:   # still unreachable after post()'s retries
+                raise RuntimeError(f"cannot reach the LLM server at {base_url} ({getattr(e, 'reason', e)}); "
+                                   "for the local Qwen model run scripts/start_qwen_server.sh") from e
     call.name = f"{model}@seed{seed}"
     return call
 
 
-# Provider presets: LLM_PROVIDER picks one (default groq). Each has its own key variable, so both keys can sit in .env.local.
+# Provider presets: LLM_PROVIDER picks one (default qwen). Each hosted one has its own key variable, so keys can sit side by side
+# in .env.local. qwen is the local llama-server (key_env None: no key needed); port 8081 matches scripts/start_qwen_server.sh.
 PROVIDERS = {
+    "qwen": dict(key_env=None, model="qwen2.5-7b-instruct", base_url="http://127.0.0.1:8081/v1"),
     "groq": dict(key_env="LLM2_API_KEY", model="openai/gpt-oss-120b", base_url="https://api.groq.com/openai/v1"),
     "google": dict(key_env="GOOGLE_API_KEY", model="gemini-3.5-flash",
                    base_url="https://generativelanguage.googleapis.com/v1beta/openai"),   # Google's OpenAI-compatible endpoint
@@ -65,13 +71,13 @@ PROVIDERS = {
 
 
 def llm_from_env():
-    """Build an llm from env vars: LLM_PROVIDER (groq | google), that provider's key (LLM2_API_KEY | GOOGLE_API_KEY),
+    """Build an llm from env vars: LLM_PROVIDER (qwen | groq | google), that provider's key (none | LLM2_API_KEY | GOOGLE_API_KEY),
     and optional LLM2_MODEL, LLM2_BASE_URL (override the provider's defaults) and LLM_SEED."""
-    provider = os.environ.get("LLM_PROVIDER", "groq").strip().lower()
+    provider = os.environ.get("LLM_PROVIDER", "qwen").strip().lower()
     if provider not in PROVIDERS:
         raise RuntimeError(f"LLM_PROVIDER must be one of {sorted(PROVIDERS)}, got {provider!r}")
     p = PROVIDERS[provider]
-    key = os.environ.get(p["key_env"])
+    key = os.environ.get(p["key_env"]) if p["key_env"] else "no-key"   # llama-server ignores the Authorization header
     if not key:
         raise RuntimeError(f"{p['key_env']} is not set (needed for LLM_PROVIDER={provider})")
     return openai_compat_llm(

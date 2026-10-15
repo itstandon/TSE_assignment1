@@ -22,7 +22,7 @@ from .state import JUMP_PCT, MIN_LISTINGS, PipelineState, Scope
 
 def build_graph(snap: Snapshot, llm, min_listings: int = MIN_LISTINGS, jump_pct: float = JUMP_PCT):
     g = StateGraph(PipelineState)
-    g.add_node("scanner", make_scanner(snap, min_listings))
+    g.add_node("scanner", make_scanner(snap, min_listings, llm=llm))
     g.add_node("statistician", make_statistician(snap))
     g.add_node("critic", make_critic(snap, min_listings, jump_pct, llm=llm))
     g.add_node("pooling", make_pooling(min_listings, llm=llm))

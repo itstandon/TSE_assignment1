@@ -75,6 +75,7 @@ class PipelineState(TypedDict, total=False):
     criteria: Any                       # housing_trends.Criteria
     scope: Scope
     scan: Any                           # ScanResult
+    neighbour_order: dict               # {zip: neighbours, most comparable first}; ranked once by the Scanner
     stat_instruction: Any               # StatInstruction (Critic / Diagnoser edit it; default = plain median)
     stats: Any                          # StatResult
     route: str                          # Critic's decision: pooling | recompute | diagnoser | render

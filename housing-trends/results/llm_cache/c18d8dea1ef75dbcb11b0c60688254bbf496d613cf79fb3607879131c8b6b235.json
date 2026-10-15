@@ -1,0 +1,1 @@
+{"tag": "qwen2.5-7b-instruct@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"22 thin buckets with a worst shortfall of 15 below the threshold of 20, and only 1 month of rescans used out of 3 allowed suggests widening the scope could improve coverage.\"}"}

@@ -1,0 +1,28 @@
+# housing-trends
+
+## LLM: local Qwen 2.5 7B
+
+The LLM agents (Parser for free-text input, Scanner's choice of comparable neighbour ZIPs, Critic and Pooling
+decisions, Anomaly Diagnoser) use **Qwen 2.5 7B
+Instruct** (GGUF, Q4_K_M) served locally by llama.cpp's `llama-server`. No API key and no cloud are involved.
+`LLM_PROVIDER=qwen` in `.env.local` is the default.
+
+On a GPU node (the llama-server builds need CUDA). Ask for enough RAM: the server alone takes ~1.8 GB, so a 2 GB
+job gets the server OOM-killed as soon as the app runs (e.g. `salloc -p u22 --gres=gpu:1 --mem=16G`):
+
+```bash
+srun --jobid=<JOBID> --overlap --pty bash          # or: srun -p u22 --gres=gpu:1 --pty bash
+cd ~/TSE_assn/TSE_assignment1/housing-trends
+python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt     # once
+bash scripts/start_qwen_server.sh > qwen.log 2>&1 &                       # = make qwen-server, http://127.0.0.1:8081/v1
+until curl -s localhost:8081/health | grep -q ok; do sleep 2; done; echo "Qwen ready"
+.venv/bin/streamlit run app_input.py --server.port 8501 --server.address 0.0.0.0 --server.headless true
+```
+
+From your laptop: `ssh -L 8501:<node>:8501 <user>@ada.iiit.ac.in`, then open http://localhost:8501 and pick
+"Qwen 7B (local)". Scripts work the same way (`scripts/run_pipeline.py`, `scripts/try_parser.py`,
+`scripts/run_mrs.py --llm real`). Override `QWEN_GGUF`, `QWEN_PORT`, `QWEN_HOST`, `LLAMA_SERVER` if needed; port 8081
+avoids vrspecml's 8080. If the server runs on another host, set `LLM2_BASE_URL=http://<host>:8081/v1` in `.env.local`.
+
+Replies are cached in `results/llm_cache/`, keyed by model + seed (`qwen2.5-7b-instruct@seed42`). To go back to a
+hosted model, set `LLM_PROVIDER=groq` or `google` and its key in `.env.local`. Tests use fake LLMs: `make test`.

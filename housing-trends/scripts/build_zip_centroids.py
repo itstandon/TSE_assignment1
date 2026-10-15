@@ -1,7 +1,7 @@
 """Ask the LLM ONCE for the approximate centroid of every ZIP in the snapshot, validate it hard, and freeze it to
 data/snapshot/zip_centroids.json.
 
-  python scripts/build_zip_centroids.py                 # real LLM (needs a key in .env.local); replies are cached
+  python scripts/build_zip_centroids.py                 # real LLM (local Qwen by default, see .env.local); replies are cached
   python scripts/build_zip_centroids.py --show          # print what is currently frozen, change nothing
   python scripts/build_zip_centroids.py --audit         # re-validate the frozen file, change nothing
 

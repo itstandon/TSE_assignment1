@@ -1,0 +1,1 @@
+{"tag": "qwen2.5-7b-instruct@seed42", "reply": "{\"choices\":[{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"padding months alone suffices to reach the threshold\"}]}"}

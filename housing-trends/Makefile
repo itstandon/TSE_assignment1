@@ -1,4 +1,4 @@
-.PHONY: install test mr mr-quick app
+.PHONY: install test mr mr-quick app qwen-server
 
 install:
 	pip install -r requirements.txt
@@ -15,3 +15,7 @@ mr-quick:
 
 app:
 	python -m streamlit run app_input.py
+
+# Local Qwen 2.5 7B (llama.cpp) for the LLM agents; run on a GPU node, keep it running.
+qwen-server:
+	bash scripts/start_qwen_server.sh

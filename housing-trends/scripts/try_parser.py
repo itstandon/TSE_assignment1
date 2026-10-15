@@ -1,6 +1,6 @@
 """Run the Parser Agent against the frozen snapshot.
 Usage: python scripts/try_parser.py "affordable homes in dallas"
-Needs LLM2_API_KEY in .env.local (see README).
+Needs the LLM from .env.local: the local Qwen server by default (bash scripts/start_qwen_server.sh, see README).
 """
 import json
 import pathlib

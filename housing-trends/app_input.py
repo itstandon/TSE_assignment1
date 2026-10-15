@@ -43,7 +43,7 @@ def snapshot_hash(p):
 
 
 def real_llm():
-    base = llm_from_env()                                  # raises RuntimeError if LLM2_API_KEY is missing
+    base = llm_from_env()                                  # local Qwen by default; RuntimeError if a hosted provider's key is missing
     return CachedLLM(base, ROOT / "results/llm_cache", tag=base.name)
 
 
@@ -92,8 +92,9 @@ with text_tab:
 
 with st.expander("Analysis options"):
     o1, o2, o3 = st.columns(3)
-    llm_choice = o1.radio("Diagnoser LLM", ["Offline stand-in", "Real LLM"],
-                          help="The Diagnoser judges outlier listings. The stand-in is rule-based and needs no API key.")
+    llm_choice = o1.radio("Diagnoser LLM", ["Offline stand-in", "Qwen 7B (local)"],
+                          help="The Diagnoser judges outlier listings. The stand-in is rule-based; Qwen 2.5 7B runs locally "
+                               "via scripts/start_qwen_server.sh (no API key).")
     min_listings = o2.number_input("Coverage threshold (listings per ZIP-month)", 1, 200, MIN_LISTINGS)
     jump_pct = o3.number_input("Price jump threshold (%)", 5.0, 100.0, JUMP_PCT, step=5.0)
 
@@ -106,7 +107,7 @@ def analyse(inp) -> dict:
     if not has_matches(inp.criteria):
         out["nomatch"] = True
         return out
-    llm = real_llm() if llm_choice == "Real LLM" else rule_based_llm
+    llm = real_llm() if llm_choice == "Qwen 7B (local)" else rule_based_llm
     with st.spinner("Running the agents (scan, statistics, critic, pooling, diagnoser)..."):
         state = run(inp.criteria, snap, llm, min_listings=int(min_listings), jump_pct=float(jump_pct))
     out.update(report=state["report"], llm=getattr(llm, "name", "llm"))
@@ -120,8 +121,9 @@ if request:
         inp = handle_input(ctx=ctx, form=payload) if kind == "form" else handle_input(ctx=ctx, text=payload, llm=real_llm())
         st.session_state["out"] = analyse(inp)
     except RuntimeError as ex:
-        st.session_state["out"] = {"fatal": f"An LLM API key is needed for this option ({ex}). Add it to .env.local, "
-                                            "or use the form with the offline stand-in." if "_API_KEY" in str(ex)
+        st.session_state["out"] = {"fatal": f"The LLM is not available ({ex}). Start the local Qwen server (scripts/start_qwen_server.sh) "
+                                            "or set LLM_PROVIDER and its key in .env.local, "
+                                            "or use the form with the offline stand-in." if "_API_KEY" in str(ex) or "cannot reach" in str(ex)
                                    else f"Something went wrong: {ex}"}
     except Exception as ex:
         st.session_state["out"] = {"fatal": f"Something went wrong while running the analysis ({type(ex).__name__}: {ex})."}

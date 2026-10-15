@@ -1,0 +1,1 @@
+{"tag": "qwen2.5-7b-instruct@seed42", "reply": "{\n  \"zips\": [\"75241\", \"75216\"],\n  \"price_max\": 400000,\n  \"beds_min\": 3,\n  \"beds_max\": 3,\n  \"assumptions\": [\"price_max = p50\"]\n}"}

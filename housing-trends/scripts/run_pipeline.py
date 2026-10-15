@@ -1,7 +1,7 @@
 """Run the full agent graph on the frozen snapshot and save the execution trace.
 
   python scripts/run_pipeline.py --all --offline                 # whole city, deterministic stand-in for the Diagnoser
-  python scripts/run_pipeline.py --zips 75241,75219              # real LLM (needs LLM2_API_KEY in .env.local), replies cached
+  python scripts/run_pipeline.py --zips 75241,75219              # real LLM (local Qwen by default: start scripts/start_qwen_server.sh), replies cached
   python scripts/run_pipeline.py --all --price-max 400000 --beds-min 3 --name filtered
 
 The trace file records which model answered, so a report can say exactly what produced it.
