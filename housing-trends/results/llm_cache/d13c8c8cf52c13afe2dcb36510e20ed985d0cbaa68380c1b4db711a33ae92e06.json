@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"199 thin buckets with median shortfall 16; rescans available, so widening improves coverage\"}"}

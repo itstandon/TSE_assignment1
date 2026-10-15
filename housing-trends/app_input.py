@@ -31,7 +31,7 @@ path = st.sidebar.text_input("Snapshot CSV", "data/snapshot/listings_dfw.csv")
 def load_data(p):
     df = pd.read_csv(p, dtype={"zip_code": str})
     ctx = SnapshotContext.from_dataframe(df, type_col="property_type" if "property_type" in df.columns else None)
-    return ctx, Snapshot(df)
+    return ctx, Snapshot.frozen(df)
 
 
 def snapshot_hash(p):

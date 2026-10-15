@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"Most buckets are thin (286/324) and well within rescan budget; pooling can resolve them without exceeding allowed rescans.\"}"}

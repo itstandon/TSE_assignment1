@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"Over half the buckets are thin with median listings far below the threshold; rescans are still available, so widening (pool) will resolve many gaps rather than leaving 180 buckets unresolved.\"}"}

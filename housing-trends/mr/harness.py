@@ -48,7 +48,7 @@ def make_llm(mode: str):
 
 def run_contract(df, c, llm, min_listings=MIN_LISTINGS, jump_pct=JUMP_PCT):
     """One pipeline run -> (contract table, loops used 'rescans/recomputes/diagnoser rounds', Report)."""
-    state = run(c, Snapshot(df), llm, min_listings=min_listings, jump_pct=jump_pct)
+    state = run(c, Snapshot.frozen(df), llm, min_listings=min_listings, jump_pct=jump_pct)
     loops = "/".join(str(state.get(k, 0)) for k in ("rescans", "recomputes", "diag_rounds"))
     return contract(state["report"]), loops, state["report"]
 

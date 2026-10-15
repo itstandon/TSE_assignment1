@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"Many thin buckets (62%) with median shortfall 14 and rescans available; pooling can widen scope to meet thresholds\"}"}

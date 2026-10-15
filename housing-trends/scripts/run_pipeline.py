@@ -34,7 +34,7 @@ a = ap.parse_args()
 
 df = pd.read_csv(a.snapshot, dtype={"zip_code": str})
 ctx = SnapshotContext.from_dataframe(df)
-snap = Snapshot(df)
+snap = Snapshot.frozen(df)
 zips = sorted(ctx.valid_zips) if a.all or not a.zips else a.zips.split(",")
 form = dict(zips=zips, end_month=a.end_month, price_min=a.price_min, price_max=a.price_max, beds_min=a.beds_min, sqft_min=a.sqft_min)
 inp = handle_input(ctx=ctx, form={k: v for k, v in form.items() if v is not None})

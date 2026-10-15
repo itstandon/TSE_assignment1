@@ -33,6 +33,7 @@ import pandas as pd
 
 from ..context import month_index, month_range
 from ..criteria import Criteria
+from ..geo import load_centroids, neighbour_order
 from ..state import MAX_TIME_PAD, MAX_ZIP_EXTRA, MIN_LISTINGS, Scope
 
 OPTIONAL_COLS = ("bed", "bath", "house_size", "acre_lot", "property_type")
@@ -40,8 +41,10 @@ OPTIONAL_COLS = ("bed", "bath", "house_size", "acre_lot", "property_type")
 
 # ---------------------------------------------------------------- snapshot
 class Snapshot:
-    def __init__(self, df: pd.DataFrame, months=None, zips=None):
-        """`months` / `zips` declare the coverage explicitly; by default it is inferred from the rows."""
+    def __init__(self, df: pd.DataFrame, months=None, zips=None, centroids=None):
+        """`months` / `zips` declare the coverage explicitly; by default it is inferred from the rows.
+        `centroids` {zip: (lat, lon)} orders the pooling neighbours geographically; without it (the default, and what
+        the unit tests use) the numerically nearest ZIP codes are used. See housing_trends.geo."""
         need = {"listing_id", "zip_code", "month", "price"} - set(df.columns)
         if need:
             raise ValueError(f"snapshot is missing columns: {sorted(need)}")
@@ -54,12 +57,17 @@ class Snapshot:
         self.df = df
         self.zips = sorted(set(zips) if zips else df.zip_code.dropna().unique(), key=int)
         self.months = list(months) if months else month_range(df.month.min(), df.month.max())
-        self._order = {z: sorted((o for o in self.zips if o != z), key=lambda o: (abs(int(o) - int(z)), int(o)))
-                       for z in self.zips}
+        self.centroids = dict(centroids or {})
+        self._order = neighbour_order(self.zips, self.centroids)
 
     @classmethod
-    def from_csv(cls, path) -> "Snapshot":
-        return cls(pd.read_csv(path, dtype={"zip_code": str}))
+    def from_csv(cls, path, centroids=None) -> "Snapshot":
+        return cls(pd.read_csv(path, dtype={"zip_code": str}), centroids=centroids)
+
+    @classmethod
+    def frozen(cls, df, **kw) -> "Snapshot":
+        """The snapshot as the application uses it: pooling neighbours ordered by the frozen ZIP centroids."""
+        return cls(df, centroids=load_centroids(), **kw)
 
     def neighbours(self, z: str, k: int) -> list[str]:
         return self._order[z][:k]

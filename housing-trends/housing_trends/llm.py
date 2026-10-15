@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import pathlib
+import time
 import urllib.error
 import urllib.request
 
@@ -19,13 +20,26 @@ def openai_compat_llm(model: str, api_key: str, base_url: str = "https://api.gro
     """Any OpenAI-compatible chat endpoint (Groq, vLLM, ...). Temperature 0, fixed seed, JSON mode.
     Record `model` and `seed` in your run log: they are part of the experiment."""
 
-    def post(payload):
+    def post(payload, retries: int = 5):
+        """A rate limit or a transient 5xx is waited out, not reported: it says nothing about the system under test.
+        Honours Retry-After when the gateway sends one, otherwise backs off exponentially."""
         req = urllib.request.Request(
             f"{base_url.rstrip('/')}/chat/completions", data=json.dumps(payload).encode(),
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}",
                      "User-Agent": "housing-trends/0.1"})   # default urllib UA is blocked by some gateways
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return json.loads(r.read())["choices"][0]["message"]["content"]
+        for attempt in range(retries + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as r:
+                    return json.loads(r.read())["choices"][0]["message"]["content"]
+            except urllib.error.HTTPError as e:
+                if e.code not in (429, 500, 502, 503, 504) or attempt == retries:
+                    raise
+                wait = float(e.headers.get("Retry-After") or 0) or min(60.0, 2.0 * 2 ** attempt)
+                time.sleep(wait)
+            except (urllib.error.URLError, TimeoutError):
+                if attempt == retries:
+                    raise
+                time.sleep(min(60.0, 2.0 * 2 ** attempt))
 
     def call(system: str, user: str) -> str:
         payload = {"model": model, "temperature": 0, "seed": seed,

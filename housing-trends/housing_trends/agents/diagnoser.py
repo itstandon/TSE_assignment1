@@ -73,8 +73,18 @@ def validate_reply(obj, anomalies, suspects):
 
 
 def rule_based_llm(system: str, user: str) -> str:
-    """Deterministic stand-in with the same prompt -> JSON contract. For tests and key-less reproduction ONLY:
-    it applies the rule a human would, so results that use it must be labelled as such in the report."""
+    """Deterministic stand-in for EVERY LLM node (Diagnoser, Critic, Pooling), dispatched on the prompt's marker.
+
+    Each node's stand-in reproduces the hard-coded policy that node had before it was given a model, so `--llm offline`
+    is both reproducible without an API key and a true baseline: any difference between an offline run and a real-model
+    run is the model's judgement, not a change of plumbing. Results produced with it must be labelled as such.
+    """
+    from .critic import MARK as CRITIC_MARK, rule_based_route
+    from .pooling import MARK as POOLING_MARK, rule_based_moves
+    if CRITIC_MARK in user:
+        return rule_based_route(user)
+    if POOLING_MARK in user:
+        return rule_based_moves(user)
     ev = json.loads(user.split(MARK, 1)[1].split("\n", 1)[0])
     out = {"verdicts": [], "explanations": []}
     for s in ev["suspects"]:

@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"10 thin buckets (3%); all fixable; median shortfall small; one rescan left, so pooling improves coverage\"}"}

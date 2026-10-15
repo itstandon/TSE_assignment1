@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"Many thin buckets (51% of total) far below threshold and no rescans used; pooling can improve coverage within allowed rescans\"}"}
