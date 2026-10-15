@@ -61,7 +61,9 @@ def test_transforms_do_not_modify_their_input():
     df, c = tiny_df()
     before = df.copy()
     rng = np.random.default_rng(1)
-    for fn in (T.reorder, T.relabel_ids, T.duplicate_all, T.to_thousands, T.add_x_to_one_month, T.scale_prices, T.raise_one_zip):
+    for fn in (T.reorder, T.sort_by_price, T.relabel_ids, T.duplicate_all, T.duplicate_random_n, T.add_fake_month, T.to_thousands,
+               T.add_x_to_one_month, T.scale_prices, T.raise_one_zip, T.double_one_zip, T.remove_top_per_zip, T.inject_outlier,
+               T.replace_month_with_previous):
         fn(df, c, rng)
     pd.testing.assert_frame_equal(df, before)
 
@@ -74,10 +76,66 @@ def test_reorder_and_relabel_keep_the_same_listings():
     assert sorted(l.listing_id) == sorted(df.listing_id) and l.price.equals(df.price)
 
 
+def test_sort_by_price_is_ascending_inside_each_zip_month_and_keeps_the_rows():
+    df, c = tiny_df()
+    d = T.sort_by_price(df.sample(frac=1, random_state=3), c, np.random.default_rng(0)).df
+    assert sorted(d.listing_id) == sorted(df.listing_id)
+    assert all(g.price.is_monotonic_increasing for _, g in d.groupby(["zip_code", "month"]))
+
+
 def test_duplicate_doubles_rows_with_unique_ids():
     df, c = tiny_df()
     d = T.duplicate_all(df, c, np.random.default_rng(0)).df
     assert len(d) == 2 * len(df) and d.listing_id.is_unique
+
+
+def test_duplicate_random_n_gives_each_zip_n_copies_with_unique_ids():
+    snap = build({(z, m): flat(5, 300_000) for z in ("75201", "75202", "75203") for m in MONTHS3}, MONTHS3, ["75201", "75202", "75203"])
+    f = T.duplicate_random_n(snap.df, crit(["75201"], MONTHS3[0], MONTHS3[2]), np.random.default_rng(4))
+    n_of, d = f.meta["n_of"], f.df
+    assert d.listing_id.is_unique and all(1 <= n <= T.MAX_COPIES for n in n_of.values())
+    base = snap.df.groupby("zip_code").size()
+    assert all(len(d[d.zip_code == z]) == base[z] * n_of[z] for z in n_of)
+
+
+def test_fake_month_lies_outside_any_pooling_padding_and_is_10x():
+    df, c = tiny_df()
+    f = T.add_fake_month(df, c, np.random.default_rng(0))
+    fake = f.meta["fake_month"]
+    assert fake == "2025-09" and len(f.df) == len(df) + f.meta["rows"] and f.df.listing_id.is_unique
+    new = f.df[f.df.month == fake]
+    assert new.price.min() >= T.FAKE_FACTOR * df.price.min() * 0.999 and set(new.zip_code) <= set(c.zips)
+
+
+def test_remove_top_deletes_one_listing_per_zip_and_it_is_the_dearest():
+    snap = build({(z, m): flat(5, 300_000) for z in ("75201", "75202") for m in MONTHS3}, MONTHS3, ["75201", "75202"])
+    c = crit(["75201", "75202"], MONTHS3[0], MONTHS3[2])
+    f = T.remove_top_per_zip(snap.df, c, np.random.default_rng(0))
+    assert len(f.df) == len(snap.df) - 2 and len(f.meta["removed"]) == 2
+    for z in c.zips:
+        assert f.df[f.df.zip_code == z].price.max() <= snap.df[snap.df.zip_code == z].price.max()
+        assert snap.df[snap.df.zip_code == z].price.max() in snap.df[snap.df.listing_id.isin(f.meta["removed"])].price.values
+
+
+def test_double_one_zip_and_inject_outlier_change_exactly_what_they_say():
+    snap = build({(z, m): flat(5, 300_000) for z in ("75201", "75202") for m in MONTHS3}, MONTHS3, ["75201", "75202"])
+    df, c = snap.df, crit(["75201", "75202"], MONTHS3[0], MONTHS3[2])
+    f = T.double_one_zip(df, c, np.random.default_rng(1))
+    z = f.meta["zip"]
+    assert np.allclose(f.df[f.df.zip_code == z].price, 2 * df[df.zip_code == z].price)
+    assert f.df[f.df.zip_code != z].price.equals(df[df.zip_code != z].price)
+    o = T.inject_outlier(df, c, np.random.default_rng(1))
+    changed = o.df[o.df.price != df.price]
+    assert len(changed) == 1 and changed.listing_id.iloc[0] == o.meta["id"]
+    assert changed.price.iloc[0] == T.OUTLIER_FACTOR * df.loc[changed.index[0], "price"]
+
+
+def test_replace_month_copies_the_previous_month_and_drops_the_original():
+    df, c = tiny_df()
+    f = T.replace_month_with_previous(df, c, np.random.default_rng(0))
+    m, p = f.meta["month"], f.meta["prev"]
+    assert m != c.start_month and f.df.listing_id.is_unique and len(f.df) == len(df) - (df.month == m).sum() + (df.month == p).sum()
+    assert sorted(f.df[f.df.month == m].price) == sorted(df[df.month == p].price)
 
 
 def test_scale_thousands_and_shift_and_widen_and_restrict():
@@ -97,50 +155,91 @@ def test_scale_thousands_and_shift_and_widen_and_restrict():
 
 
 # ---- relation checks on hand-made contracts (does each check catch what it should?)
-def test_duplicate_check_requires_doubled_counts_and_same_statistics():
-    src = full([100.0, 200.0], n=[10, 12])
-    good = full([100.0, 200.0], n=[20, 24])
-    assert not MR_BY_ID["MR3"].check(src, good, None, {})
-    assert MR_BY_ID["MR3"].check(src, full([100.0, 200.0], n=[20, 25]), None, {})
-    assert MR_BY_ID["MR3"].check(src, full([100.0, 210.0], n=[20, 24]), None, {})
+def with_zips(c, rows, verdicts=()):
+    """Attach a per ZIP-month table: rows = [(zip, month, price, n_own)]; ppsf = price/100, n_used = n_own, mom = 1."""
+    t = pd.DataFrame([dict(price=p, ppsf=p / 100, n_own=n, n_used=n, mom_price_pct=1.0, zip_code=z, month=m) for z, m, p, n in rows],
+                     index=[f"{z}@{m}" for z, m, _, _ in rows])
+    c.attrs["buckets"], c.attrs["verdicts"] = t, list(verdicts)
+    return c
+
+
+def test_equal_check_also_looks_at_the_per_zip_rows():
+    rows = [("75201", "2025-01", 100.0, 10), ("75201", "2025-02", 200.0, 10)]
+    src = with_zips(full([100.0, 200.0]), rows)
+    assert not MR_BY_ID["MR1"].check(src, with_zips(full([100.0, 200.0]), rows), None, {})
+    assert MR_BY_ID["MR1"].check(src, with_zips(full([100.0, 200.0]), [rows[0], ("75201", "2025-02", 201.0, 10)]), None, {})
+
+
+def test_random_n_check_scales_only_the_own_count():
+    rows = [("75201", "2025-01", 100.0, 10), ("75202", "2025-01", 150.0, 10)]
+    src, meta = with_zips(full([100.0]), rows), {"n_of": {"75201": 3, "75202": 1}}
+    good = [("75201", "2025-01", 100.0, 30), ("75202", "2025-01", 150.0, 10)]
+    assert not MR_BY_ID["MR4"].check(src, with_zips(full([100.0]), good), None, meta)
+    assert MR_BY_ID["MR4"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 100.0, 10), good[1]]), None, meta)
+    assert MR_BY_ID["MR4"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 120.0, 30), good[1]]), None, meta)
+
+
+def test_remove_top_check_flags_only_increases():
+    src = with_zips(full([1.0]), [("75201", "2025-01", 100.0, 10), ("75201", "2025-02", 100.0, 10)])
+    ok = with_zips(full([1.0]), [("75201", "2025-01", 90.0, 9), ("75201", "2025-02", 100.0, 9)])
+    bad = with_zips(full([1.0]), [("75201", "2025-01", 90.0, 9), ("75201", "2025-02", 130.0, 9)])
+    assert not MR_BY_ID["MR6"].check(src, ok, None, {}) and len(MR_BY_ID["MR6"].check(src, bad, None, {})) == 1
+
+
+def test_zip_doubled_check_scales_one_zip_and_leaves_the_rest():
+    rows = [("75201", "2025-01", 100.0, 10), ("75202", "2025-01", 150.0, 10)]
+    src, meta = with_zips(full([100.0]), rows), {"zip": "75201", "factor": 2.0}
+    assert not MR_BY_ID["MR9"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 200.0, 10), rows[1]]), None, meta)
+    assert MR_BY_ID["MR9"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 200.0, 10), ("75202", "2025-01", 160.0, 10)]), None, meta)
+    assert MR_BY_ID["MR9"].check(src, with_zips(full([100.0]), rows), None, meta)                    # nothing doubled
+
+
+def test_outlier_check_limits_the_move_and_demands_the_planted_listing_among_the_suspects():
+    rows = [("75201", "2025-01", 100.0, 10)]
+    src, meta = with_zips(full([100.0, 200.0]), rows), {"zip": "75201", "id": 7, "month": "2025-01"}
+    assert not MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)], [(7, "75201", "bad_listing")]), None, meta)
+    assert not MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)]), None, meta)   # Diagnoser never ran: fine
+    assert MR_BY_ID["MR10"].check(src, with_zips(full([130.0, 200.0]), [("75201", "2025-01", 105.0, 10)]), None, meta)       # overall moved 30%
+    assert MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 130.0, 10)]), None, meta)       # ZIP-month moved 30%
+    assert MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)], [(9, "75201", "bad_listing")]), None, meta)
+
+
+def test_month_copied_check_wants_equal_statistics_and_zero_change():
+    meta = {"month": "2025-02", "prev": "2025-01"}
+    good = full([100.0, 100.0, 300.0], n=[10, 10, 12], mom=[np.nan, 0.0, 200.0])
+    assert not MR_BY_ID["MR11"].check(None, good, None, meta)
+    assert MR_BY_ID["MR11"].check(None, full([100.0, 101.0, 300.0], n=[10, 10, 12], mom=[np.nan, 1.0, 200.0]), None, meta)
+    assert MR_BY_ID["MR11"].check(None, full([100.0, 100.0, 300.0], n=[10, 11, 12], mom=[np.nan, 0.0, 200.0]), None, meta)
 
 
 def test_scale_check_applies_the_factor_to_price_and_ppsf_only():
     src = full([100.0, 200.0])
     k = {"k": 2.0}
-    assert not MR_BY_ID["MR9"].check(src, full([200.0, 400.0], ppsf=[2.0, 4.0]), None, k)
-    assert MR_BY_ID["MR9"].check(src, full([100.0, 200.0]), None, k)         # nothing scaled
+    assert not MR_BY_ID["MR12"].check(src, full([200.0, 400.0], ppsf=[2.0, 4.0]), None, k)
+    assert MR_BY_ID["MR12"].check(src, full([100.0, 200.0]), None, k)         # nothing scaled
 
 
 def test_add_x_check_wants_a_rise_of_x_in_that_month_and_no_decrease_elsewhere():
     src, meta = full([100_000.0, 200_000.0, 300_000.0]), {"month": "2025-02", "x": 50_000}
-    assert not MR_BY_ID["MR7"].check(src, full([100_000.0, 250_000.0, 300_000.0]), None, meta)
-    assert MR_BY_ID["MR7"].check(src, full([100_000.0, 210_000.0, 300_000.0]), None, meta)       # rose by 10k, not 50k
-    assert MR_BY_ID["MR7"].check(src, full([90_000.0, 250_000.0, 300_000.0]), None, meta)        # another month decreased
+    assert not MR_BY_ID["MR5"].check(src, full([100_000.0, 250_000.0, 300_000.0]), None, meta)
+    assert MR_BY_ID["MR5"].check(src, full([100_000.0, 210_000.0, 300_000.0]), None, meta)       # rose by 10k, not 50k
+    assert MR_BY_ID["MR5"].check(src, full([90_000.0, 250_000.0, 300_000.0]), None, meta)        # another month decreased
 
 
 def test_monotonic_checks_have_the_right_direction():
     src, more, less = full([1.0, 2.0], n=[10, 10]), full([1.0, 2.0], n=[12, 10]), full([1.0, 2.0], n=[8, 10])
-    assert not MR_BY_ID["MR5"].check(src, more, None, {}) and MR_BY_ID["MR5"].check(src, less, None, {})
-    assert not MR_BY_ID["MR6"].check(src, less, None, {}) and MR_BY_ID["MR6"].check(src, more, None, {})
+    assert not MR_BY_ID["MR7"].check(src, more, None, {}) and MR_BY_ID["MR7"].check(src, less, None, {})
+    assert not MR_BY_ID["MR8"].check(src, less, None, {}) and MR_BY_ID["MR8"].check(src, more, None, {})
 
 
-def test_shift_check_compares_only_the_overlapping_months():
-    src = full([100.0, 200.0, 300.0], mom=[np.nan, 100.0, 50.0])
-    fol = full([200.0, 300.0, 999.0], mom=[np.nan, 50.0, 233.0])             # the new last month may differ freely
-    fol.index = ["2025-02", "2025-03", "2025-04"]
-    assert not MR_BY_ID["MR8"].check(src, fol, None, {})
-    fol.loc["2025-03", "price"] = 301.0
-    assert MR_BY_ID["MR8"].check(src, fol, None, {})
-
-
-def test_catalog_has_ten_mrs_across_the_three_families():
-    assert len(MRS) >= 8 and {m.family for m in MRS} == {"Invariance", "Monotonic", "Directional"}
+def test_catalog_has_twelve_mrs_across_the_three_families():
+    assert len(MRS) == 12 and {m.family for m in MRS} == {"Invariance", "Monotonic", "Directional"}
+    assert {f: sum(m.family == f for m in MRS) for f in ("Invariance", "Monotonic", "Directional")} == {"Invariance": 4, "Monotonic": 4, "Directional": 4}
     assert len({m.id for m in MRS}) == len(MRS) and all(m.fault and m.tolerance and m.subdomain for m in MRS)
 
 
 # ---- one tiny end-to-end trial per kind (calm data: 25 listings per month, no loop needs to fire)
-@pytest.mark.parametrize("mr_id", ["MR1", "MR2", "MR3", "MR4", "MR9"])
+@pytest.mark.parametrize("mr_id", ["MR1", "MR2", "MR3", "MR4", "MR6", "MR11", "MR12"])
 def test_invariance_and_scaling_hold_on_calm_data(mr_id):
     df, c = tiny_df()
     row = evaluate(MR_BY_ID[mr_id], df, c, base_id=0, seed=1)
