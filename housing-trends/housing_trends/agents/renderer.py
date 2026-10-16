@@ -82,6 +82,14 @@ def effective_filters(c, relaxed=()) -> str:
     return text + (f" · relaxed by Pooling: {', '.join(relaxed)}" if relaxed else "")
 
 
+def _stretch(st) -> dict:
+    """Keyword that makes a chart/table fill its container, for whichever Streamlit is installed. Newer releases take
+    `width="stretch"` (and `use_container_width` is deprecated, then removed); older ones, e.g. 1.48, reject `width` on
+    charts and only know `use_container_width=True`. Detected from the signature, so no version number is hard-coded."""
+    import inspect
+    return {"width": "stretch"} if "width" in inspect.signature(st.altair_chart).parameters else {"use_container_width": True}
+
+
 def _with_labels(df):
     df = df.copy()
     df["label"] = pd.to_datetime(df.month).dt.strftime("%b %y")
@@ -136,22 +144,22 @@ def show_dashboard(report: Report, *, zip_to_city: dict | None = None, llm_name:
         left, right = st.columns(2)
         with left:
             st.markdown("#### Median list price")
-            st.altair_chart(_line_chart(overall, "price", "$,.0f", "Median price"), width="stretch")
+            st.altair_chart(_line_chart(overall, "price", "$,.0f", "Median price"), **_stretch(st))
         with right:
             st.markdown("#### Median price per sq ft")
-            st.altair_chart(_line_chart(overall, "ppsf", "$,.0f", "Median $/sqft"), width="stretch")
+            st.altair_chart(_line_chart(overall, "ppsf", "$,.0f", "Median $/sqft"), **_stretch(st))
         left, right = st.columns(2)
         with left:
             st.markdown("#### Month-over-month price change")
             st.caption("Green = up, red = down")
-            st.altair_chart(_bar_chart(overall, "mom_price_pct", ".1f", "Change (%)", signed=True), width="stretch")
+            st.altair_chart(_bar_chart(overall, "mom_price_pct", ".1f", "Change (%)", signed=True), **_stretch(st))
         with right:
             st.markdown("#### Active listings per month")
-            st.altair_chart(_bar_chart(overall, "n", ",d", "Listings"), width="stretch")
+            st.altair_chart(_bar_chart(overall, "n", ",d", "Listings"), **_stretch(st))
         st.markdown("#### 12-month trend table")
         table = overall[["month", "n", "price", "ppsf", "mom_price_pct"]].round(1)
         table.columns = ["Month", "Listings", "Median price", "$ per sq ft", "Price change vs prior month (%)"]
-        st.dataframe(table, hide_index=True, width="stretch", column_config={
+        st.dataframe(table, hide_index=True, **_stretch(st), column_config={
             "Median price": st.column_config.NumberColumn(format="$%d"), "$ per sq ft": st.column_config.NumberColumn(format="$%.1f"),
             "Price change vs prior month (%)": st.column_config.NumberColumn(format="%+.1f%%")})
 
@@ -168,7 +176,7 @@ def show_dashboard(report: Report, *, zip_to_city: dict | None = None, llm_name:
         ztab = pd.DataFrame(rows)
         st.markdown("#### All ZIP codes")
         st.caption("Click a column header to sort.")
-        st.dataframe(ztab, hide_index=True, width="stretch", height=300, column_config={
+        st.dataframe(ztab, hide_index=True, **_stretch(st), height=300, column_config={
             "First month": st.column_config.NumberColumn(format="$%d"), "Latest month": st.column_config.NumberColumn(format="$%d"),
             "Change %": st.column_config.NumberColumn(format="%+.1f%%"),
             "Months pooled": st.column_config.NumberColumn(help="Months where Pooling borrowed listings from neighbouring months or ZIPs")})
@@ -185,12 +193,12 @@ def show_dashboard(report: Report, *, zip_to_city: dict | None = None, llm_name:
                 y=alt.Y("price:Q", title=None, scale=alt.Scale(zero=False), axis=alt.Axis(format="$,.0f")),
                 color=alt.Color("series:N", title=None, scale=alt.Scale(domain=[f"ZIP {pick}", "All ZIPs"], range=[ACCENT, MUTED])),
                 tooltip=["label", "series", alt.Tooltip("price:Q", format="$,.0f")]).properties(height=300)
-            st.altair_chart(chart, width="stretch")
+            st.altair_chart(chart, **_stretch(st))
             notes = one[one.notes != ""][["month", "n_used", "notes"]].rename(
                 columns={"month": "Month", "n_used": "Listings used", "notes": "What the agents did"})
             if len(notes):
                 with st.expander(f"Adjustments the agents made in ZIP {pick} ({len(notes)} months)"):
-                    st.dataframe(notes, hide_index=True, width="stretch")
+                    st.dataframe(notes, hide_index=True, **_stretch(st))
 
     # ---- coverage metrics and warnings
     with tab_quality:
@@ -226,7 +234,7 @@ def show_dashboard(report: Report, *, zip_to_city: dict | None = None, llm_name:
             if report.verdicts:
                 vt = pd.DataFrame(report.verdicts)[["listing_id", "zip_code", "month", "price", "verdict", "reason"]]
                 vt.columns = ["Listing", "ZIP", "Month", "Price", "Verdict", "Reason"]
-                st.dataframe(vt, hide_index=True, width="stretch", column_config={"Price": st.column_config.NumberColumn(format="$%d")})
+                st.dataframe(vt, hide_index=True, **_stretch(st), column_config={"Price": st.column_config.NumberColumn(format="$%d")})
         else:
             st.caption("The Diagnoser was not needed: no unexplained price jumps survived the earlier checks.")
 

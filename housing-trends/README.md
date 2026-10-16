@@ -7,9 +7,6 @@ decisions, Anomaly Diagnoser) use **Qwen 2.5 7B
 Instruct** (GGUF, Q4_K_M) served locally by llama.cpp's `llama-server`. No API key and no cloud are involved.
 `LLM_PROVIDER=qwen` in `.env.local` is the default.
 
-On a GPU node (the llama-server builds need CUDA). Ask for enough RAM: the server alone takes ~1.8 GB, so a 2 GB
-job gets the server OOM-killed as soon as the app runs (e.g. `salloc -p u22 --gres=gpu:1 --mem=16G`):
-
 ```bash
 srun --jobid=<JOBID> --overlap --pty bash          # or: srun -p u22 --gres=gpu:1 --pty bash
 cd ~/TSE_assn/TSE_assignment1/housing-trends
@@ -19,8 +16,10 @@ until curl -s localhost:8081/health | grep -q ok; do sleep 2; done; echo "Qwen r
 .venv/bin/streamlit run app_input.py --server.port 8501 --server.address 0.0.0.0 --server.headless true
 ```
 
-From your laptop: `ssh -L 8501:<node>:8501 <user>@ada.iiit.ac.in`, then open http://localhost:8501 and pick
-"Qwen 7B (local)". Scripts work the same way (`scripts/run_pipeline.py`, `scripts/try_parser.py`,
+From laptop: `ssh -L 8501:<node>:8501 <user>@ada-gw1`, then open http://localhost:8501 and pick
+"Qwen 7B (local)". 
+
+Scripts work the same way (`scripts/run_pipeline.py`, `scripts/try_parser.py`,
 `scripts/run_mrs.py --llm real`). Override `QWEN_GGUF`, `QWEN_PORT`, `QWEN_HOST`, `LLAMA_SERVER` if needed; port 8081
 avoids vrspecml's 8080. If the server runs on another host, set `LLM2_BASE_URL=http://<host>:8081/v1` in `.env.local`.
 
@@ -36,8 +35,6 @@ hosted model, set `LLM_PROVIDER=groq` or `google` and its key in `.env.local`. T
 | `make mr-diagnose` | Root-cause evidence `results/mr_diagnosis/` (loop ablations + per-bucket attribution) for `docs/root_cause_top3.md` | CPU only |
 | `python scripts/mr_replay.py MR2 0 101` | One trial replayed with both contracts and the loops that fired | CPU only |
 
-The Qwen MR run used **Ollama** (`qwen2.5:7b`, Q4_K_M, `OLLAMA_NUM_PARALLEL=4`) at `http://127.0.0.1:11434/v1`, not the
-llama-server setup above. `make mr-llm` sets `LLM_PROVIDER`, `LLM2_BASE_URL` and `LLM2_MODEL` itself, because
-`.env.local` may point `LLM2_*` at a hosted model. The model's seed is the trial seed, at temperature 0. Without the cache
+The Qwen MR run used **Ollama** (`qwen2.5:7b`, Q4_K_M, `OLLAMA_NUM_PARALLEL=4`) at `http://127.0.0.1:11434/v1`. The model's seed is the trial seed, at temperature 0. Without the cache
 a live re-run is not guaranteed to be byte-identical (batched parallel requests, GPU arithmetic, Ollama version).
 Ask for enough memory: 8 harness workers plus the model server exceeded a 10 GB job and got the server OOM-killed.
