@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"pool\",\"reason\":\"Need to widen scope as many buckets are thin and significantly below threshold, and rescans have been used.\"}"}

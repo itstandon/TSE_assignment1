@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\n    \"verdicts\": [\n        {\"listing_id\": 13623, \"verdict\": \"bad_listing\", \"reason\": \"price is about 1/10 of ZIP's typical price\"}\n    ],\n    \"explanations\": [\n        {\"zip_code\": \"75241\", \"month\": \"2025-12\", \"text\": \"Price jumped 33.8% month-over-month due to increased supply.\"}\n    ]\n}"}

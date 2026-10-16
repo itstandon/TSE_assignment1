@@ -152,8 +152,19 @@ Critic, Pooling, Diagnoser (LLM), LangGraph wiring and a captured loop trace, MR
   Ollama returned HTTP 500 for the in-flight calls). 0 trials had finished. Restarted with 5 workers, and the cached
   replies were replayed. A trial with any failed LLM call is recorded as an error, never silently run on the fallback.
   Log of the failed attempt: `results/mr_llm_run_oom_attempt.log`.
-- Progress at the time of writing: 52/270 trials, all MR2, all violated, 0 errors. [Update with the final table
-  from `results/mr_llm/summary.md`.]
+- Final (`results/mr_llm/summary.md`): 270 trials, 9,108 LLM calls, 0 failed calls, 0 errors, 0 skipped. Took about
+  4 h 21 min after the restart.
+
+  | MR | Qwen bases (95% CI) | Qwen runs | Offline bases (95% CI) | Offline runs |
+  |---|---|---|---|---|
+  | MR2 | 30/30, 100.0% (88.6-100.0) | 90/90 | 30/30, 100.0% (88.6-100.0) | 90/90 |
+  | MR4 | 25/30, 83.3% (66.4-92.7) | 75/90 | 16/30, 53.3% (36.1-69.8) | 48/90 |
+  | MR7 | 21/30, 70.0% (52.1-83.3) | 61/90 | 13/30, 43.3% (27.4-60.8) | 24/90 |
+
+- Qwen breaks MR4 and MR7 more often than the stand-in. In the cache, 957 of Qwen's 2,617 Pooling class choices (36.6%)
+  borrow ZIPs, while the rule pads months whenever that suffices (278 of 304 thin buckets). That is consistent with the
+  cross-ZIP leakage diagnosis. 12 invalid Qwen moves were rejected by the validator.
+- Seeds barely matter: in 89 of 90 (MR, base) pairs all 3 seeds gave the same outcome (one mixed MR7 base).
 
 ### Root-cause analysis of the top 3 (`docs/root_cause_top3.md`, `scripts/diagnose_top3.py`, `results/mr_diagnosis/`)
 - Ablation on the same 30 bases x 3 seeds (offline): `min_listings=0` disables Pooling, `jump_pct=1e9` disables

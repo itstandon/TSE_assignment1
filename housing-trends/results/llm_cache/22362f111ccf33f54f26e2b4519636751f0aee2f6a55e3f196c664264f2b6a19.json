@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"pool\",\"reason\":\"More than half of the buckets are thin, and they are significantly below the threshold. Widening the scope seems necessary to ensure coverage.\"}"}

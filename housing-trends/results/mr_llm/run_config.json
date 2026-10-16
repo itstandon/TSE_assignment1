@@ -1,7 +1,6 @@
 {
- "status": "partial: 64/270 trials",
  "llm_seed_policy": "the model's seed = the trial seed (source and follow-up runs share it)",
- "llm_calls": 1988,
+ "llm_calls": 9108,
  "llm_failures": 0,
  "seeds": [
   101,
@@ -10,7 +9,7 @@
  ],
  "bases_per_mr": 30,
  "pool_seed": 20261016,
- "llm": "cached:qwen2.5:7b (Ollama 0.30.10, OLLAMA_NUM_PARALLEL=4) @seed=trial seed",
+ "llm": "cached:qwen2.5:7b@seed101",
  "min_listings": 20,
  "jump_pct": 30.0,
  "snapshot": "listings_dfw.csv",

@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"pool\",\"reason\":\"Need one more rescan to cover all thin buckets, and the shortfall is within acceptable limits.\"}"}

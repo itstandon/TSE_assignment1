@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"adds more listings while keeping geography intact\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"sufficient to meet listing threshold without changing geography\"}]}"}

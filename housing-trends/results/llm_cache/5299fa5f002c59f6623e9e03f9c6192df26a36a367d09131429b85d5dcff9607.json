@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"recompute\",\"reason\":\"The jump exceeds the threshold and recomputing with a robust mean is cheap and can validate if the change is real.\"}"}

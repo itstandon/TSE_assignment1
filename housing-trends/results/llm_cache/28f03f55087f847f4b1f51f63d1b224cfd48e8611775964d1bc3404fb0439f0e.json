@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Adds more listings without significantly distorting the user's question.\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Extends to neighboring ZIP codes to meet the listing threshold.\"}]}"}

@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"recompute\",\"reason\":\"Initial jump exceeds threshold but no robust recompute has been used yet.\"}"}

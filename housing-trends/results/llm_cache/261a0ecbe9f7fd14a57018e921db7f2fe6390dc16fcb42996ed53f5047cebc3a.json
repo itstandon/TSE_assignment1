@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"pool\",\"reason\":\"24 thin buckets below the threshold, warranting a wider scope to ensure coverage.\"}"}

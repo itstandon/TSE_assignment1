@@ -125,6 +125,9 @@ keeps the trimmed mean. This is the likely cause, but it has **not yet been conf
 
 ## Threats to validity of this diagnosis
 
+- **Qwen results (final, `results/mr_llm/`):** MR2 30/30 bases (90/90 runs), MR4 25/30 (75/90), MR7 21/30 (61/90),
+  0 errors. MR4 and MR7 are higher than offline. 36% of Qwen's Pooling choices borrow ZIPs, the move that causes the
+  cross-ZIP leakage above.
 - The ablations and replays use the deterministic offline stand-in. For the Qwen run (`results/mr_llm/`), the LLM
   chooses Pooling moves and Critic routes, so the *rates* can differ. The mechanisms are structural (count threshold,
   cross-ZIP borrowing, id-keyed suspect cap), and the first Qwen trials violate MR2 in the same ZIP-months (e.g.

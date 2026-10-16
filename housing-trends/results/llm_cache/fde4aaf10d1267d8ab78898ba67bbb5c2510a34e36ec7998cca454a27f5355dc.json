@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Need more listings and prefer minimal distortion\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"zip\",\"reason\":\"Already sufficient time data, need geography relaxation for more listings\"}]}"}

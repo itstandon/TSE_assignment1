@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"pool\",\"reason\":\"24 thin buckets below the threshold, significant shortfall, and only 1 rescan left.\"}"}

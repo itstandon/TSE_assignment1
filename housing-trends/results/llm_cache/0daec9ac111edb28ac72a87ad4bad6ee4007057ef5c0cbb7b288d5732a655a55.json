@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"pool\",\"reason\":\"Too many thin buckets requiring significant widening and time, but not enough rescans used yet.\"}"}

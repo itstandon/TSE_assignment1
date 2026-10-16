@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"adds listings without changing month or ZIP\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"already time_suffices, no need to change\"}]}"}

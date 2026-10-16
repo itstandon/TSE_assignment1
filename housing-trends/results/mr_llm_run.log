@@ -4,3 +4,37 @@ PROGRESS 20/270 | holds 0 violated 20 skipped 0 errors 0 | elapsed 21.5m eta 268
 PROGRESS 40/270 | holds 0 violated 40 skipped 0 errors 0 | elapsed 46.6m eta 268m | violations by MR MR2:40/40
   54/270 trials
 PROGRESS 60/270 | holds 0 violated 60 skipped 0 errors 0 | elapsed 71.0m eta 249m | violations by MR MR2:60/60
+PROGRESS 80/270 | holds 0 violated 80 skipped 0 errors 0 | elapsed 102.9m eta 244m | violations by MR MR2:80/80
+  81/270 trials
+PROGRESS 100/270 | holds 0 violated 100 skipped 0 errors 0 | elapsed 122.4m eta 208m | violations by MR MR2:90/90 MR4:10/10
+  108/270 trials
+PROGRESS 120/270 | holds 3 violated 117 skipped 0 errors 0 | elapsed 129.7m eta 162m | violations by MR MR2:90/90 MR4:27/30
+  135/270 trials
+PROGRESS 140/270 | holds 6 violated 134 skipped 0 errors 0 | elapsed 147.1m eta 137m | violations by MR MR2:90/90 MR4:44/50
+PROGRESS 160/270 | holds 12 violated 148 skipped 0 errors 0 | elapsed 160.5m eta 110m | violations by MR MR2:90/90 MR4:58/70
+  162/270 trials
+PROGRESS 180/270 | holds 15 violated 165 skipped 0 errors 0 | elapsed 175.4m eta 88m | violations by MR MR2:90/90 MR4:75/90
+  189/270 trials
+PROGRESS 200/270 | holds 23 violated 177 skipped 0 errors 0 | elapsed 182.0m eta 64m | violations by MR MR2:90/90 MR4:75/90 MR7:12/20
+  216/270 trials
+PROGRESS 220/270 | holds 32 violated 188 skipped 0 errors 0 | elapsed 208.9m eta 47m | violations by MR MR2:90/90 MR4:75/90 MR7:23/40
+PROGRESS 240/270 | holds 38 violated 202 skipped 0 errors 0 | elapsed 232.3m eta 29m | violations by MR MR2:90/90 MR4:75/90 MR7:37/60
+  243/270 trials
+PROGRESS 260/270 | holds 41 violated 219 skipped 0 errors 0 | elapsed 254.9m eta 10m | violations by MR MR2:90/90 MR4:75/90 MR7:54/80
+PROGRESS 270/270 | holds 44 violated 226 skipped 0 errors 0 | elapsed 260.8m eta 0m | violations by MR MR2:90/90 MR4:75/90 MR7:61/90
+  270/270 trials
+
+| MR | Family | Relation | Base inputs | Seeds | Violating base inputs | Rate (95% Wilson CI) | Violating runs / runs | Skipped | Errors |
+|---|---|---|---|---|---|---|---|---|---|
+| MR1 | Invariance | Sort listings by price (adversarial order) | 0 | 101 202 303 | 0 | n/a | 0 / 0 | 0 | 0 |
+| MR2 | Invariance | Multiply each ZIP's listings by a random N (1-10) | 30 | 101 202 303 | 30 | 100.0% (88.6-100.0) | 90 / 90 | 0 | 0 |
+| MR3 | Monotonic | Add $X to every price in one month | 0 | 101 202 303 | 0 | n/a | 0 / 0 | 0 | 0 |
+| MR4 | Monotonic | Remove the dearest listing of each ZIP | 30 | 101 202 303 | 25 | 83.3% (66.4-92.7) | 75 / 90 | 0 | 0 |
+| MR5 | Monotonic | Widen the price band | 0 | 101 202 303 | 0 | n/a | 0 / 0 | 0 | 0 |
+| MR6 | Monotonic | Restrict to a sub-region | 0 | 101 202 303 | 0 | n/a | 0 / 0 | 0 | 0 |
+| MR7 | Directional | Double all prices in one ZIP | 30 | 101 202 303 | 21 | 70.0% (52.1-83.3) | 61 / 90 | 0 | 0 |
+| MR8 | Directional | Inject one 10x outlier | 0 | 101 202 303 | 0 | n/a | 0 / 0 | 0 | 0 |
+| MR9 | Directional | Replace a month with a copy of the previous month | 0 | 101 202 303 | 0 | n/a | 0 / 0 | 0 | 0 |
+| MR10 | Directional | Scale all prices by k > 1 | 0 | 101 202 303 | 0 | n/a | 0 / 0 | 0 | 0 |
+
+saved to results/mr_llm  (runs.csv has every trial; docs/mr_catalog.md is the MR catalog)
