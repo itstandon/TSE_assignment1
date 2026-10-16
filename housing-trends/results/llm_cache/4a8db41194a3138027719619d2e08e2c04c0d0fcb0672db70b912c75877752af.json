@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"recompute\",\"reason\":\"The largest changes are significant and above the threshold, suggesting a robust recompute to verify if these are artefacts.\"}"}

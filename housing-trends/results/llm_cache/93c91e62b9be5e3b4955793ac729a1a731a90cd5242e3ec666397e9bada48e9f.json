@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"Distorts geography but necessary to meet listing threshold\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"Sufficient additional listings from neighbouring months without distorting the entire scan\"}]}"}

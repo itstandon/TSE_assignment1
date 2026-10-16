@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"accept\",\"reason\":\"Few jumps, all above threshold, and one suspect outlier. Diagnoser rounds and robust recompute already used.\"}"}

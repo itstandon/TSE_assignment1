@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"Adding listings from 196 neighboring ZIP codes is more than enough to meet the threshold.\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Adding listings from 271 neighboring ZIP codes significantly increases the bucket size.\"}]}"}

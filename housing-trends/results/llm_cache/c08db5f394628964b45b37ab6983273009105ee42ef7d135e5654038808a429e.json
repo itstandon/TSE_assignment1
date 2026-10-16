@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"recompute\",\"reason\":\"Initial jump detection suggests potential artefacts; a robust recompute can confirm.\"}"}
