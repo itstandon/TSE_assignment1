@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"Only 1 thin bucket, shortfall modest, and one rescan remains; widening will resolve it with minimal cost.\"}"}

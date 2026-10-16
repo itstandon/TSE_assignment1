@@ -1,6 +1,6 @@
 """Run the metamorphic harness and write the results table.
 
-  python scripts/run_mrs.py                       # all 12 MRs, 30 base inputs, seeds 101,202,303, offline Diagnoser
+  python scripts/run_mrs.py                       # all 10 MRs, 30 base inputs, seeds 101,202,303, offline Diagnoser
   python scripts/run_mrs.py --quick               # smoke run: 5 base inputs, 1 seed
   python scripts/run_mrs.py --only MR1,MR3        # a subset
   python scripts/run_mrs.py --llm real            # real LLM (local Qwen by default, see .env.local; replies are cached)

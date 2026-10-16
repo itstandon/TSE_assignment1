@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"pool\",\"reason\":\"13 thin buckets (27% of total) each missing ~10 listings; no rescans used yet and pooling adds only 1 month, improving coverage significantly.\"}"}

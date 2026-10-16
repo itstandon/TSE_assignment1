@@ -29,7 +29,7 @@ from housing_trends.state import JUMP_PCT, MIN_LISTINGS
 
 from .contract import contract
 from .inputs import POOL_SEED, generate_pool, matching_rows, months_of
-from .relations import MR_BY_ID, MRS
+from .relations import MR_BY_ID, MRS, STREAM
 from .stats import wilson
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -38,12 +38,52 @@ DEFAULT_SEEDS = (101, 202, 303)
 DEFAULT_BASES = 30
 
 
-def make_llm(mode: str):
+def seed_stream(seed: int, base_id: int, mr_id: str):
+    """The random stream of one trial: a function of (seed, base input, relation) only. The relation's stream index is
+    fixed in relations.STREAM, not its position in MRS, so adding, withdrawing or renumbering relations never changes the
+    transform instances (which month, ZIP, listing, N) of the others."""
+    return np.random.default_rng([seed, base_id, STREAM[mr_id]])
+
+
+class CountingLLM:
+    """Counts the calls an agent makes and the ones that FAIL. Every LLM node catches exceptions and falls back to its
+    rule-based policy, so without this a dead API key or an unreachable server would silently turn a 'real model' run
+    into an offline one. A trial in which any call failed is recorded as an error, never as a pass or a violation."""
+
+    def __init__(self, llm):
+        self.llm, self.calls, self.failures = llm, 0, 0
+        self.name = getattr(llm, "name", "llm")
+
+    def __call__(self, system, user):
+        self.calls += 1
+        try:
+            return self.llm(system, user)
+        except Exception:
+            self.failures += 1
+            raise
+
+
+def make_llm(mode: str, seed: int | None = None):
+    """offline: the deterministic stand-in. real: the hosted/local model with ITS seed set to `seed` (the trial's recorded
+    seed, so source and follow-up runs of a trial share it), replies cached on disk for replay."""
     if mode == "offline":
         return rule_based_llm
-    from housing_trends.llm import CachedLLM, llm_from_env      # real model, replies cached on disk for replay
-    base = llm_from_env()
-    return CachedLLM(base, ROOT / "results/llm_cache", tag=base.name)
+    from housing_trends.llm import CachedLLM, llm_from_env
+    base = llm_from_env(seed)
+    return CountingLLM(CachedLLM(base, ROOT / "results/llm_cache", tag=base.name))
+
+
+def preflight(llm_mode, seed):
+    """Fail BEFORE a long run if the real model cannot answer (bad key, wrong provider, server down)."""
+    if llm_mode == "offline":
+        return
+    llm = make_llm(llm_mode, seed)
+    try:
+        llm("Reply with ONE JSON object and nothing else.", 'Return {"ok": true}')
+    except Exception as ex:
+        raise RuntimeError(f"preflight failed: the real model is not answering ({ex}). Every LLM node would silently fall "
+                           "back to its rule-based policy, so this run would not measure the model. Set LLM_PROVIDER "
+                           "(groq | qwen) and its key/server, or use --llm offline.") from ex
 
 
 def run_contract(df, c, llm, min_listings=MIN_LISTINGS, jump_pct=JUMP_PCT):
@@ -57,19 +97,26 @@ def evaluate(mr, df, c, base_id, seed, *, llm=rule_based_llm, min_listings=MIN_L
     """One (MR, base input, seed) trial. Returns a flat dict (one row of runs.csv)."""
     src_cache = {} if src_cache is None else src_cache
     row = dict(mr=mr.id, base_id=base_id, seed=seed, criteria=c.key(), status="", detail="", src_loops="", fol_loops="")
+    counted = hasattr(llm, "failures")
+    calls0, fails0 = (llm.calls, llm.failures) if counted else (0, 0)
     try:
-        rng = np.random.default_rng([seed, base_id, [m.id for m in MRS].index(mr.id)])
+        rng = seed_stream(seed, base_id, mr.id)
         follow = mr.transform(df, c, rng)
         if matching_rows(follow.df, follow.criteria) == 0:
             return {**row, "status": "skipped", "detail": "follow-up criteria match no listing"}
-        if c.key() not in src_cache:
-            src_cache[c.key()] = run_contract(df, c, llm, min_listings, jump_pct)[:2]
-        src, row["src_loops"] = src_cache[c.key()]
+        key = (c.key(), seed if counted else None)               # a seeded model answers per seed; the stand-in does not
+        if key not in src_cache:
+            src_cache[key] = run_contract(df, c, llm, min_listings, jump_pct)[:2]
+        src, row["src_loops"] = src_cache[key]
         fol, row["fol_loops"], _ = run_contract(follow.df, follow.criteria, llm, min_listings, jump_pct)
         problems = mr.check(src, fol, c, follow.meta)
         row.update(status="violated" if problems else "holds", detail=" | ".join(problems))
     except Exception as ex:                                                  # a crash is a finding of its own
         row.update(status="error", detail=f"{type(ex).__name__}: {ex} @ {traceback.format_exc().splitlines()[-3].strip()}")
+    if counted:
+        row["llm_calls"], row["llm_failures"] = llm.calls - calls0, llm.failures - fails0
+        if row["llm_failures"]:                                              # degraded to the fallback: not a valid measurement
+            row.update(status="error", detail=f"{row['llm_failures']} LLM call(s) failed; agents used their fallback policy")
     return row
 
 
@@ -79,12 +126,21 @@ _G: dict = {}
 
 def _init(snapshot_path, llm_mode, min_listings, jump_pct):
     df = pd.read_csv(snapshot_path, dtype={"zip_code": str})
-    _G.update(df=df, llm=make_llm(llm_mode), min_listings=min_listings, jump_pct=jump_pct, cache={})
+    _G.update(df=df, mode=llm_mode, llms={}, min_listings=min_listings, jump_pct=jump_pct, cache={})
+
+
+def _llm_for(seed):
+    """One model client per trial seed (offline: the single stand-in)."""
+    if _G["mode"] == "offline":
+        return rule_based_llm
+    if seed not in _G["llms"]:
+        _G["llms"][seed] = make_llm(_G["mode"], seed)
+    return _G["llms"][seed]
 
 
 def _task(t):
     mr_id, base_id, criteria_json, seed = t
-    return evaluate(MR_BY_ID[mr_id], _G["df"], Criteria.model_validate_json(criteria_json), base_id, seed, llm=_G["llm"],
+    return evaluate(MR_BY_ID[mr_id], _G["df"], Criteria.model_validate_json(criteria_json), base_id, seed, llm=_llm_for(seed),
                     min_listings=_G["min_listings"], jump_pct=_G["jump_pct"], src_cache=_G["cache"])
 
 
@@ -140,6 +196,7 @@ def run_all(*, snapshot=DEFAULT_SNAPSHOT, seeds=DEFAULT_SEEDS, n_bases=DEFAULT_B
     df = pd.read_csv(snapshot, dtype={"zip_code": str})
     pool = generate_pool(df, seed=pool_seed)
     mr_ids = list(only) if only else [m.id for m in MRS]
+    preflight(llm_mode, seeds[0])
     tasks, chosen = build_tasks(df, pool, mr_ids, n_bases, seeds)
     log(f"{len(pool)} base inputs in the pool; {len(tasks)} trials for {len(mr_ids)} MR(s); {workers} worker(s); LLM: {llm_mode}")
 
@@ -165,9 +222,13 @@ def run_all(*, snapshot=DEFAULT_SNAPSHOT, seeds=DEFAULT_SEEDS, n_bases=DEFAULT_B
     (out / "base_inputs.json").write_text(json.dumps(
         {"pool_seed": pool_seed, "chosen_per_mr": chosen,
          "criteria": {b.id: json.loads(b.criteria.model_dump_json()) for b in pool}}, indent=1))
-    llm = make_llm(llm_mode)
+    llm = make_llm(llm_mode, seeds[0])
+    real = llm_mode != "offline"
+    extra = ({"llm_seed_policy": "the model's seed = the trial seed (source and follow-up runs share it)",
+              "llm_calls": int(runs.llm_calls.sum()), "llm_failures": int(runs.llm_failures.sum())} if real else {})
     (out / "run_config.json").write_text(json.dumps(
-        {"seeds": list(seeds), "bases_per_mr": n_bases, "pool_seed": pool_seed, "llm": getattr(llm, "name", llm_mode),
+        {**extra, "seeds": list(seeds), "bases_per_mr": n_bases, "pool_seed": pool_seed,
+         "llm": getattr(getattr(llm, "llm", llm), "name", llm_mode),
          "min_listings": min_listings, "jump_pct": jump_pct, "snapshot": str(pathlib.Path(snapshot).name),
          "snapshot_sha256": snapshot_sha(snapshot), "python": platform.python_version(), "pandas": pd.__version__,
          "numpy": np.__version__, "mrs": mr_ids}, indent=1))
@@ -180,8 +241,8 @@ def replay(mr_id, base_id, seed, *, snapshot=DEFAULT_SNAPSHOT, pool_seed=POOL_SE
     """Re-run one trial and return everything needed to explain it: criteria, problems, both contracts, loops, traces."""
     df = pd.read_csv(snapshot, dtype={"zip_code": str})
     base = {b.id: b for b in generate_pool(df, seed=pool_seed)}[base_id]
-    mr, llm = MR_BY_ID[mr_id], make_llm(llm_mode)
-    rng = np.random.default_rng([seed, base_id, [m.id for m in MRS].index(mr_id)])
+    mr, llm = MR_BY_ID[mr_id], make_llm(llm_mode, seed)
+    rng = seed_stream(seed, base_id, mr.id)
     follow = mr.transform(df, base.criteria, rng)
     src, src_loops, src_rep = run_contract(df, base.criteria, llm, min_listings, jump_pct)
     fol, fol_loops, fol_rep = run_contract(follow.df, follow.criteria, llm, min_listings, jump_pct)

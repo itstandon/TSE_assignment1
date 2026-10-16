@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"pool\",\"reason\":\"58 thin buckets are below the threshold, and widening the scope could resolve most of them within the allowed rescans.\"}"}

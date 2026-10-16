@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\n    \"verdicts\": [\n        {\"listing_id\": 15940, \"verdict\": \"bad_listing\", \"reason\": \"price is 277% of ZIP median but lot and house size are typical\"}\n    ],\n    \"explanations\": [\n        {\"zip_code\": \"75253\", \"month\": \"2026-05\", \"text\": \"Price jumped 35.3% month-over-month in 2026-05.\"}\n    ]\n}"}

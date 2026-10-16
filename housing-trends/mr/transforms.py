@@ -12,15 +12,15 @@ from housing_trends import Criteria
 from housing_trends.agents.scanner import active_filters, filter_mask
 from housing_trends.context import add_months, month_range
 
-ADD_X = 50_000                 # dollars added to every price of one month (MR7)
+ADD_X = 50_000                 # dollars added to every price of one month (MR3)
 SCALE_FACTORS = (1.5, 2.0, 3.0)    # k > 1 for the scaling MR
-ZIP_RAISE = 1.5                # factor applied to one ZIP's prices (MR10)
+ZIP_RAISE = 1.5                # factor applied to one ZIP's prices (MR8)
 UNIT = 1000                    # USD -> USD thousands (retired MR, kept for the unit tests)
-FAKE_FACTOR = 10               # price multiplier of the fake month (MR3)
+FAKE_FACTOR = 10               # price multiplier of the fake month (retired relation, kept with its transform)
 FAKE_MONTH_OFFSET = 6          # months after the snapshot's last month: beyond any Pooling padding (MAX_TIME_PAD = 3)
-MAX_COPIES = 10                # N in 1..MAX_COPIES per ZIP (MR4)
-ZIP_DOUBLE = 2.0               # factor applied to one ZIP's prices (MR9)
-OUTLIER_FACTOR = 10            # one planted listing is multiplied by this (MR10)
+MAX_COPIES = 10                # N in 1..MAX_COPIES per ZIP (MR2)
+ZIP_DOUBLE = 2.0               # factor applied to one ZIP's prices (MR7)
+OUTLIER_FACTOR = 10            # one planted listing is multiplied by this (MR8)
 
 
 @dataclass

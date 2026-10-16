@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"needed listings are from time suffices\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"median_listings close to needed, time suffices\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"least distorts user's question while fixing bucket\"}]}"}

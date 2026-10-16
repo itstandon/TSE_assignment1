@@ -1,3 +1,6 @@
-240 base inputs in the pool; 60 trials for 4 MR(s); 3 worker(s); LLM: real
-  6/60 trials
-  12/60 trials
+240 base inputs in the pool; 270 trials for 3 MR(s); 5 worker(s); LLM: real
+PROGRESS 20/270 | holds 0 violated 20 skipped 0 errors 0 | elapsed 21.5m eta 268m | violations by MR MR2:20/20
+  27/270 trials
+PROGRESS 40/270 | holds 0 violated 40 skipped 0 errors 0 | elapsed 46.6m eta 268m | violations by MR MR2:40/40
+  54/270 trials
+PROGRESS 60/270 | holds 0 violated 60 skipped 0 errors 0 | elapsed 71.0m eta 249m | violations by MR MR2:60/60

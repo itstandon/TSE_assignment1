@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"recompute\",\"reason\":\"robust recompute is unused and cheap; it should be applied first to check if the large jumps are artefacts before involving analysts\"}"}

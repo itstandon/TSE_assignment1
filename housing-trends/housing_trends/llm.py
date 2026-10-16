@@ -70,9 +70,10 @@ PROVIDERS = {
 }
 
 
-def llm_from_env():
+def llm_from_env(seed: int | None = None):
     """Build an llm from env vars: LLM_PROVIDER (qwen | groq | google), that provider's key (none | LLM2_API_KEY | GOOGLE_API_KEY),
-    and optional LLM2_MODEL, LLM2_BASE_URL (override the provider's defaults) and LLM_SEED."""
+    and optional LLM2_MODEL, LLM2_BASE_URL (override the provider's defaults) and LLM_SEED. `seed` overrides LLM_SEED
+    (the MR harness passes each trial's recorded seed here)."""
     provider = os.environ.get("LLM_PROVIDER", "qwen").strip().lower()
     if provider not in PROVIDERS:
         raise RuntimeError(f"LLM_PROVIDER must be one of {sorted(PROVIDERS)}, got {provider!r}")
@@ -83,7 +84,7 @@ def llm_from_env():
     return openai_compat_llm(
         model=os.environ.get("LLM2_MODEL", p["model"]), api_key=key,
         base_url=os.environ.get("LLM2_BASE_URL", p["base_url"]),
-        seed=int(os.environ.get("LLM_SEED", "42")))
+        seed=int(os.environ.get("LLM_SEED", "42")) if seed is None else int(seed))
 
 
 class CachedLLM:

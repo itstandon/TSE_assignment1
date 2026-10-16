@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed42", "reply": "{\"decision\":\"recompute\",\"reason\":\"no robust recompute used yet; cheap trimmed\u2011mean check may explain large jumps before involving analysts\"}"}

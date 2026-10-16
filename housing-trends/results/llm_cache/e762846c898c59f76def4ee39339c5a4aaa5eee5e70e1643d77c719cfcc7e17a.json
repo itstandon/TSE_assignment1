@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"time_suffices is true, but we prefer not to distort seasonality if possible\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"filters\",\"reason\":\"Keep geography intact and only relax non-essential filters\"}]}"}

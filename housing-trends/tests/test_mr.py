@@ -174,72 +174,72 @@ def test_random_n_check_scales_only_the_own_count():
     rows = [("75201", "2025-01", 100.0, 10), ("75202", "2025-01", 150.0, 10)]
     src, meta = with_zips(full([100.0]), rows), {"n_of": {"75201": 3, "75202": 1}}
     good = [("75201", "2025-01", 100.0, 30), ("75202", "2025-01", 150.0, 10)]
-    assert not MR_BY_ID["MR4"].check(src, with_zips(full([100.0]), good), None, meta)
-    assert MR_BY_ID["MR4"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 100.0, 10), good[1]]), None, meta)
-    assert MR_BY_ID["MR4"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 120.0, 30), good[1]]), None, meta)
+    assert not MR_BY_ID["MR2"].check(src, with_zips(full([100.0]), good), None, meta)
+    assert MR_BY_ID["MR2"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 100.0, 10), good[1]]), None, meta)
+    assert MR_BY_ID["MR2"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 120.0, 30), good[1]]), None, meta)
 
 
 def test_remove_top_check_flags_only_increases():
     src = with_zips(full([1.0]), [("75201", "2025-01", 100.0, 10), ("75201", "2025-02", 100.0, 10)])
     ok = with_zips(full([1.0]), [("75201", "2025-01", 90.0, 9), ("75201", "2025-02", 100.0, 9)])
     bad = with_zips(full([1.0]), [("75201", "2025-01", 90.0, 9), ("75201", "2025-02", 130.0, 9)])
-    assert not MR_BY_ID["MR6"].check(src, ok, None, {}) and len(MR_BY_ID["MR6"].check(src, bad, None, {})) == 1
+    assert not MR_BY_ID["MR4"].check(src, ok, None, {}) and len(MR_BY_ID["MR4"].check(src, bad, None, {})) == 1
 
 
 def test_zip_doubled_check_scales_one_zip_and_leaves_the_rest():
     rows = [("75201", "2025-01", 100.0, 10), ("75202", "2025-01", 150.0, 10)]
     src, meta = with_zips(full([100.0]), rows), {"zip": "75201", "factor": 2.0}
-    assert not MR_BY_ID["MR9"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 200.0, 10), rows[1]]), None, meta)
-    assert MR_BY_ID["MR9"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 200.0, 10), ("75202", "2025-01", 160.0, 10)]), None, meta)
-    assert MR_BY_ID["MR9"].check(src, with_zips(full([100.0]), rows), None, meta)                    # nothing doubled
+    assert not MR_BY_ID["MR7"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 200.0, 10), rows[1]]), None, meta)
+    assert MR_BY_ID["MR7"].check(src, with_zips(full([100.0]), [("75201", "2025-01", 200.0, 10), ("75202", "2025-01", 160.0, 10)]), None, meta)
+    assert MR_BY_ID["MR7"].check(src, with_zips(full([100.0]), rows), None, meta)                    # nothing doubled
 
 
 def test_outlier_check_limits_the_move_and_demands_the_planted_listing_among_the_suspects():
     rows = [("75201", "2025-01", 100.0, 10)]
     src, meta = with_zips(full([100.0, 200.0]), rows), {"zip": "75201", "id": 7, "month": "2025-01"}
-    assert not MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)], [(7, "75201", "bad_listing")]), None, meta)
-    assert not MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)]), None, meta)   # Diagnoser never ran: fine
-    assert MR_BY_ID["MR10"].check(src, with_zips(full([130.0, 200.0]), [("75201", "2025-01", 105.0, 10)]), None, meta)       # overall moved 30%
-    assert MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 130.0, 10)]), None, meta)       # ZIP-month moved 30%
-    assert MR_BY_ID["MR10"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)], [(9, "75201", "bad_listing")]), None, meta)
+    assert not MR_BY_ID["MR8"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)], [(7, "75201", "bad_listing")]), None, meta)
+    assert not MR_BY_ID["MR8"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)]), None, meta)   # Diagnoser never ran: fine
+    assert MR_BY_ID["MR8"].check(src, with_zips(full([130.0, 200.0]), [("75201", "2025-01", 105.0, 10)]), None, meta)       # overall moved 30%
+    assert MR_BY_ID["MR8"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 130.0, 10)]), None, meta)       # ZIP-month moved 30%
+    assert MR_BY_ID["MR8"].check(src, with_zips(full([105.0, 200.0]), [("75201", "2025-01", 105.0, 10)], [(9, "75201", "bad_listing")]), None, meta)
 
 
 def test_month_copied_check_wants_equal_statistics_and_zero_change():
     meta = {"month": "2025-02", "prev": "2025-01"}
     good = full([100.0, 100.0, 300.0], n=[10, 10, 12], mom=[np.nan, 0.0, 200.0])
-    assert not MR_BY_ID["MR11"].check(None, good, None, meta)
-    assert MR_BY_ID["MR11"].check(None, full([100.0, 101.0, 300.0], n=[10, 10, 12], mom=[np.nan, 1.0, 200.0]), None, meta)
-    assert MR_BY_ID["MR11"].check(None, full([100.0, 100.0, 300.0], n=[10, 11, 12], mom=[np.nan, 0.0, 200.0]), None, meta)
+    assert not MR_BY_ID["MR9"].check(None, good, None, meta)
+    assert MR_BY_ID["MR9"].check(None, full([100.0, 101.0, 300.0], n=[10, 10, 12], mom=[np.nan, 1.0, 200.0]), None, meta)
+    assert MR_BY_ID["MR9"].check(None, full([100.0, 100.0, 300.0], n=[10, 11, 12], mom=[np.nan, 0.0, 200.0]), None, meta)
 
 
 def test_scale_check_applies_the_factor_to_price_and_ppsf_only():
     src = full([100.0, 200.0])
     k = {"k": 2.0}
-    assert not MR_BY_ID["MR12"].check(src, full([200.0, 400.0], ppsf=[2.0, 4.0]), None, k)
-    assert MR_BY_ID["MR12"].check(src, full([100.0, 200.0]), None, k)         # nothing scaled
+    assert not MR_BY_ID["MR10"].check(src, full([200.0, 400.0], ppsf=[2.0, 4.0]), None, k)
+    assert MR_BY_ID["MR10"].check(src, full([100.0, 200.0]), None, k)         # nothing scaled
 
 
 def test_add_x_check_wants_a_rise_of_x_in_that_month_and_no_decrease_elsewhere():
     src, meta = full([100_000.0, 200_000.0, 300_000.0]), {"month": "2025-02", "x": 50_000}
-    assert not MR_BY_ID["MR5"].check(src, full([100_000.0, 250_000.0, 300_000.0]), None, meta)
-    assert MR_BY_ID["MR5"].check(src, full([100_000.0, 210_000.0, 300_000.0]), None, meta)       # rose by 10k, not 50k
-    assert MR_BY_ID["MR5"].check(src, full([90_000.0, 250_000.0, 300_000.0]), None, meta)        # another month decreased
+    assert not MR_BY_ID["MR3"].check(src, full([100_000.0, 250_000.0, 300_000.0]), None, meta)
+    assert MR_BY_ID["MR3"].check(src, full([100_000.0, 210_000.0, 300_000.0]), None, meta)       # rose by 10k, not 50k
+    assert MR_BY_ID["MR3"].check(src, full([90_000.0, 250_000.0, 300_000.0]), None, meta)        # another month decreased
 
 
 def test_monotonic_checks_have_the_right_direction():
     src, more, less = full([1.0, 2.0], n=[10, 10]), full([1.0, 2.0], n=[12, 10]), full([1.0, 2.0], n=[8, 10])
-    assert not MR_BY_ID["MR7"].check(src, more, None, {}) and MR_BY_ID["MR7"].check(src, less, None, {})
-    assert not MR_BY_ID["MR8"].check(src, less, None, {}) and MR_BY_ID["MR8"].check(src, more, None, {})
+    assert not MR_BY_ID["MR5"].check(src, more, None, {}) and MR_BY_ID["MR5"].check(src, less, None, {})
+    assert not MR_BY_ID["MR6"].check(src, less, None, {}) and MR_BY_ID["MR6"].check(src, more, None, {})
 
 
-def test_catalog_has_twelve_mrs_across_the_three_families():
-    assert len(MRS) == 12 and {m.family for m in MRS} == {"Invariance", "Monotonic", "Directional"}
-    assert {f: sum(m.family == f for m in MRS) for f in ("Invariance", "Monotonic", "Directional")} == {"Invariance": 4, "Monotonic": 4, "Directional": 4}
+def test_catalog_has_ten_mrs_across_the_three_families():
+    assert len(MRS) == 10 and {m.family for m in MRS} == {"Invariance", "Monotonic", "Directional"}
+    assert {f: sum(m.family == f for m in MRS) for f in ("Invariance", "Monotonic", "Directional")} == {"Invariance": 2, "Monotonic": 4, "Directional": 4}
     assert len({m.id for m in MRS}) == len(MRS) and all(m.fault and m.tolerance and m.subdomain for m in MRS)
 
 
 # ---- one tiny end-to-end trial per kind (calm data: 25 listings per month, no loop needs to fire)
-@pytest.mark.parametrize("mr_id", ["MR1", "MR2", "MR3", "MR4", "MR6", "MR11", "MR12"])
+@pytest.mark.parametrize("mr_id", ["MR1", "MR2", "MR4", "MR9", "MR10"])
 def test_invariance_and_scaling_hold_on_calm_data(mr_id):
     df, c = tiny_df()
     row = evaluate(MR_BY_ID[mr_id], df, c, base_id=0, seed=1)
@@ -259,3 +259,62 @@ def test_summarize_counts_by_base_input_and_by_run():
     r = summarize(runs, [1, 2]).set_index("mr").loc["MR1"]
     assert (r.base_inputs, r.base_violations, r.runs, r.run_violations, r.skipped, r.errors) == (2, 1, 4, 1, 1, 1)
     assert r.base_rate == 0.5 and r.base_ci_low < 0.5 < r.base_ci_high
+
+
+# ---- the harness must never present a degraded real-model run as a real-model result
+def test_counting_llm_counts_calls_and_failures_and_still_raises():
+    from mr.harness import CountingLLM
+
+    def flaky(system, user):
+        if user == "boom":
+            raise RuntimeError("401")
+        return "{}"
+    flaky.name = "flaky"
+    llm = CountingLLM(flaky)
+    assert llm("s", "ok") == "{}" and llm.name == "flaky"
+    with pytest.raises(RuntimeError):
+        llm("s", "boom")
+    assert (llm.calls, llm.failures) == (2, 1)
+
+
+def test_a_trial_in_which_the_model_failed_is_an_error_not_a_pass_or_a_violation():
+    from mr.harness import CountingLLM
+    df, c = tiny_df()
+
+    def dead(system, user):
+        raise RuntimeError("Invalid API Key")
+    row = evaluate(MR_BY_ID["MR1"], df, c, 0, 1, llm=CountingLLM(dead))
+    assert row["status"] == "holds" or row["status"] == "error"          # calm data may make no call at all
+    thin = build({("75201", m): flat(8, 300_000) for m in MONTHS3}, MONTHS3, ["75201"]).df     # thin -> the Critic asks the model
+    row = evaluate(MR_BY_ID["MR1"], thin, c, 0, 1, llm=CountingLLM(dead), min_listings=20)
+    assert row["llm_failures"] >= 1 and row["status"] == "error" and "failed" in row["detail"]
+
+
+def test_preflight_refuses_to_start_a_real_run_when_the_model_does_not_answer(monkeypatch):
+    import mr.harness as H
+
+    def dead(seed=None):
+        def call(system, user):
+            raise RuntimeError("401 Invalid API Key")
+        call.name = "dead"
+        return call
+    monkeypatch.setattr("housing_trends.llm.llm_from_env", dead)
+    with pytest.raises(RuntimeError, match="preflight failed"):
+        H.preflight("real", 101)
+    H.preflight("offline", 101)                                              # offline never needs a model
+
+
+def test_the_ten_relations_are_numbered_MR1_to_MR10():
+    assert [m.id for m in MRS] == [f"MR{i}" for i in range(1, 11)]
+
+
+def test_random_draws_are_keyed_on_a_fixed_stream_so_renumbering_changes_no_transform_instance():
+    """The streams equal each relation's index in the original 12-MR list (old id number - 1)."""
+    from mr.harness import seed_stream
+    from mr.relations import STREAM
+    old_number = {"MR1": 2, "MR2": 4, "MR3": 5, "MR4": 6, "MR5": 7, "MR6": 8, "MR7": 9, "MR8": 10, "MR9": 11, "MR10": 12}
+    for new, old in old_number.items():
+        assert STREAM[new] == old - 1
+        a = seed_stream(101, 7, new).integers(0, 2**31, 5)
+        assert (a == np.random.default_rng([101, 7, old - 1]).integers(0, 2**31, 5)).all()
+    assert len(set(STREAM.values())) == len(STREAM)

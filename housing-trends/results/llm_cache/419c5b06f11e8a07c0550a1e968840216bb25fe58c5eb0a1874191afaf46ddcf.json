@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"recompute\",\"reason\":\"Too few jumps for robust recompute and no prior recomputes.\"}"}

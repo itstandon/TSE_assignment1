@@ -23,8 +23,8 @@ args = ap.parse_args()
 
 KEY = ["mr", "base_id", "seed"]
 COLS = KEY + ["status", "src_loops", "fol_loops", "detail"]
-a = pd.read_csv(pathlib.Path(args.a) / "runs.csv")[COLS]
-b = pd.read_csv(pathlib.Path(args.b) / "runs.csv")[COLS]
+a = pd.read_csv(pathlib.Path(args.a) / "runs.csv")[COLS].fillna({"src_loops": "-", "fol_loops": "-"})   # skipped trials have no loops: "-" == "-"
+b = pd.read_csv(pathlib.Path(args.b) / "runs.csv")[COLS].fillna({"src_loops": "-", "fol_loops": "-"})
 m = a.merge(b, on=KEY, suffixes=("_a", "_b"))
 if m.empty:
     sys.exit("the two runs share no (MR, base input, seed) trial")

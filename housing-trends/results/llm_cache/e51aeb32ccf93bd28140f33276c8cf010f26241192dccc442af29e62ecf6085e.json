@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"zip adds enough listings\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"time alone reaches threshold\"}]}"}

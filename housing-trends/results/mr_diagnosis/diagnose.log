@@ -1,0 +1,77 @@
+ablation: Pooling + jump loops OFF
+240 base inputs in the pool; 270 trials for 3 MR(s); 2 worker(s); LLM: offline
+  27/270 trials
+  54/270 trials
+  81/270 trials
+  108/270 trials
+  135/270 trials
+  162/270 trials
+  189/270 trials
+  216/270 trials
+  243/270 trials
+  270/270 trials
+     mr  base_inputs  base_violations  base_rate  run_violations  runs  errors
+0   MR1            0                0        NaN               0     0       0
+1   MR2           30                0        0.0               0    90       0
+2   MR3            0                0        NaN               0     0       0
+3   MR4           30                0        0.0               0    90       0
+4   MR5            0                0        NaN               0     0       0
+5   MR6            0                0        NaN               0     0       0
+6   MR7           30                0        0.0               0    90       0
+7   MR8            0                0        NaN               0     0       0
+8   MR9            0                0        NaN               0     0       0
+9  MR10            0                0        NaN               0     0       0
+ablation: Pooling OFF only (jump loops ON)
+240 base inputs in the pool; 270 trials for 3 MR(s); 2 worker(s); LLM: offline
+  27/270 trials
+  54/270 trials
+  81/270 trials
+  108/270 trials
+  135/270 trials
+  162/270 trials
+  189/270 trials
+  216/270 trials
+  243/270 trials
+  270/270 trials
+     mr  base_inputs  base_violations  base_rate  run_violations  runs  errors
+0   MR1            0                0        NaN               0     0       0
+1   MR2           30               10   0.333333              18    90       0
+2   MR3            0                0        NaN               0     0       0
+3   MR4           30               12   0.400000              36    90       0
+4   MR5            0                0        NaN               0     0       0
+5   MR6            0                0        NaN               0     0       0
+6   MR7           30                0   0.000000               0    90       0
+7   MR8            0                0        NaN               0     0       0
+8   MR9            0                0        NaN               0     0       0
+9  MR10            0                0        NaN               0     0       0
+ablation: jump loops OFF only (Pooling ON)
+240 base inputs in the pool; 270 trials for 3 MR(s); 2 worker(s); LLM: offline
+  27/270 trials
+  54/270 trials
+  81/270 trials
+  108/270 trials
+  135/270 trials
+  162/270 trials
+  189/270 trials
+  216/270 trials
+  243/270 trials
+  270/270 trials
+     mr  base_inputs  base_violations  base_rate  run_violations  runs  errors
+0   MR1            0                0        NaN               0     0       0
+1   MR2           30               30   1.000000              90    90       0
+2   MR3            0                0        NaN               0     0       0
+3   MR4           30               16   0.533333              48    90       0
+4   MR5            0                0        NaN               0     0       0
+5   MR6            0                0        NaN               0     0       0
+6   MR7           30               13   0.433333              24    90       0
+7   MR8            0                0        NaN               0     0       0
+8   MR9            0                0        NaN               0     0       0
+9  MR10            0                0        NaN               0     0       0
+attribution: replaying 59 violating trials (one seed per violating base input)
+    pooled_any       robust_any       excl_any       plain      
+           sum count        sum count      sum count   sum count
+mr                                                              
+MR2        133   150         58   150        7   150     0   150
+MR4         46    46         17    46        5    46     0    46
+MR7         65    65         25    65       16    65     0    65
+DONE

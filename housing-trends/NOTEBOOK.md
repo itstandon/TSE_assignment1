@@ -1,4 +1,4 @@
-## 2025-10-07: Data snapshot
+## 2026-10-07: Data snapshot
 - Built with `python scripts/build_snapshot.py` (defaults): seed 20261016, window 2025-09..2026-08,
   calibration window 2021-11..2022-04, typo rate 0.4%, rural rate 0.3%, shrink k = 20.
 - Inputs: Kaggle realtor-data.zip.csv (178,858,272 bytes), Zillow City ZHVI (middle tier, smoothed, SA).
@@ -110,3 +110,83 @@ Statistician, Critic, Pooling, graph wiring, MR harness.
 ### Next
 Critic, Pooling, Diagnoser (LLM), LangGraph wiring and a captured loop trace, MR harness, UI, report.
 
+
+
+## 2026-10-12: Streamlit UI and first MR harness
+
+### Built
+- Rendered the full agent pipeline in a Streamlit app (`app_input.py`, dashboard in `agents/renderer.py`; run with
+  `make app`).
+- Built a basic metamorphic harness around the app (`mr/`, `scripts/run_mrs.py`).
+
+## 2026-10-16: Full metamorphic run, Qwen run, root-cause analysis
+
+### State of the catalog
+- 10 MRs (MR1..MR10): 2 Invariance, 4 Monotonic, 4 Directional. Two of the original 12 were withdrawn: "reorder
+  listings" and "add a 10x fake month outside the window". Both were removed because they were redundant. The random stream
+  of each MR is keyed by `relations.STREAM`, so renumbering did not change the transform instances of the others.
+- The old `results/mr/summary.md` was stale: it still had the 12-MR numbering (its MR4 is today's MR2, and so on).
+  It was regenerated today, so the old numbers must not be quoted.
+
+### Offline run (headline table, `make mr`)
+- 10 MRs x 30 distinct base inputs x seeds 101, 202, 303 = 900 trials, rule-based stand-in for every LLM node.
+  0 errors, 1 skipped (MR6, the follow-up criteria matched no listing). Took about 13 min on 8 workers (18:05-18:18).
+  Each trial is about 13-17 s, because the full pipeline runs twice on about 20k listings.
+- Violating base inputs (Wilson 95% CI): MR2 30/30 (88.6-100), MR4 16/30 (36.1-69.8), MR7 13/30 (27.4-60.8),
+  MR3 5/30, MR9 3/30, MR8 2/30. MR1, MR5, MR6 and MR10 are 0/30 (CI 0-11.4).
+- The stand-in is deterministic, so the 3 seeds vary only the transform's random draws (shuffle, ids, which ZIP or
+  month, N), not the agents. This is a threat to validity for the "non-deterministic agents" requirement, and it is
+  why the Qwen run below exists.
+
+### Qwen run (top 3 MRs only)
+- Qwen 2.5 7B Instruct Q4_K_M served by **Ollama** 0.30.10 (`qwen2.5:7b`) on a GTX 1080 Ti, not by llama-server as
+  the README describes. Command:
+  `LLM_PROVIDER=qwen LLM2_BASE_URL=http://127.0.0.1:11434/v1 LLM2_MODEL=qwen2.5:7b python scripts/run_mrs.py --llm real --only MR2,MR4,MR7 --out results/mr_llm`
+  Both overrides are needed: `.env.local` points `LLM2_*` at Groq. The model seed is the trial seed (101/202/303),
+  temperature 0, replies cached in `results/llm_cache/`. `OLLAMA_NUM_PARALLEL=4`, 5 harness workers.
+- Why only 3 MRs: about 25-60 LLM calls per trial with prompts of about 3k tokens, 6-7 tokens/s per request on this
+  GPU, so about 4.5 h for 270 trials. All 10 MRs (900 trials) would not finish before the deadline. 30 bases x 3
+  seeds per MR is kept, so the statistical protocol still holds for the MRs that were run.
+- First attempt (8 workers) was killed: the SLURM job has a 10 GB memory cap. 8 harness workers + 2 diagnosis
+  workers + the model server exceeded it, and the kernel OOM-killed llama-server at 18:33 (`memory.events: oom_kill 1`;
+  Ollama returned HTTP 500 for the in-flight calls). 0 trials had finished. Restarted with 5 workers, and the cached
+  replies were replayed. A trial with any failed LLM call is recorded as an error, never silently run on the fallback.
+  Log of the failed attempt: `results/mr_llm_run_oom_attempt.log`.
+- Progress at the time of writing: 52/270 trials, all MR2, all violated, 0 errors. [Update with the final table
+  from `results/mr_llm/summary.md`.]
+
+### Root-cause analysis of the top 3 (`docs/root_cause_top3.md`, `scripts/diagnose_top3.py`, `results/mr_diagnosis/`)
+- Ablation on the same 30 bases x 3 seeds (offline): `min_listings=0` disables Pooling, `jump_pct=1e9` disables
+  the robust recompute and the Diagnoser.
+
+  | MR | full | both loops off | Pooling off | jump loops off |
+  |---|---|---|---|---|
+  | MR2 | 90/90 runs | 0/90 | 18/90 | 90/90 |
+  | MR4 | 48/90 | 0/90 | 36/90 | 48/90 |
+  | MR7 | 24/90 | 0/90 | 0/90 | 24/90 |
+
+  With the loops off every relation holds on 270/270 trials. That rules out a harness bug and a data artifact: same
+  transforms, same checks, same listings.
+- Bucket attribution (59 replays, one violating seed per violating base input): 0 of 261 violating ZIP-months is a
+  plain own-listing median. Pooled: MR2 133/150, MR4 46/46, MR7 65/65.
+- Verdicts:
+  - MR4: genuine aggregation fault. Removing the maximum pushes buckets across the threshold, and Pooling then
+    borrows dearer neighbours. Example: `75216@2025-06` (0 own listings) goes from $415,550 to $804,150 after
+    removing a listing.
+  - MR7: genuine fault, cross-ZIP leakage through Pooling. 0/90 with Pooling off. MR10 (global scale) holds.
+  - MR2: mostly an ill-conceived MR. The coverage threshold is on counts, and copying changes counts, so different
+    buckets get pooled. There is also a genuine Diagnoser fault. The suspect list is capped at 8 and chosen by
+    listing id: 8 copies of one $3.8M bad listing fill every slot, so the `legit_rural` listing in the same ZIP is
+    never judged, and the ZIP reverts from trimmed mean to plain median (`diagnoser.py:153-157`). Replay: MR2 base 0,
+    seed 101, `min_listings=0`, ZIP 75232, January $276,242 -> $267,700.
+- Not yet confirmed: that the 36 MR4 runs that still fail with Pooling off have the same Diagnoser cause.
+
+### Decisions
+- Headline table = offline run (re-runnable by anyone in about 15 min on 8 cores, with no GPU). The Qwen table is reported
+  separately for MR2/MR4/MR7, and it is reproducible from the committed `results/llm_cache/`.
+- Commit `results/llm_cache/`: without it a re-run must query Qwen again, and parallel batching or a different
+  Ollama version can change a reply.
+
+### Next
+Finish the Qwen run, update README reproduction steps (Ollama), write the report (results, root cause, threats to
+validity, reflection), first git commit.

@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"recompute\",\"reason\":\"Four jumps larger than 30% with few listings behind them suggest they might be artefacts.\"}"}

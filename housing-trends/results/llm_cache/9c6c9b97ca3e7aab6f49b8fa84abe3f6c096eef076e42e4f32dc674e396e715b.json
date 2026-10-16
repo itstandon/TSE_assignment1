@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"accept\",\"reason\":\"Jump exceeds threshold but no outlier suspects and only one robust recompute used.\"}"}

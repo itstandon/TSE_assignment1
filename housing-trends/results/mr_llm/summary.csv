@@ -1,0 +1,4 @@
+mr,name,family,base_inputs,seeds,runs,run_violations,run_rate,run_ci_low,run_ci_high,base_violations,base_rate,base_ci_low,base_ci_high,skipped,errors
+MR2,Multiply each ZIP's listings by a random N (1-10),Invariance,22,101 202 303,64,64,1.0,0.9433739770288436,1.0,22,1.0,0.8513404742740388,1.0,0,0
+MR4,Remove the dearest listing of each ZIP,Monotonic,0,101 202 303,0,0,,,,0,,,,0,0
+MR7,Double all prices in one ZIP,Directional,0,101 202 303,0,0,,,,0,,,,0,0

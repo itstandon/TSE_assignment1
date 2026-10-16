@@ -1,0 +1,11 @@
+mr,name,family,base_inputs,seeds,runs,run_violations,run_rate,run_ci_low,run_ci_high,base_violations,base_rate,base_ci_low,base_ci_high,skipped,errors
+MR1,Sort listings by price (adversarial order),Invariance,0,101 202 303,0,0,,,,0,,,,0,0
+MR2,Multiply each ZIP's listings by a random N (1-10),Invariance,30,101 202 303,90,90,1.0,0.9590629315783191,0.9999999999999999,30,1.0,0.8864829086095221,1.0,0,0
+MR3,Add $X to every price in one month,Monotonic,0,101 202 303,0,0,,,,0,,,,0,0
+MR4,Remove the dearest listing of each ZIP,Monotonic,30,101 202 303,90,48,0.5333333333333333,0.4310200470971506,0.6329174816747374,16,0.5333333333333333,0.3614201328152505,0.6976787277587178,0,0
+MR5,Widen the price band,Monotonic,0,101 202 303,0,0,,,,0,,,,0,0
+MR6,Restrict to a sub-region,Monotonic,0,101 202 303,0,0,,,,0,,,,0,0
+MR7,Double all prices in one ZIP,Directional,30,101 202 303,90,24,0.26666666666666666,0.18623692042961365,0.3662003781671706,13,0.43333333333333335,0.2737723743061511,0.6080299045459127,0,0
+MR8,Inject one 10x outlier,Directional,0,101 202 303,0,0,,,,0,,,,0,0
+MR9,Replace a month with a copy of the previous month,Directional,0,101 202 303,0,0,,,,0,,,,0,0
+MR10,Scale all prices by k > 1,Directional,0,101 202 303,0,0,,,,0,,,,0,0

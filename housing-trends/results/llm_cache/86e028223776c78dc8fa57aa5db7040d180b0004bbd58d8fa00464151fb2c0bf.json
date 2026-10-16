@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"recompute\",\"reason\":\"The jump is large and only one outlier suspect exists, recomputing with a robust mean could provide more insight.\"}"}

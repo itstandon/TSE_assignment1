@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"Adding listings from nearby ZIP codes is more specific than broadening the time frame.\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"The needed listings are significantly higher and only adding nearby ZIP code listings can meet the threshold.\"}]}"}

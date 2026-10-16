@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"pool\",\"reason\":\"More than half of the buckets are thin and significantly below the threshold, warranting a wider scope.\"}"}

@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"pool\",\"reason\":\"More than half of the buckets are thin, and the shortfall is significant. Given that we have enough rescans left and the cost is only one additional month, it's better to widen the scope rather than accept unresolved issues.\"}"}

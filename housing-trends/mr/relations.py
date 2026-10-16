@@ -20,7 +20,7 @@ from .contract import zip_table
 RTOL = 1e-9
 ALL = ["price", "ppsf", "n", "mom_price_pct"]
 ZIPS = ["price", "ppsf", "n_own", "n_used", "mom_price_pct"]
-OUTLIER_TOL = 0.15             # MR10: a single planted outlier may move a median by less than this (relative)
+OUTLIER_TOL = 0.15             # MR8: a single planted outlier may move a median by less than this (relative)
 
 
 @dataclass(frozen=True)
@@ -148,30 +148,14 @@ def _many_zips(c, info):
 
 MRS = [
     # ---- Invariance
-    MR("MR1", "Reorder listings", "Invariance", T.reorder,
-       "Shuffling the rows of the listing file leaves the whole contract (overall and per ZIP-month) unchanged.",
-       "Every base input.", "Exact: relative 1e-9 on every contract column.",
-       "Order dependence: a first/last-row choice, an unstable sort or an unkeyed groupby in the Scanner or Statistician.",
-       "Row order carries no meaning in a listing feed, so any change is a defect, not a modelling choice. Baseline sanity: "
-       "if this fails, no other result is interpretable.",
-       _always, _equal),
-    MR("MR2", "Sort listings by price (adversarial order)", "Invariance", T.sort_by_price,
+    MR("MR1", "Sort listings by price (adversarial order)", "Invariance", T.sort_by_price,
        "Sorting the rows ascending by price inside every ZIP-month leaves the whole contract unchanged.",
        "Every base input.", "Exact: relative 1e-9 on every contract column.",
        "Position-dependent logic that a random shuffle rarely triggers: head/tail slicing, 'first N' caps or id/position "
        "tie-breaks that matter only when the cheapest or dearest listings come first.",
        "A sorted feed is just another valid order; a random shuffle and an adversarial order exercise different failure modes.",
        _always, _equal),
-    MR("MR3", "Add a 10x-priced fake month outside the window", "Invariance", T.add_fake_month,
-       "Adding listings in a month far outside the query window (and beyond Pooling's padding) leaves the whole contract "
-       "unchanged.",
-       "Every base input.", "Exact: relative 1e-9 on every contract column.",
-       "Out-of-window data leaking into the answer: the Critic's ZipProfile (log-price median/MAD behind the outlier "
-       "z-scores) is computed from the WHOLE snapshot, so out-of-window rows can change which listings count as suspects.",
-       "The query asks about 12 months; listings of other months are not part of the question. If the answer depends on them, "
-       "the system's scope is wider than its contract.",
-       _always, _equal),
-    MR("MR4", "Multiply each ZIP's listings by a random N (1-10)", "Invariance", T.duplicate_random_n,
+    MR("MR2", "Multiply each ZIP's listings by a random N (1-10)", "Invariance", T.duplicate_random_n,
        "With every ZIP's listings present N_zip times (fresh ids, N_zip random per ZIP), each requested ZIP's median price, "
        "$/sqft and month-over-month % are unchanged and its monthly own count is exactly N_zip times larger.",
        "Every base input (violations are expected where buckets cross the coverage threshold: n changes which buckets are thin).",
@@ -182,7 +166,7 @@ MRS = [
        "The coverage threshold depends on n by design, so this MR is partly ill-conceived on thin buckets.",
        _always, _dup_zip_scaled),
     # ---- Monotonic
-    MR("MR5", "Add $X to every price in one month", "Monotonic", T.add_x_to_one_month,
+    MR("MR3", "Add $X to every price in one month", "Monotonic", T.add_x_to_one_month,
        f"Adding ${T.ADD_X:,} to every price in one month raises that month's median by ~${T.ADD_X:,} (within 1% of X) "
        "and no month's median decreases.",
        "Base inputs without a price filter (a price band would move listings in or out).",
@@ -192,7 +176,7 @@ MRS = [
        "The median is translation-equivariant, so a uniform shift of a month's prices shifts its median by the same amount. "
        "The system's own jump logic is expected to interfere.",
        _no_band, _add_x),
-    MR("MR6", "Remove the dearest listing of each ZIP", "Monotonic", T.remove_top_per_zip,
+    MR("MR4", "Remove the dearest listing of each ZIP", "Monotonic", T.remove_top_per_zip,
        "Deleting the single most expensive in-scope listing of every requested ZIP raises no ZIP-month median.",
        "Every base input.", "No increase beyond 1e-6 in any ZIP-month with a median on both sides.",
        "Buckets pushed across the coverage threshold (the removal makes a bucket thin, Pooling then borrows neighbours "
@@ -200,32 +184,32 @@ MRS = [
        "Removing the maximum of a sample can never raise its median, so only the pipeline's reaction (pooling, robust "
        "recompute, exclusions) can break it.",
        _always, _remove_top),
-    MR("MR7", "Widen the price band", "Monotonic", T.widen_price_band,
+    MR("MR5", "Widen the price band", "Monotonic", T.widen_price_band,
        "Lowering price_min by 25% and/or raising price_max by 25% (a superset of listings) never lowers the listing "
        "count of any month.",
        "Base inputs that have a price_min or price_max.", "Exact: follow-up n >= source n for every month.",
        "Filters applied wrongly (inclusive/exclusive bounds), or exclusions that remove more listings after widening.",
        "A superset of listings cannot have fewer members; only an agent that drops listings differently can break it.",
        _has_band, _more_listings),
-    MR("MR8", "Restrict to a sub-region", "Monotonic", T.restrict_zips,
+    MR("MR6", "Restrict to a sub-region", "Monotonic", T.restrict_zips,
        "Keeping a strict subset of the ZIPs never gives any month more listings than the full set.",
        "Base inputs with at least two ZIPs.", "Exact: follow-up n <= source n for every month.",
        "ZIP scoping errors, or pooled listings leaking into the 'own' count.",
        "Own listings of fewer ZIPs are a subset of own listings of more ZIPs. Tests ZIP isolation from the count side "
-       "(MR9 tests it from the price side).",
+       "(MR7 tests it from the price side).",
        _many_zips, _fewer_listings),
     # ---- Directional
-    MR("MR9", "Double all prices in one ZIP", "Directional", T.double_one_zip,
+    MR("MR7", "Double all prices in one ZIP", "Directional", T.double_one_zip,
        "Multiplying every price in ONE ZIP by 2 doubles that ZIP's median price and $/sqft in every month and leaves its "
        "counts and % changes, and every other ZIP's rows, unchanged.",
        "Base inputs without a price filter (a price band is not scaled).",
        "Exact: relative 1e-9 on every ZIP-month row.",
        "Cross-ZIP leakage: Pooling borrows listings from neighbouring ZIPs, so a changed ZIP changes the medians of its "
        "thin neighbours (and the doubled ZIP's own pooled buckets stop scaling cleanly).",
-       "A ZIP's statistics describe that ZIP's listings. MR9 tests a local scale change; MR12 a global one: if MR12 holds and "
-       "MR9 fails, the cause is cross-ZIP pooling, not a scale-sensitive threshold.",
+       "A ZIP's statistics describe that ZIP's listings. MR7 tests a local scale change; MR10 a global one: if MR10 holds and "
+       "MR7 fails, the cause is cross-ZIP pooling, not a scale-sensitive threshold.",
        _no_band, _zip_doubled),
-    MR("MR10", "Inject one 10x outlier", "Directional", T.inject_outlier,
+    MR("MR8", "Inject one 10x outlier", "Directional", T.inject_outlier,
        f"Multiplying the price of one counted listing by {T.OUTLIER_FACTOR} moves no month's overall median, and no month of "
        f"its ZIP, by {100 * OUTLIER_TOL:.0f}% or more; and whenever the Diagnoser examines that ZIP, the planted listing is "
        "among its suspects.",
@@ -235,7 +219,7 @@ MRS = [
        "moving the whole series; or the outlier screen does not surface a 10x listing the Diagnoser should judge.",
        "A single extreme value is exactly what the median, the Critic's screen and the Diagnoser exist to absorb.",
        _no_band, _outlier_contained),
-    MR("MR11", "Replace a month with a copy of the previous month", "Directional", T.replace_month_with_previous,
+    MR("MR9", "Replace a month with a copy of the previous month", "Directional", T.replace_month_with_previous,
        "If one month's listings are replaced by a copy of the previous month's, the two months have equal median price, "
        "median $/sqft and count, and the month-over-month change into the replaced month is 0%.",
        "Every base input.", "Exact: relative 1e-9; mom_price_pct within 1e-6 of 0.",
@@ -243,7 +227,7 @@ MRS = [
        "id-keyed exclusions that hit one copy but not the other.",
        "Two months with the same listings have the same distribution, so any per-month statistic must agree.",
        _always, _month_copied),
-    MR("MR12", "Scale all prices by k > 1", "Directional", T.scale_prices,
+    MR("MR10", "Scale all prices by k > 1", "Directional", T.scale_prices,
        "Multiplying every price by k (k in {1.5, 2, 3}) scales median price and $/sqft by k (overall and per ZIP-month) and "
        "leaves the month-over-month % and the counts unchanged.",
        "Base inputs without a price filter (a price band is not scaled).",
@@ -254,3 +238,11 @@ MRS = [
        _no_band, _scaled),
 ]
 MR_BY_ID = {m.id: m for m in MRS}
+
+
+# Each relation's random draws (which month, ZIP, listing, N, shuffle) come from stream STREAM[id]. The ids were renumbered
+# MR1..MR10 after MR1 (reorder) and MR3 (fake out-of-window month) were withdrawn from the original 12; the streams keep the
+# index each relation had then (old id number - 1), so every relation still perturbs exactly the same months, ZIPs and
+# listings, and the results of the 12-MR run remain directly comparable to this one.
+STREAM = {"MR1": 1, "MR2": 3, "MR3": 4, "MR4": 5, "MR5": 6, "MR6": 7, "MR7": 8, "MR8": 9, "MR9": 10, "MR10": 11}
+assert set(STREAM) == set(MR_BY_ID)

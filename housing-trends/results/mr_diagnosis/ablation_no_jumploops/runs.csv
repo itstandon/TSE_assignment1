@@ -1,0 +1,271 @@
+mr,base_id,seed,criteria,status,detail,src_loops,fol_loops
+MR2,0,101,837830c82cee,violated,"price 75202@2025-01: expected 360850, got 300500 | price 75202@2025-02: expected 383700, got 350900 | price 75202@2025-03: expected 383700, got 398700 | price 75202@2025-04: expected 373400, got 384600 | price 75202@2025-05: expected 373400, got 384600",3/0/0,2/0/0
+MR2,0,202,837830c82cee,violated,"price 75202@2025-01: expected 360850, got 300500 | price 75202@2025-02: expected 383700, got 350900 | price 75202@2025-03: expected 383700, got 410100 | price 75202@2025-04: expected 373400, got 371250 | price 75202@2025-05: expected 373400, got 384600",3/0/0,2/0/0
+MR2,0,303,837830c82cee,violated,"price 75202@2025-01: expected 360850, got 300500 | price 75202@2025-02: expected 383700, got 350900 | price 75202@2025-03: expected 383700, got 367150 | price 75202@2025-04: expected 373400, got 384600 | price 75202@2025-05: expected 373400, got 399300",3/0/0,2/0/0
+MR2,1,101,ea516380e2bb,violated,"price 75201@2025-07: expected 373450, got 390700 | price 75201@2025-08: expected 358600, got 374500 | price 75201@2025-09: expected 373450, got 372400 | price 75201@2025-10: expected 333000, got 335700 | price 75201@2025-11: expected 932500, got 338400",3/0/0,3/0/0
+MR2,1,202,ea516380e2bb,violated,"price 75201@2025-07: expected 373450, got 390700 | price 75201@2025-08: expected 358600, got 374500 | price 75201@2025-09: expected 373450, got 335700 | price 75201@2025-10: expected 333000, got 335700 | price 75201@2025-11: expected 932500, got 329300",3/0/0,3/0/0
+MR2,1,303,ea516380e2bb,violated,"price 75201@2025-07: expected 373450, got 421100 | price 75201@2025-08: expected 358600, got 409400 | price 75201@2025-09: expected 373450, got 387350 | price 75201@2025-11: expected 932500, got 338400 | price 75201@2025-12: expected 780550, got 329300",3/0/0,3/0/0
+MR2,2,101,cdc85e88d655,violated,"price 75203@2024-12: expected 462850, got 474700 | price 75203@2025-01: expected 465800, got 483000 | price 75203@2025-02: expected 446750, got 424450 | price 75203@2025-03: expected 439900, got 407600 | price 75203@2025-04: expected 424450, got 394600",3/0/0,3/0/0
+MR2,2,202,cdc85e88d655,violated,"price 75203@2024-12: expected 462850, got 502300 | price 75203@2025-01: expected 465800, got 483000 | price 75203@2025-02: expected 446750, got 424450 | price 75203@2025-03: expected 439900, got 407600 | price 75203@2025-04: expected 424450, got 355400",3/0/0,2/0/0
+MR2,2,303,cdc85e88d655,violated,"price 75203@2024-12: expected 462850, got 502300 | price 75203@2025-01: expected 465800, got 483000 | price 75203@2025-02: expected 446750, got 424450 | price 75203@2025-03: expected 439900, got 394600 | price 75203@2025-04: expected 424450, got 355400",3/0/0,3/0/0
+MR2,3,101,ff9821ba1ed6,violated,"price 75201@2025-06: expected 511750, got 459050 | price 75201@2025-07: expected 492400, got 459200 | price 75201@2025-08: expected 533250, got 459200 | price 75201@2025-10: expected 476150, got 477600 | price 75201@2025-11: expected 719300, got 477600",3/0/0,3/0/0
+MR2,3,202,ff9821ba1ed6,violated,"price 75201@2025-06: expected 511750, got 890700 | price 75201@2025-07: expected 492400, got 948500 | price 75201@2025-08: expected 533250, got 870850 | price 75201@2025-09: expected 526800, got 948500 | price 75201@2025-10: expected 476150, got 972300",3/0/0,3/0/0
+MR2,3,303,ff9821ba1ed6,violated,"price 75201@2025-06: expected 511750, got 890700 | price 75201@2025-07: expected 492400, got 948500 | price 75201@2025-08: expected 533250, got 870850 | price 75201@2025-09: expected 526800, got 1.12295e+06 | price 75201@2025-10: expected 476150, got 1.12295e+06",3/0/0,3/0/0
+MR2,4,101,4022ee2e80fa,violated,"price 75204@2025-04: expected 329000, got 294000 | price 75204@2025-05: expected 334200, got 294150 | price 75204@2025-06: expected 325900, got 370300 | price 75204@2025-07: expected 317300, got 310000 | price 75204@2025-09: expected 320250, got 323350",3/0/0,1/0/0
+MR2,4,202,4022ee2e80fa,violated,"price 75204@2025-04: expected 329000, got 294000 | price 75204@2025-05: expected 334200, got 294150 | price 75204@2025-06: expected 325900, got 370300 | price 75204@2025-07: expected 317300, got 310000 | price 75204@2025-08: expected 329400, got 398000",3/0/0,1/0/0
+MR2,4,303,4022ee2e80fa,violated,"price 75204@2025-04: expected 329000, got 294000 | price 75204@2025-05: expected 334200, got 294150 | price 75204@2025-06: expected 325900, got 310000 | price 75204@2025-07: expected 317300, got 369400 | price 75204@2025-09: expected 320250, got 317300",3/0/0,1/0/0
+MR2,5,101,f13bf9a3f714,violated,"price 75202@2024-09: expected 395700, got 457800 | price 75202@2024-10: expected 388500, got 457800 | price 75202@2024-11: expected 466100, got 425300 | price 75202@2024-12: expected 459900, got 325700 | price 75202@2025-01: expected 360850, got 300500",3/0/0,3/0/0
+MR2,5,202,f13bf9a3f714,violated,"price 75202@2024-09: expected 395700, got 441550 | price 75202@2024-10: expected 388500, got 457800 | price 75202@2024-11: expected 466100, got 495300 | price 75202@2024-12: expected 459900, got 325700 | price 75202@2025-01: expected 360850, got 300500",3/0/0,3/0/0
+MR2,5,303,f13bf9a3f714,violated,"price 75202@2024-09: expected 395700, got 441550 | price 75202@2024-10: expected 388500, got 425300 | price 75202@2024-11: expected 466100, got 425300 | price 75202@2024-12: expected 459900, got 350900 | price 75202@2025-01: expected 360850, got 367150",3/0/0,3/0/0
+MR2,6,101,1646a271cfeb,violated,"price 75201@2025-06: expected 409400, got 351200 | price 75201@2025-07: expected 432400, got 390700 | price 75201@2025-08: expected 427500, got 258300 | price 75202@2024-11: expected 466100, got 495300 | price 75202@2024-12: expected 428000, got 325700",3/0/0,3/0/0
+MR2,6,202,1646a271cfeb,violated,"price 75201@2024-11: expected 609400, got 518000 | price 75201@2024-12: expected 605300, got 518000 | price 75201@2025-01: expected 605300, got 663400 | price 75201@2025-02: expected 607350, got 444150 | price 75201@2025-03: expected 607350, got 506500",3/0/0,2/0/0
+MR2,6,303,1646a271cfeb,violated,"price 75201@2024-11: expected 609400, got 518000 | price 75201@2024-12: expected 605300, got 518000 | price 75201@2025-01: expected 605300, got 663400 | price 75201@2025-02: expected 607350, got 444150 | price 75201@2025-03: expected 607350, got 506500",3/0/0,3/0/0
+MR2,7,101,266d8022d4f5,violated,"price 75202@2024-12: expected 367600, got 399750 | price 75202@2025-01: expected 394600, got 389200 | price 75202@2025-02: expected 368050, got 407600 | price 75202@2025-03: expected 382700, got 365300 | price 75202@2025-04: expected 364850, got 379950",3/0/0,3/0/0
+MR2,7,202,266d8022d4f5,violated,"price 75202@2024-12: expected 367600, got 399750 | price 75202@2025-01: expected 394600, got 370800 | price 75202@2025-02: expected 368050, got 407600 | price 75202@2025-03: expected 382700, got 365300 | price 75202@2025-04: expected 364850, got 345500",3/0/0,3/0/0
+MR2,7,303,266d8022d4f5,violated,"price 75202@2024-12: expected 367600, got 399750 | price 75202@2025-01: expected 394600, got 370800 | price 75202@2025-02: expected 368050, got 407600 | price 75202@2025-03: expected 382700, got 365300 | price 75202@2025-04: expected 364850, got 345500",3/0/0,3/0/0
+MR2,8,101,f832a54eb4ff,violated,"price 75201@2025-01: expected 296700, got 295500 | price 75201@2025-02: expected 373100, got 363100 | price 75201@2025-03: expected 295400, got 289400 | price 75201@2025-04: expected 303000, got 294100 | price 75201@2025-05: expected 337100, got 335800",3/0/0,3/0/0
+MR2,8,202,f832a54eb4ff,violated,"price 75201@2025-01: expected 296700, got 297900 | price 75201@2025-03: expected 295400, got 289400 | price 75201@2025-04: expected 303000, got 338400 | price 75201@2025-05: expected 337100, got 335800 | price 75201@2025-06: expected 373400, got 325100",3/0/0,2/0/0
+MR2,8,303,f832a54eb4ff,violated,"price 75201@2025-01: expected 296700, got 500200 | price 75201@2025-02: expected 373100, got 498700 | price 75201@2025-03: expected 295400, got 408500 | price 75201@2025-04: expected 303000, got 408500 | price 75201@2025-05: expected 337100, got 478350",3/0/0,2/0/0
+MR2,9,101,35ac278bca9e,violated,"price 75204@2025-07: expected 485400, got 406500 | price 75204@2025-08: expected 463800, got 477200 | price 75204@2025-09: expected 521800, got 454600 | price 75204@2025-11: expected 511100, got 437200 | price 75204@2026-02: expected 508900, got 539850",2/0/0,2/0/0
+MR2,9,202,35ac278bca9e,violated,"price 75206@2025-07: expected 510700, got 502900 | price 75206@2026-05: expected 477850, got 452900 | price 75209@2025-06: expected 492600, got 633500 | price 75209@2025-07: expected 494000, got 473400 | price 75209@2025-08: expected 493300, got 494000",2/0/0,1/0/0
+MR2,9,303,35ac278bca9e,violated,"price 75204@2025-07: expected 485400, got 406500 | price 75204@2025-08: expected 463800, got 477200 | price 75204@2025-09: expected 521800, got 454600 | price 75204@2025-11: expected 511100, got 437200 | price 75204@2026-02: expected 508900, got 539850",2/0/0,2/0/0
+MR2,10,101,b76ec81f5e60,violated,"price 75204@2025-07: expected 456200, got 397700 | price 75204@2025-08: expected 416500, got 444450 | price 75204@2025-09: expected 444200, got 443200 | price 75204@2025-10: expected 443200, got 445200 | price 75204@2025-11: expected 444500, got 437200",3/0/0,3/0/0
+MR2,10,202,b76ec81f5e60,violated,"price 75204@2025-08: expected 416500, got 444450 | price 75204@2025-09: expected 444200, got 443200 | price 75204@2025-10: expected 443200, got 445200 | price 75204@2026-03: expected 429500, got 433200 | price 75206@2025-07: expected 427500, got 360700",3/0/0,2/0/0
+MR2,10,303,b76ec81f5e60,violated,"price 75204@2025-07: expected 456200, got 397700 | price 75204@2025-08: expected 416500, got 444450 | price 75204@2025-09: expected 444200, got 443200 | price 75204@2025-10: expected 443200, got 445200 | price 75204@2025-11: expected 444500, got 437200",3/0/0,2/0/0
+MR2,11,101,fd5f9ec822f3,violated,"price 75201@2024-10: expected 308650, got 321150 | price 75201@2024-11: expected 304900, got 243300 | price 75201@2025-02: expected 289100, got 288900 | price 75201@2025-04: expected 289350, got 294100 | price 75201@2025-05: expected 318500, got 302150",3/0/0,3/0/0
+MR2,11,202,fd5f9ec822f3,violated,"price 75201@2024-10: expected 308650, got 296250 | price 75201@2024-11: expected 304900, got 366950 | price 75201@2024-12: expected 291200, got 366950 | price 75201@2025-01: expected 290000, got 365900 | price 75201@2025-02: expected 289100, got 365900",3/0/0,3/0/0
+MR2,11,303,fd5f9ec822f3,violated,"price 75201@2024-10: expected 308650, got 337400 | price 75201@2024-11: expected 304900, got 243300 | price 75201@2024-12: expected 291200, got 325400 | price 75201@2025-01: expected 290000, got 291200 | price 75201@2025-02: expected 289100, got 288900",3/0/0,3/0/0
+MR2,12,101,13805c31b035,violated,"price 75201@2025-09: expected 312850, got 440100 | price 75201@2025-10: expected 316300, got 432400 | price 75201@2025-11: expected 315150, got 413800 | price 75201@2025-12: expected 316900, got 413800 | price 75201@2026-01: expected 327550, got 391700",3/0/0,3/0/0
+MR2,12,202,13805c31b035,violated,"price 75201@2025-09: expected 312850, got 335700 | price 75201@2025-10: expected 316300, got 284700 | price 75201@2025-11: expected 315150, got 307600 | price 75201@2025-12: expected 316900, got 314000 | price 75201@2026-01: expected 327550, got 300800",3/0/0,3/0/0
+MR2,12,303,13805c31b035,violated,"price 75201@2025-09: expected 312850, got 335700 | price 75201@2025-10: expected 316300, got 277950 | price 75201@2025-11: expected 315150, got 316300 | price 75201@2025-12: expected 316900, got 317500 | price 75201@2026-01: expected 327550, got 315800",3/0/0,3/0/0
+MR2,13,101,3573aa42aece,violated,"price 75201@2024-12: expected 370800, got 652300 | price 75201@2025-01: expected 340150, got 663400 | price 75201@2025-02: expected 370800, got 652300 | price 75201@2025-03: expected 383400, got 613100 | price 75201@2025-04: expected 659800, got 622800",3/0/0,3/0/0
+MR2,13,202,3573aa42aece,violated,"price 75201@2024-12: expected 370800, got 508900 | price 75201@2025-01: expected 340150, got 663400 | price 75201@2025-02: expected 370800, got 559800 | price 75201@2025-03: expected 383400, got 655350 | price 75201@2025-04: expected 659800, got 622800",3/0/0,2/0/0
+MR2,13,303,3573aa42aece,violated,"price 75201@2024-12: expected 370800, got 508900 | price 75201@2025-01: expected 340150, got 663400 | price 75201@2025-02: expected 370800, got 652300 | price 75201@2025-03: expected 383400, got 613100 | price 75201@2025-04: expected 659800, got 622800",3/0/0,3/0/0
+MR2,14,101,83337be03223,violated,"price 75219@2025-04: expected 423700, got 612450 | price 75219@2025-05: expected 460600, got 441000 | price 75219@2025-07: expected 419800, got 371600 | price 75229@2025-01: expected 549900, got 523900 | price 75229@2025-02: expected 586300, got 568450",2/0/0,1/0/0
+MR2,14,202,83337be03223,violated,"price 75219@2025-04: expected 423700, got 612450 | price 75219@2025-05: expected 460600, got 441000 | price 75219@2025-07: expected 419800, got 371600 | price 75229@2025-01: expected 549900, got 523900 | price 75229@2025-02: expected 586300, got 568450",2/0/0,1/0/0
+MR2,14,303,83337be03223,violated,"price 75219@2025-04: expected 423700, got 612450 | price 75219@2025-05: expected 460600, got 441000 | price 75219@2025-07: expected 419800, got 371600 | price 75229@2025-01: expected 549900, got 523900 | price 75229@2025-02: expected 586300, got 568450",2/0/0,1/0/0
+MR2,15,101,1d3c429eed1b,violated,"price 75203@2024-10: expected 575700, got 576400 | price 75203@2025-06: expected 521650, got 531500 | price 75209@2024-09: expected 967050, got 847500 | price 75209@2024-10: expected 948650, got 990300 | price 75209@2025-01: expected 996850, got 830800",3/0/0,3/0/0
+MR2,15,202,1d3c429eed1b,violated,"price 75203@2024-09: expected 643800, got 511750 | price 75203@2024-10: expected 575700, got 511750 | price 75203@2024-11: expected 505000, got 502300 | price 75203@2025-01: expected 507700, got 505000 | price 75203@2025-02: expected 508900, got 465800",3/0/0,3/0/0
+MR2,15,303,1d3c429eed1b,violated,"price 75203@2024-09: expected 643800, got 510450 | price 75203@2024-10: expected 575700, got 510450 | price 75203@2024-11: expected 505000, got 502300 | price 75203@2024-12: expected 507700, got 547750 | price 75203@2025-02: expected 508900, got 465800",3/0/0,3/0/0
+MR2,16,101,4e87afd47020,violated,"price 75211@2024-11: expected 315550, got 326450 | price 75211@2024-12: expected 315550, got 279700 | price 75211@2025-01: expected 309850, got 327850 | price 75211@2025-02: expected 329500, got 354400 | price 75211@2025-04: expected 302000, got 311900",2/0/0,2/0/0
+MR2,16,202,4e87afd47020,violated,"price 75209@2025-01: expected 858000, got 793700 | price 75209@2025-04: expected 693200, got 977600 | price 75209@2025-05: expected 853600, got 863800 | price 75209@2025-07: expected 768200, got 868800 | price 75209@2025-08: expected 844500, got 619100",2/0/0,3/0/0
+MR2,16,303,4e87afd47020,violated,"price 75211@2024-11: expected 315550, got 326450 | price 75211@2024-12: expected 315550, got 279700 | price 75211@2025-01: expected 309850, got 327850 | price 75211@2025-02: expected 329500, got 354400 | price 75211@2025-04: expected 302000, got 311900",2/0/0,3/0/0
+MR2,17,101,9bffe5f7695f,violated,"price 75201@2025-10: expected 680300, got 617900 | price 75201@2025-11: expected 666350, got 617900 | price 75201@2026-01: expected 675350, got 715150 | price 75201@2026-02: expected 709450, got 695500 | price 75201@2026-04: expected 727900, got 823850",3/0/0,2/0/0
+MR2,17,202,9bffe5f7695f,violated,"price 75201@2025-09: expected 746300, got 617900 | price 75201@2025-10: expected 680300, got 870350 | price 75201@2025-11: expected 666350, got 617900 | price 75201@2026-01: expected 675350, got 715150 | price 75201@2026-02: expected 709450, got 695500",3/0/0,2/0/0
+MR2,17,303,9bffe5f7695f,violated,"price 75201@2025-08: expected 746300, got 536300 | price 75201@2025-09: expected 746300, got 617900 | price 75201@2025-10: expected 680300, got 617900 | price 75201@2025-11: expected 666350, got 1.1228e+06 | price 75201@2025-12: expected 666350, got 523700",3/0/0,2/0/0
+MR2,18,101,bd013f15618b,violated,"price 75208@2025-06: expected 531150, got 661000 | price 75208@2025-08: expected 537400, got 546700 | price 75208@2025-12: expected 494900, got 440550 | price 75210@2025-01: expected 259700, got 264050 | price 75210@2025-03: expected 247550, got 244300",2/0/0,1/0/0
+MR2,18,202,bd013f15618b,violated,"price 75208@2025-06: expected 531150, got 661000 | price 75208@2025-08: expected 537400, got 546700 | price 75208@2025-12: expected 494900, got 440550 | price 75210@2025-01: expected 259700, got 264050 | price 75210@2025-02: expected 247550, got 211100",2/0/0,1/0/0
+MR2,18,303,bd013f15618b,violated,"price 75208@2025-06: expected 531150, got 661000 | price 75208@2025-08: expected 537400, got 546700 | price 75208@2025-12: expected 494900, got 440550 | price 75210@2025-01: expected 259700, got 264050 | price 75210@2025-02: expected 247550, got 211100",2/0/0,1/0/0
+MR2,19,101,8cb36efae7a5,violated,"price 75215@2025-07: expected 239450, got 240700 | price 75215@2025-08: expected 261500, got 266600 | price 75215@2025-09: expected 256400, got 293600 | price 75215@2025-10: expected 252150, got 202800 | price 75215@2025-12: expected 251200, got 244350",2/0/0,1/0/0
+MR2,19,202,8cb36efae7a5,violated,"price 75209@2025-07: expected 868800, got 967350 | price 75209@2025-08: expected 891500, got 697950 | price 75209@2025-09: expected 891500, got 914950 | price 75209@2025-10: expected 975150, got 977200 | price 75209@2025-12: expected 913000, got 1.0905e+06",2/0/0,1/0/0
+MR2,19,303,8cb36efae7a5,violated,"price 75209@2025-07: expected 868800, got 967350 | price 75209@2025-08: expected 891500, got 697950 | price 75209@2025-09: expected 891500, got 914950 | price 75209@2025-10: expected 975150, got 977200 | price 75209@2025-12: expected 913000, got 1.0905e+06",2/0/0,1/0/0
+MR2,20,101,35fbe0b2738e,violated,"price 75201@2025-04: expected 343550, got 345500 | price 75201@2025-05: expected 341600, got 337100 | price 75201@2025-06: expected 345150, got 318700 | price 75201@2025-07: expected 341600, got 350100 | price 75201@2025-08: expected 344800, got 350100",3/0/0,3/0/0
+MR2,20,202,35fbe0b2738e,violated,"price 75201@2025-04: expected 343550, got 345500 | price 75201@2025-05: expected 341600, got 337100 | price 75201@2025-06: expected 345150, got 318700 | price 75201@2025-07: expected 341600, got 350100 | price 75201@2025-08: expected 344800, got 350100",3/0/0,3/0/0
+MR2,20,303,35fbe0b2738e,violated,"price 75201@2025-04: expected 343550, got 345500 | price 75201@2025-05: expected 341600, got 337100 | price 75201@2025-06: expected 345150, got 318700 | price 75201@2025-07: expected 341600, got 350100 | price 75201@2025-08: expected 344800, got 350100",3/0/0,3/0/0
+MR2,21,101,d87a9f12b68b,violated,"price 75201@2025-09: expected 333000, got 335700 | price 75201@2025-10: expected NaN, got 333000 | price 75201@2025-11: expected NaN, got 329300 | price 75201@2026-02: expected NaN, got 296100 | price 75201@2026-04: expected NaN, got 293800",3/0/0,3/0/0
+MR2,21,202,d87a9f12b68b,violated,"price 75201@2025-09: expected 333000, got 328600 | price 75201@2025-10: expected NaN, got 332800 | price 75201@2025-11: expected NaN, got 329300 | price 75201@2026-04: expected NaN, got 301750 | price 75201@2026-05: expected NaN, got 307400",3/0/0,3/0/0
+MR2,21,303,d87a9f12b68b,violated,"price 75201@2025-09: expected 333000, got 335700 | price 75201@2025-10: expected NaN, got 333000 | price 75201@2025-11: expected NaN, got 329300 | price 75201@2026-02: expected NaN, got 296100 | price 75201@2026-04: expected NaN, got 293800",3/0/0,3/0/0
+MR2,22,101,cd957316d1b9,violated,"price 75206@2025-09: expected 650800, got 716250 | price 75206@2025-10: expected 662400, got 716250 | price 75206@2025-11: expected 606400, got 630600 | price 75206@2025-12: expected 606400, got 630600 | price 75206@2026-01: expected 597000, got 613800",3/0/0,3/0/0
+MR2,22,202,cd957316d1b9,violated,"price 75206@2025-09: expected 650800, got 716250 | price 75206@2025-10: expected 662400, got 716250 | price 75206@2025-11: expected 606400, got 630600 | price 75206@2025-12: expected 606400, got 630600 | price 75206@2026-01: expected 597000, got 613800",3/0/0,3/0/0
+MR2,22,303,cd957316d1b9,violated,"price 75206@2025-09: expected 650800, got 593500 | price 75206@2025-10: expected 662400, got 659800 | price 75206@2025-11: expected 606400, got 665000 | price 75206@2025-12: expected 606400, got 666500 | price 75206@2026-01: expected 597000, got 516700",3/0/0,3/0/0
+MR2,23,101,c65ef9e4d809,violated,"price 75201@2025-05: expected 719350, got 622800 | price 75201@2025-09: expected 746300, got 617900 | price 75201@2025-10: expected 680300, got 617900 | price 75201@2025-11: expected 666350, got 1.1228e+06 | price 75201@2025-12: expected 666350, got 523700",3/0/0,3/0/0
+MR2,23,202,c65ef9e4d809,violated,"price 75208@2025-06: expected 531150, got 661000 | price 75208@2025-08: expected 537400, got 546700 | price 75208@2025-12: expected 494900, got 440550 | price 75208@2026-03: expected 515200, got 431850 | price 75210@2025-05: expected 275500, got 274500",3/0/0,3/0/0
+MR2,23,303,c65ef9e4d809,violated,"price 75201@2025-05: expected 719350, got 622800 | price 75201@2025-09: expected 746300, got 617900 | price 75201@2025-10: expected 680300, got 617900 | price 75201@2025-11: expected 666350, got 1.1228e+06 | price 75201@2025-12: expected 666350, got 523700",3/0/0,2/0/0
+MR2,24,101,2bee54c4e2c7,violated,"price 75204@2025-05: expected 491900, got 462900 | price 75204@2025-07: expected 491900, got 402100 | price 75208@2025-06: expected 522600, got 647300 | price 75209@2025-05: expected 792450, got 711750 | price 75209@2025-08: expected 754600, got 591350",3/0/0,3/0/0
+MR2,24,202,2bee54c4e2c7,violated,"price 75202@2024-10: expected 329600, got 453800 | price 75202@2024-11: expected 329600, got 414050 | price 75202@2024-12: expected 298000, got 446550 | price 75202@2025-01: expected 292450, got 292150 | price 75202@2025-02: expected 289400, got 325200",3/0/0,1/0/0
+MR2,24,303,2bee54c4e2c7,violated,"price 75202@2024-10: expected 329600, got 453800 | price 75202@2024-11: expected 329600, got 414050 | price 75202@2024-12: expected 298000, got 446550 | price 75202@2025-01: expected 292450, got 292150 | price 75202@2025-02: expected 289400, got 325200",3/0/0,2/0/0
+MR2,25,101,cbad9096b0a4,violated,"price 75202@2025-05: expected 315600, got 268500 | price 75202@2025-06: expected 329800, got 387500 | price 75202@2025-07: expected 371300, got 338400 | price 75202@2025-08: expected 338400, got 302000 | price 75202@2025-09: expected 364350, got 399450",2/0/0,1/0/0
+MR2,25,202,cbad9096b0a4,violated,"price 75202@2025-05: expected 315600, got 328500 | price 75202@2025-06: expected 329800, got 371300 | price 75202@2025-07: expected 371300, got 354850 | price 75202@2025-12: expected 313500, got 315750 | price 75202@2026-01: expected 314000, got 300800",2/0/0,1/0/0
+MR2,25,303,cbad9096b0a4,violated,"price 75202@2025-05: expected 315600, got 268500 | price 75202@2025-06: expected 329800, got 387500 | price 75202@2025-07: expected 371300, got 338400 | price 75202@2025-08: expected 338400, got 302000 | price 75202@2025-09: expected 364350, got 399450",2/0/0,1/0/0
+MR2,26,101,ad69bc18ae77,violated,"price 75201@2025-05: expected 365300, got 832900 | price 75201@2025-06: expected 377300, got 890700 | price 75201@2025-07: expected 400050, got 948500 | price 75201@2025-08: expected 393250, got 870850 | price 75201@2025-09: expected 392100, got 948500",3/0/0,3/0/0
+MR2,26,202,ad69bc18ae77,violated,"price 75201@2025-05: expected 365300, got 832900 | price 75201@2025-06: expected 377300, got 890700 | price 75201@2025-07: expected 400050, got 948500 | price 75201@2025-08: expected 393250, got 870850 | price 75201@2025-09: expected 392100, got 948500",3/0/0,3/0/0
+MR2,26,303,ad69bc18ae77,violated,"price 75201@2025-05: expected 365300, got 373400 | price 75201@2025-06: expected 377300, got 325100 | price 75201@2025-07: expected 400050, got 372400 | price 75201@2025-08: expected 393250, got 395800 | price 75201@2025-09: expected 392100, got 364150",3/0/0,3/0/0
+MR2,27,101,9f552d4451ac,violated,"price 75203@2024-12: expected 410300, got 484050 | price 75203@2025-01: expected 411800, got 392900 | price 75203@2025-02: expected 394600, got 415300 | price 75203@2025-03: expected 389300, got 357600 | price 75203@2025-04: expected 373400, got 355400",3/0/0,2/0/0
+MR2,27,202,9f552d4451ac,violated,"price 75203@2024-12: expected 410300, got 484050 | price 75203@2025-01: expected 411800, got 392900 | price 75203@2025-02: expected 394600, got 415300 | price 75203@2025-03: expected 389300, got 357600 | price 75203@2025-05: expected 373400, got 396450",3/0/0,3/0/0
+MR2,27,303,9f552d4451ac,violated,"price 75203@2024-12: expected 410300, got 484050 | price 75203@2025-01: expected 411800, got 392900 | price 75203@2025-02: expected 394600, got 415300 | price 75203@2025-03: expected 389300, got 357600 | price 75203@2025-04: expected 373400, got 355400",3/0/0,2/0/0
+MR2,28,101,5a8d7203252a,violated,"price 75201@2025-04: expected 355400, got 345500 | price 75201@2025-05: expected 355400, got 373400 | price 75201@2025-06: expected 377300, got 325100 | price 75201@2025-07: expected 400050, got 372400 | price 75201@2025-08: expected 390700, got 395800",3/0/0,2/0/0
+MR2,28,202,5a8d7203252a,violated,"price 75201@2025-04: expected 355400, got 822450 | price 75201@2025-05: expected 355400, got 832900 | price 75201@2025-06: expected 377300, got 890700 | price 75201@2025-07: expected 400050, got 948500 | price 75201@2025-08: expected 390700, got 870850",3/0/0,3/0/0
+MR2,28,303,5a8d7203252a,violated,"price 75201@2025-04: expected 355400, got 812000 | price 75201@2025-05: expected 355400, got 832900 | price 75201@2025-06: expected 377300, got 832900 | price 75201@2025-07: expected 400050, got 832900 | price 75201@2025-08: expected 390700, got 948500",3/0/0,3/0/0
+MR2,29,101,d3752cceeae9,violated,"price 75202@2024-10: expected 378650, got 337950 | price 75202@2024-11: expected 465800, got 396100 | price 75202@2024-12: expected 483000, got 593200 | price 75202@2025-01: expected 471450, got 459900 | price 75202@2025-02: expected 424450, got 433600",3/0/0,2/0/0
+MR2,29,202,d3752cceeae9,violated,"price 75202@2024-10: expected 378650, got 337950 | price 75202@2024-11: expected 465800, got 340100 | price 75202@2024-12: expected 483000, got 502300 | price 75202@2025-01: expected 471450, got 392900 | price 75202@2025-02: expected 424450, got 415300",3/0/0,3/0/0
+MR2,29,303,d3752cceeae9,violated,"price 75202@2024-10: expected 378650, got 337950 | price 75202@2024-11: expected 465800, got 396100 | price 75202@2024-12: expected 483000, got 593200 | price 75202@2025-01: expected 471450, got 459900 | price 75202@2025-02: expected 424450, got 433600",3/0/0,3/0/0
+MR4,0,101,837830c82cee,holds,,3/0/0,3/0/0
+MR4,0,202,837830c82cee,holds,,3/0/0,3/0/0
+MR4,0,303,837830c82cee,holds,,3/0/0,3/0/0
+MR4,1,101,ea516380e2bb,violated,"price 75201@2025-12: removing the dearest listing raised the median (780,550 -> 783,400) | price 75201@2026-01: removing the dearest listing raised the median (747,400 -> 762,550) | price 75201@2026-02: removing the dearest listing raised the median (762,550 -> 777,700) | price 75203@2025-10: removing the dearest listing raised the median (373,450 -> 541,300) | price 75203@2025-12: removing the dearest listing raised the median (516,100 -> 541,300)",3/0/0,3/0/0
+MR4,1,202,ea516380e2bb,violated,"price 75201@2025-12: removing the dearest listing raised the median (780,550 -> 783,400) | price 75201@2026-01: removing the dearest listing raised the median (747,400 -> 762,550) | price 75201@2026-02: removing the dearest listing raised the median (762,550 -> 777,700) | price 75203@2025-10: removing the dearest listing raised the median (373,450 -> 541,300) | price 75203@2025-12: removing the dearest listing raised the median (516,100 -> 541,300)",3/0/0,3/0/0
+MR4,1,303,ea516380e2bb,violated,"price 75201@2025-12: removing the dearest listing raised the median (780,550 -> 783,400) | price 75201@2026-01: removing the dearest listing raised the median (747,400 -> 762,550) | price 75201@2026-02: removing the dearest listing raised the median (762,550 -> 777,700) | price 75203@2025-10: removing the dearest listing raised the median (373,450 -> 541,300) | price 75203@2025-12: removing the dearest listing raised the median (516,100 -> 541,300)",3/0/0,3/0/0
+MR4,2,101,cdc85e88d655,holds,,3/0/0,3/0/0
+MR4,2,202,cdc85e88d655,holds,,3/0/0,3/0/0
+MR4,2,303,cdc85e88d655,holds,,3/0/0,3/0/0
+MR4,3,101,ff9821ba1ed6,violated,"price 75203@2025-07: removing the dearest listing raised the median (461,000 -> 589,500) | price 75216@2025-06: removing the dearest listing raised the median (418,000 -> 804,150) | price 75216@2025-07: removing the dearest listing raised the median (569,100 -> 569,500) | price 75216@2025-11: removing the dearest listing raised the median (640,300 -> 641,650) | price 75235@2025-07: removing the dearest listing raised the median (460,350 -> 462,000)",3/0/0,3/0/0
+MR4,3,202,ff9821ba1ed6,violated,"price 75203@2025-07: removing the dearest listing raised the median (461,000 -> 589,500) | price 75216@2025-06: removing the dearest listing raised the median (418,000 -> 804,150) | price 75216@2025-07: removing the dearest listing raised the median (569,100 -> 569,500) | price 75216@2025-11: removing the dearest listing raised the median (640,300 -> 641,650) | price 75235@2025-07: removing the dearest listing raised the median (460,350 -> 462,000)",3/0/0,3/0/0
+MR4,3,303,ff9821ba1ed6,violated,"price 75203@2025-07: removing the dearest listing raised the median (461,000 -> 589,500) | price 75216@2025-06: removing the dearest listing raised the median (418,000 -> 804,150) | price 75216@2025-07: removing the dearest listing raised the median (569,100 -> 569,500) | price 75216@2025-11: removing the dearest listing raised the median (640,300 -> 641,650) | price 75235@2025-07: removing the dearest listing raised the median (460,350 -> 462,000)",3/0/0,3/0/0
+MR4,4,101,4022ee2e80fa,holds,,3/0/0,3/0/0
+MR4,4,202,4022ee2e80fa,holds,,3/0/0,3/0/0
+MR4,4,303,4022ee2e80fa,holds,,3/0/0,3/0/0
+MR4,5,101,f13bf9a3f714,violated,"price 75237@2025-07: removing the dearest listing raised the median (458,700 -> 459,500)",3/0/0,3/0/0
+MR4,5,202,f13bf9a3f714,violated,"price 75237@2025-07: removing the dearest listing raised the median (458,700 -> 459,500)",3/0/0,3/0/0
+MR4,5,303,f13bf9a3f714,violated,"price 75237@2025-07: removing the dearest listing raised the median (458,700 -> 459,500)",3/0/0,3/0/0
+MR4,6,101,1646a271cfeb,holds,,3/0/0,3/0/0
+MR4,6,202,1646a271cfeb,holds,,3/0/0,3/0/0
+MR4,6,303,1646a271cfeb,holds,,3/0/0,3/0/0
+MR4,7,101,266d8022d4f5,violated,"price 75231@2025-11: removing the dearest listing raised the median (499,100 -> 499,950)",3/0/0,3/0/0
+MR4,7,202,266d8022d4f5,violated,"price 75231@2025-11: removing the dearest listing raised the median (499,100 -> 499,950)",3/0/0,3/0/0
+MR4,7,303,266d8022d4f5,violated,"price 75231@2025-11: removing the dearest listing raised the median (499,100 -> 499,950)",3/0/0,3/0/0
+MR4,8,101,f832a54eb4ff,holds,,3/0/0,3/0/0
+MR4,8,202,f832a54eb4ff,holds,,3/0/0,3/0/0
+MR4,8,303,f832a54eb4ff,holds,,3/0/0,3/0/0
+MR4,9,101,35ac278bca9e,holds,,2/0/0,2/0/0
+MR4,9,202,35ac278bca9e,holds,,2/0/0,2/0/0
+MR4,9,303,35ac278bca9e,holds,,2/0/0,2/0/0
+MR4,10,101,b76ec81f5e60,holds,,3/0/0,3/0/0
+MR4,10,202,b76ec81f5e60,holds,,3/0/0,3/0/0
+MR4,10,303,b76ec81f5e60,holds,,3/0/0,3/0/0
+MR4,11,101,fd5f9ec822f3,violated,"price 75248@2025-04: removing the dearest listing raised the median (304,250 -> 311,000)",3/0/0,3/0/0
+MR4,11,202,fd5f9ec822f3,violated,"price 75248@2025-04: removing the dearest listing raised the median (304,250 -> 311,000)",3/0/0,3/0/0
+MR4,11,303,fd5f9ec822f3,violated,"price 75248@2025-04: removing the dearest listing raised the median (304,250 -> 311,000)",3/0/0,3/0/0
+MR4,12,101,13805c31b035,violated,"price 75252@2026-03: removing the dearest listing raised the median (316,650 -> 354,700) | price 75252@2026-05: removing the dearest listing raised the median (361,250 -> 367,800)",3/0/0,3/0/0
+MR4,12,202,13805c31b035,violated,"price 75252@2026-03: removing the dearest listing raised the median (316,650 -> 354,700) | price 75252@2026-05: removing the dearest listing raised the median (361,250 -> 367,800)",3/0/0,3/0/0
+MR4,12,303,13805c31b035,violated,"price 75252@2026-03: removing the dearest listing raised the median (316,650 -> 354,700) | price 75252@2026-05: removing the dearest listing raised the median (361,250 -> 367,800)",3/0/0,3/0/0
+MR4,13,101,3573aa42aece,holds,,3/0/0,3/0/0
+MR4,13,202,3573aa42aece,holds,,3/0/0,3/0/0
+MR4,13,303,3573aa42aece,holds,,3/0/0,3/0/0
+MR4,14,101,83337be03223,holds,,2/0/0,2/0/0
+MR4,14,202,83337be03223,holds,,2/0/0,2/0/0
+MR4,14,303,83337be03223,holds,,2/0/0,2/0/0
+MR4,15,101,1d3c429eed1b,violated,"price 75203@2024-11: removing the dearest listing raised the median (505,000 -> 508,550) | price 75210@2024-12: removing the dearest listing raised the median (852,600 -> 858,000) | price 75210@2025-01: removing the dearest listing raised the median (955,600 -> 956,550) | price 75212@2024-11: removing the dearest listing raised the median (486,800 -> 491,600) | price 75215@2024-12: removing the dearest listing raised the median (703,950 -> 713,400)",3/0/0,3/0/0
+MR4,15,202,1d3c429eed1b,violated,"price 75203@2024-11: removing the dearest listing raised the median (505,000 -> 508,550) | price 75210@2024-12: removing the dearest listing raised the median (852,600 -> 858,000) | price 75210@2025-01: removing the dearest listing raised the median (955,600 -> 956,550) | price 75212@2024-11: removing the dearest listing raised the median (486,800 -> 491,600) | price 75215@2024-12: removing the dearest listing raised the median (703,950 -> 713,400)",3/0/0,3/0/0
+MR4,15,303,1d3c429eed1b,violated,"price 75203@2024-11: removing the dearest listing raised the median (505,000 -> 508,550) | price 75210@2024-12: removing the dearest listing raised the median (852,600 -> 858,000) | price 75210@2025-01: removing the dearest listing raised the median (955,600 -> 956,550) | price 75212@2024-11: removing the dearest listing raised the median (486,800 -> 491,600) | price 75215@2024-12: removing the dearest listing raised the median (703,950 -> 713,400)",3/0/0,3/0/0
+MR4,16,101,4e87afd47020,holds,,2/0/0,2/0/0
+MR4,16,202,4e87afd47020,holds,,2/0/0,2/0/0
+MR4,16,303,4e87afd47020,holds,,2/0/0,2/0/0
+MR4,17,101,9bffe5f7695f,violated,"price 75252@2025-12: removing the dearest listing raised the median (481,200 -> 521,150)",3/0/0,3/0/0
+MR4,17,202,9bffe5f7695f,violated,"price 75252@2025-12: removing the dearest listing raised the median (481,200 -> 521,150)",3/0/0,3/0/0
+MR4,17,303,9bffe5f7695f,violated,"price 75252@2025-12: removing the dearest listing raised the median (481,200 -> 521,150)",3/0/0,3/0/0
+MR4,18,101,bd013f15618b,holds,,2/0/0,2/0/0
+MR4,18,202,bd013f15618b,holds,,2/0/0,2/0/0
+MR4,18,303,bd013f15618b,holds,,2/0/0,2/0/0
+MR4,19,101,8cb36efae7a5,holds,,2/0/0,2/0/0
+MR4,19,202,8cb36efae7a5,holds,,2/0/0,2/0/0
+MR4,19,303,8cb36efae7a5,holds,,2/0/0,2/0/0
+MR4,20,101,35fbe0b2738e,violated,"price 75204@2026-03: removing the dearest listing raised the median (385,000 -> 389,350) | price 75241@2026-03: removing the dearest listing raised the median (337,900 -> 345,850) | price 75249@2025-12: removing the dearest listing raised the median (346,350 -> 349,600)",3/0/0,3/0/0
+MR4,20,202,35fbe0b2738e,violated,"price 75204@2026-03: removing the dearest listing raised the median (385,000 -> 389,350) | price 75241@2026-03: removing the dearest listing raised the median (337,900 -> 345,850) | price 75249@2025-12: removing the dearest listing raised the median (346,350 -> 349,600)",3/0/0,3/0/0
+MR4,20,303,35fbe0b2738e,violated,"price 75204@2026-03: removing the dearest listing raised the median (385,000 -> 389,350) | price 75241@2026-03: removing the dearest listing raised the median (337,900 -> 345,850) | price 75249@2025-12: removing the dearest listing raised the median (346,350 -> 349,600)",3/0/0,3/0/0
+MR4,21,101,d87a9f12b68b,violated,"price 75214@2025-10: removing the dearest listing raised the median (270,600 -> 283,500) | price 75214@2025-11: removing the dearest listing raised the median (270,600 -> 277,050) | price 75214@2025-12: removing the dearest listing raised the median (272,200 -> 277,850) | price 75214@2026-01: removing the dearest listing raised the median (278,800 -> 281,150) | price 75219@2026-04: removing the dearest listing raised the median (300,300 -> 301,300)",3/0/0,3/0/0
+MR4,21,202,d87a9f12b68b,violated,"price 75214@2025-10: removing the dearest listing raised the median (270,600 -> 283,500) | price 75214@2025-11: removing the dearest listing raised the median (270,600 -> 277,050) | price 75214@2025-12: removing the dearest listing raised the median (272,200 -> 277,850) | price 75214@2026-01: removing the dearest listing raised the median (278,800 -> 281,150) | price 75219@2026-04: removing the dearest listing raised the median (300,300 -> 301,300)",3/0/0,3/0/0
+MR4,21,303,d87a9f12b68b,violated,"price 75214@2025-10: removing the dearest listing raised the median (270,600 -> 283,500) | price 75214@2025-11: removing the dearest listing raised the median (270,600 -> 277,050) | price 75214@2025-12: removing the dearest listing raised the median (272,200 -> 277,850) | price 75214@2026-01: removing the dearest listing raised the median (278,800 -> 281,150) | price 75219@2026-04: removing the dearest listing raised the median (300,300 -> 301,300)",3/0/0,3/0/0
+MR4,22,101,cd957316d1b9,violated,"price 75212@2026-02: removing the dearest listing raised the median (451,050 -> 453,700) | price 75246@2026-04: removing the dearest listing raised the median (546,450 -> 546,700) | price 75246@2026-05: removing the dearest listing raised the median (566,900 -> 567,050) | price 75246@2026-06: removing the dearest listing raised the median (560,850 -> 563,200)",3/0/0,3/0/0
+MR4,22,202,cd957316d1b9,violated,"price 75212@2026-02: removing the dearest listing raised the median (451,050 -> 453,700) | price 75246@2026-04: removing the dearest listing raised the median (546,450 -> 546,700) | price 75246@2026-05: removing the dearest listing raised the median (566,900 -> 567,050) | price 75246@2026-06: removing the dearest listing raised the median (560,850 -> 563,200)",3/0/0,3/0/0
+MR4,22,303,cd957316d1b9,violated,"price 75212@2026-02: removing the dearest listing raised the median (451,050 -> 453,700) | price 75246@2026-04: removing the dearest listing raised the median (546,450 -> 546,700) | price 75246@2026-05: removing the dearest listing raised the median (566,900 -> 567,050) | price 75246@2026-06: removing the dearest listing raised the median (560,850 -> 563,200)",3/0/0,3/0/0
+MR4,23,101,c65ef9e4d809,violated,"price 75223@2025-08: removing the dearest listing raised the median (365,750 -> 399,200)",3/0/0,3/0/0
+MR4,23,202,c65ef9e4d809,violated,"price 75223@2025-08: removing the dearest listing raised the median (365,750 -> 399,200)",3/0/0,3/0/0
+MR4,23,303,c65ef9e4d809,violated,"price 75223@2025-08: removing the dearest listing raised the median (365,750 -> 399,200)",3/0/0,3/0/0
+MR4,24,101,2bee54c4e2c7,holds,,3/0/0,3/0/0
+MR4,24,202,2bee54c4e2c7,holds,,3/0/0,3/0/0
+MR4,24,303,2bee54c4e2c7,holds,,3/0/0,3/0/0
+MR4,25,101,cbad9096b0a4,holds,,2/0/0,2/0/0
+MR4,25,202,cbad9096b0a4,holds,,2/0/0,2/0/0
+MR4,25,303,cbad9096b0a4,holds,,2/0/0,2/0/0
+MR4,26,101,ad69bc18ae77,violated,"price 75210@2025-07: removing the dearest listing raised the median (274,750 -> 275,500)",3/0/0,3/0/0
+MR4,26,202,ad69bc18ae77,violated,"price 75210@2025-07: removing the dearest listing raised the median (274,750 -> 275,500)",3/0/0,3/0/0
+MR4,26,303,ad69bc18ae77,violated,"price 75210@2025-07: removing the dearest listing raised the median (274,750 -> 275,500)",3/0/0,3/0/0
+MR4,27,101,9f552d4451ac,violated,"price 75243@2025-11: removing the dearest listing raised the median (371,300 -> 404,150) | price 75254@2025-11: removing the dearest listing raised the median (450,150 -> 483,400)",3/0/0,3/0/0
+MR4,27,202,9f552d4451ac,violated,"price 75243@2025-11: removing the dearest listing raised the median (371,300 -> 404,150) | price 75254@2025-11: removing the dearest listing raised the median (450,150 -> 483,400)",3/0/0,3/0/0
+MR4,27,303,9f552d4451ac,violated,"price 75243@2025-11: removing the dearest listing raised the median (371,300 -> 404,150) | price 75254@2025-11: removing the dearest listing raised the median (450,150 -> 483,400)",3/0/0,3/0/0
+MR4,28,101,5a8d7203252a,violated,"price 75254@2025-04: removing the dearest listing raised the median (479,800 -> 511,000)",3/0/0,3/0/0
+MR4,28,202,5a8d7203252a,violated,"price 75254@2025-04: removing the dearest listing raised the median (479,800 -> 511,000)",3/0/0,3/0/0
+MR4,28,303,5a8d7203252a,violated,"price 75254@2025-04: removing the dearest listing raised the median (479,800 -> 511,000)",3/0/0,3/0/0
+MR4,29,101,d3752cceeae9,violated,"price 75237@2025-07: removing the dearest listing raised the median (459,500 -> 460,300)",3/0/0,3/0/0
+MR4,29,202,d3752cceeae9,violated,"price 75237@2025-07: removing the dearest listing raised the median (459,500 -> 460,300)",3/0/0,3/0/0
+MR4,29,303,d3752cceeae9,violated,"price 75237@2025-07: removing the dearest listing raised the median (459,500 -> 460,300)",3/0/0,3/0/0
+MR7,0,101,837830c82cee,violated,"price 75202@2025-01: expected 360850, got 626900 | price 75202@2025-02: expected 383700, got 627450 | price 75202@2025-03: expected 383700, got 638300 | price 75202@2025-04: expected 373400, got 606000 | price 75202@2025-05: expected 373400, got 671600",3/0/0,3/0/0
+MR7,0,202,837830c82cee,holds,,3/0/0,3/0/0
+MR7,0,303,837830c82cee,holds,,3/0/0,3/0/0
+MR7,1,101,ea516380e2bb,violated,"price 75232@2025-10: expected 490600, got 944800 | price 75232@2025-12: expected 509050, got 981500 | price 75233@2025-07: expected 402400, got 407800 | price 75233@2025-08: expected 413400, got 466900 | price 75233@2025-10: expected 490600, got 944800",3/0/0,3/0/0
+MR7,1,202,ea516380e2bb,violated,"price 75201@2025-07: expected 373450, got 746900 | price 75201@2025-08: expected 358600, got 717200 | price 75201@2025-09: expected 373450, got 746900 | price 75201@2025-10: expected 333000, got 666000 | price 75201@2025-12: expected 780550, got 818650",3/0/0,3/0/0
+MR7,1,303,ea516380e2bb,violated,"price 75201@2025-07: expected 373450, got 746900 | price 75201@2025-08: expected 358600, got 717200 | price 75201@2025-09: expected 373450, got 746900 | price 75201@2025-10: expected 333000, got 666000 | price 75201@2025-12: expected 780550, got 818650",3/0/0,3/0/0
+MR7,5,101,f13bf9a3f714,holds,,3/0/0,3/0/0
+MR7,5,202,f13bf9a3f714,holds,,3/0/0,3/0/0
+MR7,5,303,f13bf9a3f714,holds,,3/0/0,3/0/0
+MR7,14,101,83337be03223,holds,,2/0/0,2/0/0
+MR7,14,202,83337be03223,holds,,2/0/0,2/0/0
+MR7,14,303,83337be03223,holds,,2/0/0,2/0/0
+MR7,17,101,9bffe5f7695f,holds,,3/0/0,3/0/0
+MR7,17,202,9bffe5f7695f,holds,,3/0/0,3/0/0
+MR7,17,303,9bffe5f7695f,violated,"price 75236@2026-07: expected 336500, got 363000 | price 75237@2025-08: expected 960600, got 494300 | price 75237@2025-09: expected 810800, got 433550 | price 75237@2025-10: expected 878600, got 446800 | price 75237@2025-11: expected 891600, got 452700",3/0/0,3/0/0
+MR7,18,101,bd013f15618b,holds,,2/0/0,2/0/0
+MR7,18,202,bd013f15618b,holds,,2/0/0,2/0/0
+MR7,18,303,bd013f15618b,holds,,2/0/0,2/0/0
+MR7,19,101,8cb36efae7a5,holds,,2/0/0,2/0/0
+MR7,19,202,8cb36efae7a5,holds,,2/0/0,2/0/0
+MR7,19,303,8cb36efae7a5,holds,,2/0/0,2/0/0
+MR7,28,101,5a8d7203252a,holds,,3/0/0,3/0/0
+MR7,28,202,5a8d7203252a,holds,,3/0/0,3/0/0
+MR7,28,303,5a8d7203252a,holds,,3/0/0,3/0/0
+MR7,29,101,d3752cceeae9,holds,,3/0/0,3/0/0
+MR7,29,202,d3752cceeae9,holds,,3/0/0,3/0/0
+MR7,29,303,d3752cceeae9,holds,,3/0/0,3/0/0
+MR7,32,101,e45dbc36ce95,holds,,3/0/0,3/0/0
+MR7,32,202,e45dbc36ce95,holds,,3/0/0,3/0/0
+MR7,32,303,e45dbc36ce95,holds,,3/0/0,3/0/0
+MR7,34,101,e2503e51d80c,violated,"price 75232@2025-10: expected 490600, got 944800 | price 75232@2025-12: expected 509050, got 981500 | ppsf 75232@2025-10: expected 203.418, got 367.154 | ppsf 75232@2025-12: expected 186.136, got 349.739 | mom_price_pct 75232@2025-10: expected 52.0297, got 192.78",3/0/0,3/0/0
+MR7,34,202,e2503e51d80c,violated,"price 75232@2025-10: expected 490600, got 944800 | price 75232@2025-12: expected 509050, got 981500 | ppsf 75232@2025-10: expected 203.418, got 367.154 | ppsf 75232@2025-12: expected 186.136, got 349.739 | mom_price_pct 75232@2025-10: expected 52.0297, got 192.78",3/0/0,3/0/0
+MR7,34,303,e2503e51d80c,holds,,3/0/0,3/0/0
+MR7,37,101,d1f4fd452b4d,holds,,3/0/0,3/0/0
+MR7,37,202,d1f4fd452b4d,holds,,3/0/0,3/0/0
+MR7,37,303,d1f4fd452b4d,holds,,3/0/0,3/0/0
+MR7,38,101,73aa9af20a30,violated,"price 75203@2026-02: expected 762550, got 1.473e+06 | price 75203@2026-03: expected 898000, got 1.4748e+06 | ppsf 75203@2026-02: expected 269.531, got 478.394 | ppsf 75203@2026-03: expected 266.013, got 525.749 | mom_price_pct 75203@2026-02: expected 66.9696, got 222.531",3/0/0,3/0/0
+MR7,38,202,73aa9af20a30,violated,"price 75223@2025-10: expected 1.5888e+06, got 929700 | price 75223@2025-12: expected 1.5551e+06, got 874500 | price 75223@2026-01: expected 1.6497e+06, got 874500 | price 75223@2026-02: expected 1.7564e+06, got 922700 | price 75223@2026-03: expected 1.6928e+06, got 911250",3/0/0,3/0/0
+MR7,38,303,73aa9af20a30,violated,"price 75215@2025-10: expected 921000, got 546300 | price 75215@2025-11: expected 1.3276e+06, got 663800 | price 75215@2026-05: expected 1.7636e+06, got 881800 | price 75215@2026-06: expected 1.7428e+06, got 871400 | price 75215@2026-07: expected 717000, got 367800",3/0/0,3/0/0
+MR7,41,101,7e1f5d44ea9a,holds,,3/0/0,3/0/0
+MR7,41,202,7e1f5d44ea9a,holds,,3/0/0,3/0/0
+MR7,41,303,7e1f5d44ea9a,holds,,3/0/0,3/0/0
+MR7,43,101,a1925bbc96da,violated,"price 75219@2025-01: expected 1.5982e+06, got 941800 | price 75219@2025-04: expected 1.7984e+06, got 984000 | price 75219@2025-05: expected 1.7997e+06, got 1.1173e+06 | price 75219@2025-06: expected 1.7446e+06, got 1.1095e+06 | price 75219@2025-07: expected 1.6158e+06, got 990300",3/0/0,3/0/0
+MR7,43,202,a1925bbc96da,violated,"price 75253@2025-02: expected 1.2025e+06, got 658500 | price 75253@2025-04: expected 1.2026e+06, got 672300 | price 75253@2025-05: expected 1.1572e+06, got 703800 | price 75253@2025-06: expected 1.2384e+06, got 705100 | price 75253@2025-07: expected 1.1406e+06, got 691900",3/0/0,3/0/0
+MR7,43,303,a1925bbc96da,violated,"price 75219@2025-01: expected 799100, got 1.4949e+06 | price 75219@2025-04: expected 899200, got 1.2039e+06 | price 75219@2025-05: expected 899850, got 1.5807e+06 | price 75219@2025-06: expected 872300, got 1.632e+06 | price 75219@2025-07: expected 807900, got 1.0634e+06",3/0/0,3/0/0
+MR7,44,101,d45301099b69,holds,,3/0/0,3/0/0
+MR7,44,202,d45301099b69,holds,,3/0/0,3/0/0
+MR7,44,303,d45301099b69,violated,"price 75201@2025-11: expected 412100, got 621000 | price 75201@2025-12: expected 444300, got 658600 | ppsf 75201@2025-11: expected 248.498, got 378.992 | ppsf 75201@2025-12: expected 268.12, got 358.056 | mom_price_pct 75201@2025-11: expected -47.2546, got -20.5171",3/0/0,3/0/0
+MR7,46,101,1a01e2ec0253,holds,,2/0/0,2/0/0
+MR7,46,202,1a01e2ec0253,holds,,2/0/0,2/0/0
+MR7,46,303,1a01e2ec0253,holds,,2/0/0,2/0/0
+MR7,49,101,696ad3a970b8,holds,,3/0/0,3/0/0
+MR7,49,202,696ad3a970b8,holds,,3/0/0,3/0/0
+MR7,49,303,696ad3a970b8,holds,,3/0/0,3/0/0
+MR7,50,101,3de8e5437f98,violated,"price 75237@2025-04: expected 433000, got 789600 | price 75237@2025-05: expected 437700, got 831200 | price 75237@2025-06: expected 458700, got 917400 | price 75237@2025-07: expected 459500, got 919000 | price 75237@2025-08: expected 480300, got 960600",3/0/0,3/0/0
+MR7,50,202,3de8e5437f98,holds,,3/0/0,3/0/0
+MR7,50,303,3de8e5437f98,violated,"price 75254@2025-04: expected 479800, got 932000 | price 75254@2025-05: expected 511000, got 831200 | price 75254@2025-06: expected 578600, got 836300 | price 75254@2025-07: expected 467500, got 717050 | price 75254@2025-08: expected 451000, got 602400",3/0/0,3/0/0
+MR7,51,101,4bca1621653b,holds,,3/0/0,3/0/0
+MR7,51,202,4bca1621653b,holds,,3/0/0,3/0/0
+MR7,51,303,4bca1621653b,violated,"price 75201@2025-04: expected 710800, got 355400 | price 75201@2025-05: expected 710800, got 355400 | price 75201@2025-06: expected 754600, got 377300 | price 75201@2025-07: expected 800100, got 400050 | price 75201@2025-08: expected 781400, got 390700",3/0/0,3/0/0
+MR7,52,101,54359eac2e50,holds,,3/0/0,3/0/0
+MR7,52,202,54359eac2e50,holds,,3/0/0,3/0/0
+MR7,52,303,54359eac2e50,holds,,3/0/0,3/0/0
+MR7,54,101,499ffed49989,holds,,3/0/0,3/0/0
+MR7,54,202,499ffed49989,holds,,3/0/0,3/0/0
+MR7,54,303,499ffed49989,holds,,3/0/0,3/0/0
+MR7,55,101,9934b8e95f79,holds,,2/0/0,2/0/0
+MR7,55,202,9934b8e95f79,holds,,2/0/0,2/0/0
+MR7,55,303,9934b8e95f79,holds,,2/0/0,2/0/0
+MR7,57,101,6267b975b0fd,holds,,3/0/0,3/0/0
+MR7,57,202,6267b975b0fd,holds,,3/0/0,3/0/0
+MR7,57,303,6267b975b0fd,holds,,3/0/0,3/0/0
+MR7,62,101,e5a72c913ccf,holds,,3/0/0,3/0/0
+MR7,62,202,e5a72c913ccf,holds,,3/0/0,3/0/0
+MR7,62,303,e5a72c913ccf,holds,,3/0/0,3/0/0
+MR7,64,101,9337279a083a,holds,,3/0/0,3/0/0
+MR7,64,202,9337279a083a,violated,"price 75210@2025-09: expected 1.5536e+06, got 880100 | price 75210@2025-10: expected 2.0826e+06, got 1.0876e+06 | price 75210@2025-11: expected 2.2836e+06, got 1.1766e+06 | price 75210@2025-12: expected 1.7994e+06, got 927100 | price 75210@2026-02: expected 1.7994e+06, got 899700",3/0/0,3/0/0
+MR7,64,303,9337279a083a,violated,"price 75232@2025-10: expected 490600, got 598700 | price 75232@2025-12: expected 509050, got 573450 | price 75233@2025-06: expected 869300, got 507200 | price 75233@2025-07: expected 804800, got 476000 | price 75233@2025-08: expected 826800, got 515100",3/0/0,3/0/0
+MR7,66,101,fb3de85123dc,violated,"price 75246@2025-09: expected 1.0672e+06, got 533600 | price 75246@2025-10: expected 1.0534e+06, got 553600 | price 75246@2025-11: expected 1.0887e+06, got 560050 | price 75246@2025-12: expected 1.065e+06, got 558200 | price 75246@2026-01: expected 1.0426e+06, got 529150",3/0/0,3/0/0
+MR7,66,202,fb3de85123dc,holds,,3/0/0,3/0/0
+MR7,66,303,fb3de85123dc,holds,,3/0/0,3/0/0
+MR7,67,101,3f741a53cc3a,holds,,3/0/0,3/0/0
+MR7,67,202,3f741a53cc3a,holds,,3/0/0,3/0/0
+MR7,67,303,3f741a53cc3a,holds,,3/0/0,3/0/0
+MR7,71,101,a7cc1351ec86,holds,,3/0/0,3/0/0
+MR7,71,202,a7cc1351ec86,holds,,3/0/0,3/0/0
+MR7,71,303,a7cc1351ec86,violated,"price 75246@2024-10: expected 613350, got 1.212e+06 | price 75246@2024-11: expected 580350, got 1.0614e+06 | price 75246@2024-12: expected 555300, got 974200 | price 75246@2025-01: expected 556000, got 814150 | price 75246@2025-02: expected 632200, got 1.0198e+06",3/0/0,3/0/0
+MR7,72,101,6bdb794c940b,violated,"price 75236@2025-06: expected 430500, got 511100 | price 75236@2025-07: expected 455600, got 582900 | price 75236@2025-08: expected 492100, got 723450 | ppsf 75236@2025-06: expected 196.755, got 241.489 | ppsf 75236@2025-07: expected 198.08, got 259.154",3/0/0,3/0/0
+MR7,72,202,6bdb794c940b,violated,"price 75235@2025-06: expected 859600, got 429800 | price 75235@2025-07: expected 861000, got 430500 | price 75235@2025-08: expected 864900, got 432450 | price 75235@2025-09: expected 913200, got 456600 | price 75235@2025-10: expected 868800, got 434400",3/0/0,3/0/0
+MR7,72,303,6bdb794c940b,violated,"price 75253@2025-06: expected 1.2384e+06, got 705100 | price 75253@2025-07: expected 1.1406e+06, got 691900 | price 75253@2025-08: expected 1.1391e+06, got 648050 | price 75253@2026-01: expected 1.1938e+06, got 729800 | price 75253@2026-02: expected 1.2063e+06, got 637400",3/0/0,3/0/0

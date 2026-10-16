@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"pool\",\"reason\":\"More than half of the buckets are thin, and they are significantly below the threshold. Given that we have not used all allowed rescans and can potentially improve coverage by widening the scope, it is worth attempting to gather more data.\"}"}

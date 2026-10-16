@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Sufficient to meet the listing count without distorting geography.\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"Already sufficient from time padding alone, no need for additional distortion.\"}]}"}

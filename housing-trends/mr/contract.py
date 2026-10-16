@@ -16,7 +16,7 @@
      n_used          listings behind the statistic (own + pooled, after exclusions)
      mom_price_pct   month-over-month % change within the ZIP
 
-Diagnoser verdicts (listing id, ZIP, verdict) ride along as `attrs["verdicts"]` so MR10 can ask whether a planted outlier
+Diagnoser verdicts (listing id, ZIP, verdict) ride along as `attrs["verdicts"]` so MR8 can ask whether a planted outlier
 was ever examined. Notes, loop counters and the decision trace are NOT part of the contract: they are diagnostics.
 """
 from __future__ import annotations

@@ -1,0 +1,1 @@
+{"tag": "openai/gpt-oss-120b@seed303", "reply": "{\"rankings\":[{\"zip_code\":\"75223\",\"comparable\":[\"75227\",\"75224\",\"75228\",\"75217\",\"75219\",\"75218\"],\"reason\":\"price ratio close to 1 and similar sqft\"},{\"zip_code\":\"75224\",\"comparable\":[\"75228\",\"75223\",\"75227\",\"75219\",\"75216\",\"75217\"],\"reason\":\"price ratio near 1 and comparable sqft\"}]}"}
