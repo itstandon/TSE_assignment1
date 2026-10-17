@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"pool\",\"reason\":\"Need to widen scope to meet coverage threshold, as many buckets are significantly below the listing count and only one rescan has been used.\"}"}

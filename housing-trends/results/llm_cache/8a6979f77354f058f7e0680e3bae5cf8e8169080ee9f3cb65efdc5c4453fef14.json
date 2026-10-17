@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"More buckets are affected by this move\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Only 2 buckets, significant impact from zip widening\"}]}"}

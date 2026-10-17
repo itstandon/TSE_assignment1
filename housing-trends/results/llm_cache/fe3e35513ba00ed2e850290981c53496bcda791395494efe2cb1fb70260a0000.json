@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"recompute\",\"reason\":\"Few jumps and outliers suggest a potential artefact that robust recompute can address.\"}"}

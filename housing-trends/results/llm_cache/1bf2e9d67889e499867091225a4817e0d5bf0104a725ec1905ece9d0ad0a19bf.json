@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"recompute\",\"reason\":\"The jump is large but there are only a few affected ZIPs and listings. A robust recompute can confirm if the change is real.\"}"}

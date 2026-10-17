@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"recompute\",\"reason\":\"Few jumps with potential artefacts, cheap to recompute using robust mean.\"}"}

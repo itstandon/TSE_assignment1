@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"More buckets are affected by 'time' and it doesn't add enough listings.\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"There's only one bucket in this class, adding listings from nearby ZIPs is necessary.\"}]}"}

@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Time suffices to reach threshold while least distorting user's question.\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Zip is the only legal move and significantly increases listings.\"}]}"}

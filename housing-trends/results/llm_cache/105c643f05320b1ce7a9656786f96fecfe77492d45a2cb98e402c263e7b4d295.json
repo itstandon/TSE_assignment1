@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"recompute\",\"reason\":\"The jump is large but there's only one outlier suspect, making diagnoser less justified. Recompute with robust mean to verify.\"}"}

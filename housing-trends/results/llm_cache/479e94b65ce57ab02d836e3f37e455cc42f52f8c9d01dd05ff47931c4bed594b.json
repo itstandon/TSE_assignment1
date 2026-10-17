@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Need more listings and 'time' least distorts the user's question.\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"zip\",\"reason\":\"While 'time' would add more, it changes too much geography. 'zip' is a better balance.\"}]}"}

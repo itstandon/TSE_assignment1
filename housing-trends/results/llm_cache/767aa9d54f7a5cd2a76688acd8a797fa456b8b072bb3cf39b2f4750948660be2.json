@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"time_suffices is true, but we prefer not to distort seasonality if possible\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"zip\",\"reason\":\"While time would add more listings, it distorts the month-over-month trend. Zip pooling maintains geography.\"}]}"}

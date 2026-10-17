@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Needs more listings and 'time' adds the most without distorting geography.\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"zip\",\"reason\":\"While 'time' would suffice, it distorts seasonality; expanding geography is a better trade-off.\"}]}"}

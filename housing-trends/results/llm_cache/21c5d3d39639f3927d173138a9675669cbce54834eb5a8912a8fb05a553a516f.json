@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"recompute\",\"reason\":\"The jump is large but there's only one suspect listing, making diagnoser less justified. Recompute can confirm if the change is robust.\"}"}

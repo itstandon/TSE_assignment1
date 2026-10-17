@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"More buckets are affected by this move, helping more than 'time' alone.\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Only bucket available, and 'zip' is the only legal move that can help reach the threshold.\"}]}"}

@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"rankings\":[{\"zip_code\":\"75231\",\"comparable\":[\"75230\",\"75232\",\"75229\"],\"reason\":\"Close price ratio and similar median_sqft\"},{\"zip_code\":\"75241\",\"comparable\":[\"75238\",\"75230\",\"75232\"],\"reason\":\"Close proximity and price ratio, though some sqft difference\"}]}"}

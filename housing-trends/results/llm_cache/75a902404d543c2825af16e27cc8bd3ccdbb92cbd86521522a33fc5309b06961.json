@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"needed listings can be reached by time alone\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"median_listings already sufficient, but time can still reach needed listings\"}]}"}

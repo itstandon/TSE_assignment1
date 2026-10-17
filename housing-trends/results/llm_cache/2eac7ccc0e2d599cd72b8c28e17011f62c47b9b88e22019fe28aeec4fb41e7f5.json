@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"Only option to meet threshold\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Needed to meet threshold\"}]}"}

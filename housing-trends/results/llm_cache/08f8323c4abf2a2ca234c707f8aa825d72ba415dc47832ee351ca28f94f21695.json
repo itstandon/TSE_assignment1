@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\n    \"verdicts\": [\n        {\"listing_id\": 9653, \"verdict\": \"unexplained\", \"reason\": \"\"}\n    ],\n    \"explanations\": [\n        {\"zip_code\": \"75230\", \"month\": \"2024-11\", \"text\": \"The price increased by 46.3% month-over-month in 2024-11.\"}\n    ]\n}"}

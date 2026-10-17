@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed202", "reply": "{\"decision\":\"recompute\",\"reason\":\"No robust recompute has run yet, so it's cheaper to try that before diagnosing.\"}"}

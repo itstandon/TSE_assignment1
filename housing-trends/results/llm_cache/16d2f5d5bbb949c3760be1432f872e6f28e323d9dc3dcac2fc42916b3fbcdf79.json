@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"zip\",\"reason\":\"Adding listings from more ZIP codes is less distorting than broadening the time frame.\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"The single bucket needs a significant increase in listings, and adding from nearby ZIP codes is the least distorting option.\"}]}"}
