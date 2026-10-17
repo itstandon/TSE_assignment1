@@ -201,3 +201,12 @@ Critic, Pooling, Diagnoser (LLM), LangGraph wiring and a captured loop trace, MR
 ### Next
 Finish the Qwen run, update README reproduction steps (Ollama), write the report (results, root cause, threats to
 validity, reflection), first git commit.
+
+## 2026-10-17: Qwen run completed for all 10 MRs
+- Resumed the interrupted run: `mr_llm_rest` had MR6 70/90 and MR10 0/90. Re-ran MR6+MR10 into `results/mr_llm_rest2/` (the 70 MR6 rows matched exactly),
+  merged into `results/mr_llm_rest/runs.csv` (backup: `runs.backup.csv`). Every MR now has 90 Qwen runs (MR6: 89 + 1 skipped).
+- Qwen ranking by violating bases: MR2 30/30, MR4 25/30, MR10 22/30, MR7 21/30, MR3 19/30, MR8 9/30, MR9 4/30, MR6 1/30, MR1 and MR5 0/30.
+- MR10 (holds 0/90 offline) fails 64/90 with Qwen. Jump loops off: 59/90. Jump loops + Pooling off: 0/90 (0 LLM calls). Cause: Qwen's
+  neighbour-ZIP ranking in the Scanner/Pooling differs between source and follow-up. k=1.000001 control (3 trials) still violates once,
+  so prompt-text noise alone suffices. Not the Diagnoser (my first hypothesis was wrong).
+- Report: MR2/MR4/MR7 stay the headline root causes (structural, reproducible offline); MR10 is a separate Qwen-only finding.

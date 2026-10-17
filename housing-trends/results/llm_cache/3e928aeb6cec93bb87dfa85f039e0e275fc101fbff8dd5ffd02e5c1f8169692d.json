@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Blurs seasonality but keeps geography intact\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"Already sufficient listings from time alone\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Significantly expands coverage area\"}]}"}

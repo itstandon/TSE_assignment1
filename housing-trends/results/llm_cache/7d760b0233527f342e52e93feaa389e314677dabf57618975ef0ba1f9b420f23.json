@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed303", "reply": "{\"decision\":\"recompute\",\"reason\":\"The jump is large and only one has been flagged, suggesting it might be an artefact of the plain median.\"}"}

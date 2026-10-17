@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"choices\":[{\"class\":\"time+zip\",\"move\":\"time\",\"reason\":\"Suffices without distorting month-over-month trend\"},{\"class\":\"time+zip|time_suffices\",\"move\":\"time\",\"reason\":\"Already above threshold, no distortion needed\"},{\"class\":\"zip\",\"move\":\"zip\",\"reason\":\"Least distorts geography compared to filters\"}]}"}

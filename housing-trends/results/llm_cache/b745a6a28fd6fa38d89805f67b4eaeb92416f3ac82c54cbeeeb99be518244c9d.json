@@ -1,0 +1,1 @@
+{"tag": "qwen2.5:7b@seed101", "reply": "{\"decision\":\"pool\",\"reason\":\"28 thin buckets below the threshold, significant shortfall, and only 1 rescan remaining make pooling necessary to ensure coverage.\"}"}

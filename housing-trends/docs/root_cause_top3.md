@@ -79,9 +79,10 @@ recompute, so the leakage also changes *which estimator* a neighbouring ZIP gets
 although nothing in A changed. Conversely, the doubled ZIP's own pooled buckets contain undoubled neighbour listings, so they
 do not scale cleanly by 2.
 
-*Contrast with MR10 (scale all prices by k).* MR10 holds on 0 / 90 runs: a global scale keeps pooled populations
+*Contrast with MR10 (scale all prices by k).* Offline, MR10 holds on 0 / 90 runs: a global scale keeps pooled populations
 proportional. MR7 is local, and MR7 fails only through Pooling. This pins the cause on cross-ZIP borrowing, not on a
-scale-sensitive threshold (the catalog predicted this contrast).
+scale-sensitive threshold (the catalog predicted this contrast). With Qwen, MR10 also fails (see the MR10 section
+below), so the contrast holds only for the offline stand-in.
 
 ## MR2: Multiply each ZIP's listings by N. Verdict: mostly an ill-conceived MR, plus one genuine Diagnoser fault
 
@@ -115,12 +116,32 @@ listings judged legitimate rather than from which listings happened to be sent. 
 off also go through the jump loops. Removing a ZIP's maximum can change which listings are suspects, and so whether a ZIP
 keeps the trimmed mean. This is the likely cause, but it has **not yet been confirmed by a replay**.
 
+## MR10 with Qwen only: unstable neighbour ranking in Pooling. Verdict: LLM robustness fault, not a code logic fault
+
+Offline MR10 holds 0/90; with Qwen it is violated on 22/30 base inputs (64/90 runs), with errors of about 1-2%.
+
+| Qwen run, MR10, 30 bases x 3 seeds | Violating runs | LLM calls |
+|---|---|---|
+| Full pipeline | 64/90 | - |
+| Jump loops off (`jump_pct=1e9`) | 59/90 | 2,683 |
+| Jump loops and Pooling off (`min_listings=0`) | **0/90** | 0 |
+
+The Diagnoser is not the cause (loops off barely changes the rate). Pooling is necessary. Replay of base 1, seed 101,
+loops off: the Scanner's Qwen neighbour ranking differs between source and x3 follow-up (75211, 75214, 75220 ordered
+differently, 75223 pooled only in the follow-up), so different listings enter the medians.
+
+Control: k = 1.000001 (prompt text changes, meaning does not), first 3 bases, seed 101: bases 0 and 5 hold, base 1 still
+violates (n 139 vs 140). So prompt-text noise alone is sufficient, and real scale changes make it worse. Only 3 trials: it
+does not estimate the noise share. Results: `results/mr_llm_mr10_noloops/`, `results/mr_llm_mr10_nopool/`,
+`results/mr_llm_ctrl_k1e-6/`.
+
 ## Summary
 
 | MR | Cause category | Loop responsible | Key evidence |
 |---|---|---|---|
 | MR4 | Genuine aggregation fault | Coverage (Pooling) | 46/46 violating buckets pooled; 0/90 with loops off; median +93.5% after removing the maximum |
 | MR7 | Genuine aggregation fault (cross-ZIP leakage) | Coverage (Pooling) | 0/90 with Pooling off; 65/65 buckets pooled; MR10 (global scale) holds 0/90 |
+| MR10 (Qwen only) | LLM instability in Pooling's neighbour ranking | Pooling | 0/90 offline; 64/90 Qwen; 59/90 loops off; 0/90 Pooling off; k=1.000001 control still violates 1 of 3 |
 | MR2 | Ill-conceived MR on thin buckets **plus** genuine Diagnoser fault | Pooling (main), Diagnoser suspect cap | 133/150 pooled; with Pooling off 18/90 remain, all after a Diagnoser round; replay shows copies crowding out the `legit_rural` listing |
 
 ## Threats to validity of this diagnosis

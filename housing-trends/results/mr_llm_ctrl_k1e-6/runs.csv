@@ -1,0 +1,4 @@
+mr,base_id,seed,criteria,status,detail,src_loops,fol_loops,llm_calls,llm_failures
+MR10,0,101,837830c82cee,holds,,3/1/1,3/1/1,40,0
+MR10,1,101,ea516380e2bb,violated,"price 2026-04: expected 577401, got 578201 | ppsf 2026-04: expected 212.556, got 212.847 | n 2026-04: expected 139, got 140 | mom_price_pct 2026-04: expected -3.6623, got -3.52882 | mom_price_pct 2026-05: expected -6.88431, got -7.01314 | price 75211@2026-06: expected 842151, got 843201 | price 75214@2026-03: expected 998901, got 999851 | price 75214@2026-04: expected 965551, got 969501 | ppsf 75211@2026-06: expected 274.22, got 274.273 | ppsf 75214@2026-03: expected 312.445, got 312.733",3/1/2,3/1/2,56,0
+MR10,5,101,f13bf9a3f714,holds,,2/1/2,2/1/2,44,0
